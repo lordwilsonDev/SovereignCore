@@ -1,0 +1,3 @@
+{"id": "770fb1b947d7", "timestamp": "2026-01-01T10:15:55.582216", "operation": "test_entry", "requester": "system", "details": {"message": "Axiom inversion test"}, "prev_hash": null, "hash": "a70de83726120ccd"}
+{"id": "54d634853442", "timestamp": "2026-01-01T10:17:00.224839", "operation": "sovereign_init", "requester": "system", "details": {"version": "4.0", "components": ["ollama", "dual_purpose"]}, "prev_hash": null, "hash": "9bd32f0432cb40f9"}
+{"id": "e8984f1fe99b", "timestamp": "2026-01-01T11:55:10.765913", "operation": "sovereign_init", "requester": "system", "details": {"version": "4.0", "components": ["ollama", "dual_purpose"]}, "prev_hash": null, "hash": "ee804c0996b13285"}

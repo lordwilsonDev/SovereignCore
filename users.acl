@@ -1,0 +1,23 @@
+# Redis ACL Configuration for SovereignCore
+# Redis 6+ Access Control Lists
+
+# Default user - disabled for security
+user default off
+
+# Admin user - full access (use for maintenance only)
+user admin on >your-admin-password-here ~* &* +@all
+
+# Application user - limited permissions for SovereignCore API
+user sovereigncore on >your-app-password-here ~* &* +@read +@write +@string +@hash +@list +@set +@sortedset +@geo +@hyperloglog +@stream -@dangerous
+
+# Read-only user - for monitoring/metrics
+user readonly on >your-readonly-password-here ~* &* +@read +info +ping +client|list +slowlog|get
+
+# Notes:
+# - Change all passwords above!
+# - ~* allows access to all keys (restrict in production if needed)
+# - &* allows access to all pub/sub channels
+# - +@all gives all commands
+# - +@read, +@write are command categories
+# - -@dangerous removes dangerous commands
+# - Use 'nopass' only for local development (NOT recommended)

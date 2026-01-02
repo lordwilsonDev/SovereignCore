@@ -1,0 +1,91 @@
+# SovereignCore systemd Service Unit
+# Install to: /etc/systemd/system/sovereigncore.service
+# Enable: sudo systemctl enable sovereigncore
+# Start: sudo systemctl start sovereigncore
+
+[Unit]
+Description=SovereignCore API Server
+Documentation=https://github.com/lordwilson/SovereignCore
+After=network.target redis.service
+Requires=redis.service
+Wants=network-online.target
+
+[Service]
+# Service type
+Type=notify
+NotifyAccess=all
+
+# User and group
+User=sovereign
+Group=sovereign
+
+# Working directory
+WorkingDirectory=/opt/sovereigncore
+
+# Environment
+EnvironmentFile=/opt/sovereigncore/.env
+Environment="PATH=/opt/sovereigncore/.venv/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONUNBUFFERED=1"
+
+# Start command
+ExecStart=/opt/sovereigncore/.venv/bin/gunicorn \
+    --config /opt/sovereigncore/gunicorn.conf.py \
+    api_server:app
+
+# Reload command (graceful reload)
+ExecReload=/bin/kill -s HUP $MAINPID
+
+# Stop command (graceful shutdown)
+KillMode=mixed
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+# Restart policy
+Restart=on-failure
+RestartSec=10s
+StartLimitInterval=5min
+StartLimitBurst=3
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+
+# Memory and CPU limits (adjust based on your system)
+MemoryLimit=8G
+CPUQuota=400%
+
+# Security hardening
+# Filesystem protection
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/sovereigncore/data /opt/sovereigncore/logs
+
+# Network protection
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+
+# Privilege restrictions
+NoNewPrivileges=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+# System call filtering
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+
+# Capabilities (drop all, add only what's needed)
+CapabilityBoundingSet=
+AmbientCapabilities=
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=sovereigncore
+
+# Watchdog (health monitoring)
+WatchdogSec=60s
+
+[Install]
+WantedBy=multi-user.target

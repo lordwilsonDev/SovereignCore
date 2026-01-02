@@ -1,0 +1,37 @@
+[run]
+source = .
+omit =
+    */tests/*
+    */test_*.py
+    */__pycache__/*
+    */venv/*
+    */.venv/*
+    */build/*
+    */dist/*
+    */BitNet/*
+    */faiss/*
+    */redis-py/*
+    */segment-anything/*
+    */vjepa2/*
+    */swarm_vjepa/*
+    */qwen-consciousness-framework/*
+    */nano-consciousness-empire/*
+    */mcp-context-forge/*
+    */markitdown/*
+    */screen_agent/*
+    */command_center/*
+    */consciousness-automation-tools/*
+    */sovereign_bridge/*
+    setup.py
+    conftest.py
+
+[report]
+precision = 2
+show_missing = True
+skip_covered = False
+
+[html]
+directory = htmlcov
+
+[json]
+output = coverage.json

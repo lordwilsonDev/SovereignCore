@@ -1,0 +1,134 @@
+# Git
+.git
+.gitignore
+.github
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PIPFILE.lock
+
+# Virtual environments
+.venv
+venv/
+ENV/
+env/
+sovereign-venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+.tox/
+htmlcov/
+*.cover
+.hypothesis/
+
+# Documentation
+docs/_build/
+*.md
+!README.md
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Development scripts
+test_*.py
+*_test.py
+
+# Build artifacts
+*.o
+*.a
+*.dylib
+*.metallib
+*.air
+sovereign_bridge
+build_sovereign/
+
+# Large model files (download separately)
+models/
+*.bin
+*.gguf
+*.safetensors
+
+# Submodules and external repos
+redis-py/
+markitdown/
+segment-anything/
+mcp-context-forge/
+consciousness-automation-tools/
+qwen-consciousness-framework/
+nano-consciousness-empire/
+vjepa2/
+faiss/
+BitNet/
+
+# Certificates (should be mounted as secrets)
+certs/
+*.pem
+*.key
+*.crt
+*.csr
+
+# Data directories (should be mounted as volumes)
+data/
+mcp_data/
+memory/
+
+# Backup files
+*.backup
+*.bak
+
+# CI/CD
+.github/
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore

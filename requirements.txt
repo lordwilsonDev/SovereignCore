@@ -1,0 +1,135 @@
+# Core Web & API Frameworks
+fastapi
+flask
+gunicorn
+uvicorn
+uvloop
+sse-starlette
+starlette
+requests
+httpx
+aiohttp
+
+# Data Science & Machine Learning
+numpy
+pandas
+scipy
+scikit-learn
+torch
+torchvision
+transformers
+datasets
+sentence_transformers
+timm
+einops
+# xformers  # Commented out due to compilation issues on macOS
+safetensors
+# Note: FAISS typically requires a specific CPU or GPU build.
+# faiss-cpu
+# faiss-gpu
+faiss-cpu
+# Note: RMM is part of the NVIDIA RAPIDS ecosystem and requires a specific installation.
+# rmm
+
+# Database & Caching
+sqlalchemy
+alembic
+redis
+diskcache
+cachetools
+
+# AI & LLM Tooling
+openai
+ollama
+langchain
+langchain-core
+langchain-openai
+llm_guard
+tiktoken
+sentencepiece
+
+# Testing & Quality
+pytest
+pytest-asyncio
+pytest_httpx
+pytest-cov
+behave
+hypothesis
+locust
+
+# Dev Tools & Utilities
+fire
+typer
+invoke
+joblib
+filelock
+pydantic
+pydantic_settings
+python-dotenv
+argh
+PyYAML
+tomlkit
+orjson
+msgpack
+decorator
+lazy_loader
+
+# Hardware & System
+psutil
+# PyObjC is macOS specific
+# pyobjc
+
+# Media & Document Processing
+Pillow
+opencv-python
+python-docx
+openpyxl
+beautifulsoup4
+markdownify
+defusedxml
+audioread
+soundfile
+# decord  # Commented out due to installation issues on this platform
+soxr
+magika
+
+# Security & Authentication
+cryptography
+pyjwt
+# argon2  # Commented out due to missing system library 'libargon2'
+bcrypt
+cedarpy
+requests_oauthlib
+passlib[bcrypt]
+python-multipart
+slowapi
+structlog
+passlib[bcrypt]
+python-multipart
+slowapi
+structlog
+
+# Console & Visualization
+rich
+tqdm
+matplotlib
+seaborn
+plotly
+
+# Other
+tenacity
+python-dateutil
+url_normalize
+websockets
+zeroconf
+jsonpath-ng
+jsonschema
+textstat
+cffi
+numba
+h5py
+pooch
+prometheus-client
+prometheus-fastapi-instrumentator
+multidict
+colorama

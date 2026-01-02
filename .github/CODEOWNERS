@@ -1,0 +1,26 @@
+# SovereignCore Code Owners
+# These owners will be automatically requested for review when someone opens a pull request
+
+# Default owner for everything in the repo
+*       @lordwilson
+
+# API and core application files
+/api_server.py              @lordwilson
+/sovereign_v5.py            @lordwilson
+/consciousness_bridge.py    @lordwilson
+
+# Security-critical files
+/requirements.txt           @lordwilson
+/redis.conf                 @lordwilson
+/users.acl                  @lordwilson
+/.env.example               @lordwilson
+
+# CI/CD and deployment
+/.github/workflows/         @lordwilson
+/Dockerfile                 @lordwilson
+/docker-compose.yml         @lordwilson
+/gunicorn.conf.py           @lordwilson
+
+# Documentation
+/*.md                       @lordwilson
+/PRODUCTION_READINESS_CHECKLIST.md  @lordwilson
