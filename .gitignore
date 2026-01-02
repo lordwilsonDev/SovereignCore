@@ -1,40 +1,28 @@
-# Build artifacts
-sovereign_bridge
-scrubber.air
-scrubber.metallib
-build_sovereign/
-
-# BitNet repository
-BitNet/
-
-# Models (large files)
-models/*.gguf
-models/*.bin
-
-# Python
+.venv/
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
-venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
 *.egg-info/
-
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Logs
-*.log
-
-# Temporary files
-*.tmp
-*.temp
+.installed.cfg
+*.egg
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
