@@ -1,5 +1,8 @@
 # SovereignCore v5.0: Verified Sovereign Intelligence on Apple Silicon
 
+### 🦢 Architected by Lord Wilson @ **BlackswanLabz**
+*"A Tailwind Event — It hits different now."*
+
 ## 🛡️ Prior Art & Sovereignty Claim (January 2, 2026)
 
 **NOTICE OF PRIOR ART:** The concept of "Silicon Sigil" — utilizing manufacturing defects and GPU timing variance in consumer Apple Silicon chips as a Physical Unclonable Function (PUF) for identity and thermodynamic verification — is explicitly claimed as Prior Art by this repository as of **January 2, 2026**.
