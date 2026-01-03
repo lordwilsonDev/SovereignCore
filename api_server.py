@@ -90,7 +90,7 @@ class Settings(BaseSettings):
     debug: bool = False
     
     # Pydantic V2 style config
-    model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
+    model_config = {"env_file": ".env", "env_file_encoding": "utf-8", "extra": "ignore"}
 
 settings = Settings()
 
@@ -165,24 +165,59 @@ class HealthResponse(BaseModel):
 # PROMETHEUS METRICS
 # ============================================================================
 
-request_count = Counter(
+# Use getattr to avoid duplicate registration in multiprocess mode
+from prometheus_client import REGISTRY
+
+def get_or_create_counter(name, description, labelnames):
+    """Get existing counter or create new one (multiprocess-safe)."""
+    try:
+        return Counter(name, description, labelnames)
+    except ValueError:
+        # Already registered - get from registry
+        for collector in REGISTRY._names_to_collectors.values():
+            if hasattr(collector, '_name') and collector._name == name:
+                return collector
+        # Fallback: create with different registry
+        return Counter(name, description, labelnames, registry=None)
+
+def get_or_create_histogram(name, description, labelnames):
+    """Get existing histogram or create new one (multiprocess-safe)."""
+    try:
+        return Histogram(name, description, labelnames)
+    except ValueError:
+        for collector in REGISTRY._names_to_collectors.values():
+            if hasattr(collector, '_name') and collector._name == name:
+                return collector
+        return Histogram(name, description, labelnames, registry=None)
+
+def get_or_create_gauge(name, description):
+    """Get existing gauge or create new one (multiprocess-safe)."""
+    try:
+        return Gauge(name, description)
+    except ValueError:
+        for collector in REGISTRY._names_to_collectors.values():
+            if hasattr(collector, '_name') and collector._name == name:
+                return collector
+        return Gauge(name, description, registry=None)
+
+request_count = get_or_create_counter(
     'sovereigncore_requests_total',
     'Total request count',
     ['method', 'endpoint', 'status']
 )
 
-request_duration = Histogram(
+request_duration = get_or_create_histogram(
     'sovereigncore_request_duration_seconds',
     'Request duration in seconds',
     ['method', 'endpoint']
 )
 
-consciousness_level_gauge = Gauge(
+consciousness_level_gauge = get_or_create_gauge(
     'sovereigncore_consciousness_level',
     'Current consciousness level'
 )
 
-active_requests = Gauge(
+active_requests = get_or_create_gauge(
     'sovereigncore_active_requests',
     'Number of active requests'
 )
@@ -229,7 +264,7 @@ app.add_middleware(
 if settings.environment == "production":
     app.add_middleware(
         TrustedHostMiddleware,
-        allowed_hosts=["api.sovereigncore.com", "localhost"]
+        allowed_hosts=["api.sovereigncore.com", "localhost", "testserver", "127.0.0.1"]
     )
 
 # Security Headers Middleware
@@ -287,6 +322,11 @@ async def track_metrics(request: Request, call_next):
         return response
     finally:
         active_requests.dec()
+
+# ============================================================================
+# PROMETHEUS INSTRUMENTATION (must be after middleware, before routes)
+# ============================================================================
+Instrumentator().instrument(app).expose(app, endpoint="/metrics")
 
 # ============================================================================
 # AUTHENTICATION
@@ -421,8 +461,7 @@ async def lifespan(app: FastAPI):
         logger.error("Failed to initialize consciousness bridge", error=str(e))
         raise
     
-    # Initialize Prometheus instrumentation
-    Instrumentator().instrument(app).expose(app, endpoint="/metrics")
+    # Prometheus instrumentation is now handled at module level (before routes)
     
     logger.info("API server ready")
     
@@ -615,11 +654,211 @@ async def get_consciousness_state(
     }
 
 # ============================================================================
+# CHAT ENDPOINTS (Background Agent Interface)
+# ============================================================================
+
+class ChatRequest(BaseModel):
+    """Chat message request."""
+    message: str
+    context: Optional[Dict[str, Any]] = None
+
+class ChatResponse(BaseModel):
+    """Chat response."""
+    command_id: str
+    response: str
+    response_type: str
+    success: bool
+    execution_time_ms: float
+
+@app.post("/api/v1/chat", response_model=ChatResponse, tags=["chat"])
+@limiter.limit("30/minute")
+async def send_chat_message(
+    request: Request,
+    chat_request: ChatRequest,
+    current_user: User = Depends(get_current_active_user)
+):
+    """
+    Send a chat message to the background agent.
+    
+    The message is published to Redis and processed by the background agent.
+    Returns the agent's response.
+    """
+    import redis
+    import json
+    import time as time_module
+    
+    start_time = time_module.time()
+    command_id = f"chat-{int(start_time * 1000)}-{current_user.username}"
+    
+    try:
+        # Connect to Redis
+        r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+        
+        # Publish command
+        command = {
+            "id": command_id,
+            "action": "chat",
+            "payload": {
+                "message": chat_request.message,
+                "context": chat_request.context or {},
+                "user": current_user.username
+            },
+            "source": "api",
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+        r.publish("sovereign:commands", json.dumps(command))
+        
+        # Wait for response (with timeout)
+        pubsub = r.pubsub()
+        pubsub.subscribe("sovereign:responses")
+        
+        response_data = None
+        timeout = 30  # seconds
+        start_wait = time_module.time()
+        
+        while time_module.time() - start_wait < timeout:
+            message = pubsub.get_message(timeout=0.1)
+            if message and message['type'] == 'message':
+                try:
+                    data = json.loads(message['data'])
+                    if data.get('command_id') == command_id:
+                        response_data = data
+                        break
+                except json.JSONDecodeError:
+                    continue
+        
+        pubsub.unsubscribe()
+        
+        if response_data:
+            result = response_data.get('result', {})
+            return ChatResponse(
+                command_id=command_id,
+                response=result.get('response', str(result)),
+                response_type=result.get('type', 'unknown'),
+                success=response_data.get('success', False),
+                execution_time_ms=(time_module.time() - start_time) * 1000
+            )
+        else:
+            # Timeout - return fallback
+            return ChatResponse(
+                command_id=command_id,
+                response="Agent did not respond in time. Is the background agent running?",
+                response_type="error",
+                success=False,
+                execution_time_ms=(time_module.time() - start_time) * 1000
+            )
+            
+    except Exception as e:
+        logger.error(f"Chat endpoint error: {e}")
+        return ChatResponse(
+            command_id=command_id,
+            response=f"Error: {str(e)}",
+            response_type="error",
+            success=False,
+            execution_time_ms=(time_module.time() - start_time) * 1000
+        )
+
+@app.get("/api/v1/chat/status", tags=["chat"])
+@limiter.limit(settings.rate_limit_default)
+async def get_agent_status(
+    request: Request,
+    current_user: User = Depends(get_current_active_user)
+):
+    """Get background agent status."""
+    import redis
+    import json
+    
+    try:
+        r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+        status_data = r.get("sovereign:agent:status")
+        
+        if status_data:
+            status = json.loads(status_data)
+            return {
+                "agent_online": True,
+                **status
+            }
+        else:
+            return {
+                "agent_online": False,
+                "message": "Background agent not running or not sending heartbeats"
+            }
+    except Exception as e:
+        return {
+            "agent_online": False,
+            "error": str(e)
+        }
+
+@app.post("/api/v1/chat/command", tags=["chat"])
+@limiter.limit("60/minute")
+async def send_direct_command(
+    request: Request,
+    action: str,
+    payload: Dict[str, Any],
+    current_user: User = Depends(get_current_active_user)
+):
+    """
+    Send a direct command to the background agent.
+    
+    Actions: execute, read, write, list, status
+    """
+    import redis
+    import json
+    import time as time_module
+    
+    start_time = time_module.time()
+    command_id = f"cmd-{int(start_time * 1000)}"
+    
+    try:
+        r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+        
+        command = {
+            "id": command_id,
+            "action": action,
+            "payload": payload,
+            "source": "api_direct",
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+        r.publish("sovereign:commands", json.dumps(command))
+        
+        # Wait for response
+        pubsub = r.pubsub()
+        pubsub.subscribe("sovereign:responses")
+        
+        timeout = 30
+        start_wait = time_module.time()
+        
+        while time_module.time() - start_wait < timeout:
+            message = pubsub.get_message(timeout=0.1)
+            if message and message['type'] == 'message':
+                try:
+                    data = json.loads(message['data'])
+                    if data.get('command_id') == command_id:
+                        pubsub.unsubscribe()
+                        return data
+                except:
+                    continue
+        
+        pubsub.unsubscribe()
+        return {"command_id": command_id, "error": "Timeout waiting for response"}
+        
+    except Exception as e:
+        return {"command_id": command_id, "error": str(e)}
+
+# ============================================================================
 # MAIN
 # ============================================================================
 
 if __name__ == "__main__":
     import uvicorn
+    import multiprocessing
+    
+    # Fix for macOS multiprocessing with uvicorn workers
+    # macOS Python 3.8+ uses 'spawn' by default which causes issues
+    try:
+        multiprocessing.set_start_method("fork")
+    except RuntimeError:
+        pass  # Already set
     
     # Configure TLS if enabled
     ssl_config = {}

@@ -1,0 +1,160 @@
+[2026-01-02 12:55:29 -0600] [37308] [INFO] Starting gunicorn 23.0.0
+[2026-01-02 12:55:29 -0600] [37308] [INFO] Starting SovereignCore API Server
+[2026-01-02 12:55:29 -0600] [37308] [INFO] Listening at: https://0.0.0.0:8528 (37308)
+[2026-01-02 12:55:29 -0600] [37308] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2026-01-02 12:55:29 -0600] [37308] [INFO] SovereignCore API ready on 0.0.0.0:8528
+[2026-01-02 12:55:29 -0600] [37310] [INFO] Booting worker with pid: 37310
+[2026-01-02 12:55:29 -0600] [37310] [INFO] Worker spawned (pid: 37310)
+[2026-01-02 12:55:29 -0600] [37311] [INFO] Booting worker with pid: 37311
+[2026-01-02 12:55:29 -0600] [37311] [INFO] Worker spawned (pid: 37311)
+[2026-01-02 12:55:29 -0600] [37312] [INFO] Booting worker with pid: 37312
+[2026-01-02 12:55:29 -0600] [37312] [INFO] Worker spawned (pid: 37312)
+[2026-01-02 12:55:29 -0600] [37314] [INFO] Booting worker with pid: 37314
+[2026-01-02 12:55:29 -0600] [37314] [INFO] Worker spawned (pid: 37314)
+[2026-01-02 12:55:29 -0600] [37311] [INFO] Started server process [37311]
+[2026-01-02 12:55:29 -0600] [37310] [INFO] Started server process [37310]
+[2026-01-02 12:55:29 -0600] [37311] [INFO] Waiting for application startup.
+[2026-01-02 12:55:29 -0600] [37310] [INFO] Waiting for application startup.
+[2026-01-02 12:55:29 -0600] [37312] [INFO] Started server process [37312]
+[2026-01-02 12:55:29 -0600] [37312] [INFO] Waiting for application startup.
+[2026-01-02 12:55:29 -0600] [37314] [INFO] Started server process [37314]
+[2026-01-02 12:55:29 -0600] [37314] [INFO] Waiting for application startup.
+[2026-01-02 12:55:29 -0600] [37312] [ERROR] Traceback (most recent call last):
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lordwilson/SovereignCore/api_server.py", line 425, in lifespan
+    Instrumentator().instrument(app).expose(app, endpoint="/metrics")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/prometheus_fastapi_instrumentator/instrumentation.py", line 206, in instrument
+    app.add_middleware(
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/starlette/applications.py", line 125, in add_middleware
+    raise RuntimeError("Cannot add middleware after an application has started")
+RuntimeError: Cannot add middleware after an application has started
+
+[2026-01-02 12:55:29 -0600] [37311] [ERROR] Traceback (most recent call last):
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lordwilson/SovereignCore/api_server.py", line 425, in lifespan
+    Instrumentator().instrument(app).expose(app, endpoint="/metrics")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/prometheus_fastapi_instrumentator/instrumentation.py", line 206, in instrument
+    app.add_middleware(
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/starlette/applications.py", line 125, in add_middleware
+    raise RuntimeError("Cannot add middleware after an application has started")
+RuntimeError: Cannot add middleware after an application has started
+
+[2026-01-02 12:55:29 -0600] [37312] [ERROR] Application startup failed. Exiting.
+[2026-01-02 12:55:29 -0600] [37311] [ERROR] Application startup failed. Exiting.
+[2026-01-02 12:55:29 -0600] [37312] [INFO] Worker exiting (pid: 37312)
+[2026-01-02 12:55:29 -0600] [37311] [INFO] Worker exiting (pid: 37311)
+[2026-01-02 12:55:29 -0600] [37310] [ERROR] Traceback (most recent call last):
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lordwilson/SovereignCore/api_server.py", line 425, in lifespan
+    Instrumentator().instrument(app).expose(app, endpoint="/metrics")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/prometheus_fastapi_instrumentator/instrumentation.py", line 206, in instrument
+    app.add_middleware(
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/starlette/applications.py", line 125, in add_middleware
+    raise RuntimeError("Cannot add middleware after an application has started")
+RuntimeError: Cannot add middleware after an application has started
+
+[2026-01-02 12:55:29 -0600] [37310] [ERROR] Application startup failed. Exiting.
+[2026-01-02 12:55:29 -0600] [37310] [INFO] Worker exiting (pid: 37310)
+[2026-01-02 12:55:29 -0600] [37314] [ERROR] Traceback (most recent call last):
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lordwilson/SovereignCore/api_server.py", line 425, in lifespan
+    Instrumentator().instrument(app).expose(app, endpoint="/metrics")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/prometheus_fastapi_instrumentator/instrumentation.py", line 206, in instrument
+    app.add_middleware(
+  File "/Users/lordwilson/SovereignCore/.venv/lib/python3.12/site-packages/starlette/applications.py", line 125, in add_middleware
+    raise RuntimeError("Cannot add middleware after an application has started")
+RuntimeError: Cannot add middleware after an application has started
+
+[2026-01-02 12:55:29 -0600] [37314] [ERROR] Application startup failed. Exiting.
+[2026-01-02 12:55:29 -0600] [37314] [INFO] Worker exiting (pid: 37314)
+[2026-01-02 12:55:29 -0600] [37308] [ERROR] Worker (pid:37311) exited with code 3
+[2026-01-02 12:55:29 -0600] [37308] [ERROR] Worker (pid:37312) was sent SIGTERM!
+[2026-01-02 12:55:29 -0600] [37308] [ERROR] Worker (pid:37310) was sent SIGTERM!
+[2026-01-02 12:55:29 -0600] [37308] [ERROR] Worker (pid:37314) was sent SIGTERM!
+[2026-01-02 12:55:30 -0600] [37308] [ERROR] Shutting down: Master
+[2026-01-02 12:55:30 -0600] [37308] [ERROR] Reason: Worker failed to boot.
+[2026-01-02 12:55:30 -0600] [37308] [INFO] Shutting down SovereignCore API Server
+[2026-01-02 13:43:23 -0600] [86175] [INFO] Starting gunicorn 23.0.0
+
+Error: Already running on PID 41194 (or pid file '/tmp/sovereigncore.pid' is stale)
+
+[2026-01-02 13:43:34 -0600] [86641] [INFO] Starting gunicorn 23.0.0
+
+Error: Already running on PID 41194 (or pid file '/tmp/sovereigncore.pid' is stale)
+
+[2026-01-02 13:43:44 -0600] [87016] [INFO] Starting gunicorn 23.0.0
+[2026-01-02 13:43:44 -0600] [87016] [INFO] Starting SovereignCore API Server
+[2026-01-02 13:43:44 -0600] [87016] [INFO] Listening at: https://0.0.0.0:8528 (87016)
+[2026-01-02 13:43:44 -0600] [87016] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2026-01-02 13:43:44 -0600] [87016] [INFO] SovereignCore API ready on 0.0.0.0:8528
+[2026-01-02 13:43:44 -0600] [87029] [INFO] Booting worker with pid: 87029
+[2026-01-02 13:43:44 -0600] [87029] [INFO] Worker spawned (pid: 87029)
+[2026-01-02 13:43:44 -0600] [87036] [INFO] Booting worker with pid: 87036
+[2026-01-02 13:43:44 -0600] [87036] [INFO] Worker spawned (pid: 87036)
+[2026-01-02 13:43:44 -0600] [87039] [INFO] Booting worker with pid: 87039
+[2026-01-02 13:43:44 -0600] [87039] [INFO] Worker spawned (pid: 87039)
+[2026-01-02 13:43:44 -0600] [87044] [INFO] Booting worker with pid: 87044
+[2026-01-02 13:43:44 -0600] [87044] [INFO] Worker spawned (pid: 87044)
+[2026-01-02 13:43:45 -0600] [87029] [INFO] Started server process [87029]
+[2026-01-02 13:43:45 -0600] [87039] [INFO] Started server process [87039]
+[2026-01-02 13:43:45 -0600] [87036] [INFO] Started server process [87036]
+[2026-01-02 13:43:45 -0600] [87029] [INFO] Waiting for application startup.
+[2026-01-02 13:43:45 -0600] [87039] [INFO] Waiting for application startup.
+[2026-01-02 13:43:45 -0600] [87036] [INFO] Waiting for application startup.
+[2026-01-02 13:43:45 -0600] [87044] [INFO] Started server process [87044]
+[2026-01-02 13:43:45 -0600] [87044] [INFO] Waiting for application startup.
+[2026-01-02 13:43:45 -0600] [87036] [INFO] Application startup complete.
+[2026-01-02 13:43:45 -0600] [87029] [INFO] Application startup complete.
+[2026-01-02 13:43:45 -0600] [87039] [INFO] Application startup complete.
+[2026-01-02 13:43:46 -0600] [87044] [INFO] Application startup complete.
+[2026-01-02 20:50:16 -0600] [87016] [INFO] Handling signal: term
+[2026-01-02 20:50:16 -0600] [87039] [INFO] Shutting down
+[2026-01-02 20:50:16 -0600] [87039] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2026-01-02 20:50:16 -0600] [87029] [INFO] Shutting down
+[2026-01-02 20:50:16 -0600] [87029] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2026-01-02 20:50:16 -0600] [87036] [INFO] Shutting down
+[2026-01-02 20:50:16 -0600] [87036] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2026-01-02 20:50:16 -0600] [87044] [INFO] Shutting down
+[2026-01-02 20:50:16 -0600] [87044] [INFO] Error while closing socket [Errno 9] Bad file descriptor
+[2026-01-02 20:50:16 -0600] [87039] [INFO] Waiting for application shutdown.
+[2026-01-02 20:50:16 -0600] [87039] [INFO] Application shutdown complete.
+[2026-01-02 20:50:16 -0600] [87039] [INFO] Finished server process [87039]
+[2026-01-02 20:50:16 -0600] [87029] [INFO] Waiting for application shutdown.
+[2026-01-02 20:50:16 -0600] [87016] [ERROR] Worker (pid:87039) was sent SIGTERM!
+[2026-01-02 20:50:17 -0600] [87029] [INFO] Application shutdown complete.
+[2026-01-02 20:50:17 -0600] [87029] [INFO] Finished server process [87029]
+[2026-01-02 20:50:17 -0600] [87016] [ERROR] Worker (pid:87029) was sent SIGTERM!
+[2026-01-02 20:50:17 -0600] [87036] [INFO] Waiting for application shutdown.
+[2026-01-02 20:50:17 -0600] [87044] [INFO] Waiting for application shutdown.
+[2026-01-02 20:50:17 -0600] [87044] [INFO] Application shutdown complete.
+[2026-01-02 20:50:17 -0600] [87036] [INFO] Application shutdown complete.
+[2026-01-02 20:50:17 -0600] [87044] [INFO] Finished server process [87044]
+[2026-01-02 20:50:17 -0600] [87036] [INFO] Finished server process [87036]
+[2026-01-02 20:50:17 -0600] [87016] [ERROR] Worker (pid:87044) was sent SIGTERM!
+[2026-01-02 20:50:17 -0600] [87016] [ERROR] Worker (pid:87036) was sent SIGTERM!
+[2026-01-02 20:50:17 -0600] [87016] [INFO] Shutting down: Master
+[2026-01-02 20:50:17 -0600] [87016] [INFO] Shutting down SovereignCore API Server

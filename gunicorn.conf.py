@@ -3,6 +3,10 @@
 
 import multiprocessing
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Server socket
 bind = f"0.0.0.0:{os.getenv('API_PORT', '8528')}"
@@ -72,10 +76,10 @@ def on_exit(server):
     server.log.info("Shutting down SovereignCore API Server")
 
 # SSL/TLS Configuration (if enabled)
+# Note: When using UvicornWorker, SSL is handled by Uvicorn, not Gunicorn directly.
+# We set certfile/keyfile here for Gunicorn to pass to Uvicorn workers.
 if os.getenv('TLS_ENABLED', 'false').lower() == 'true':
     certfile = os.getenv('TLS_CERT_PATH')
     keyfile = os.getenv('TLS_KEY_PATH')
-    if certfile and keyfile:
-        # SSL version and ciphers
-        ssl_version = 5  # TLS 1.2+
-        ciphers = 'TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256'
+    # Don't set ssl_version or ciphers - let OpenSSL 3.x use secure defaults
+    # This avoids cipher compatibility issues between Gunicorn and Uvicorn workers

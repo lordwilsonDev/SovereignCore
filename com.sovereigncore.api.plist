@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.sovereigncore.api</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/lordwilson/SovereignCore/.venv/bin/gunicorn</string>
+        <string>--config</string>
+        <string>/Users/lordwilson/SovereignCore/gunicorn.conf.py</string>
+        <string>api_server:app</string>
+    </array>
+    
+    <key>WorkingDirectory</key>
+    <string>/Users/lordwilson/SovereignCore</string>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/Users/lordwilson/SovereignCore/.venv/bin:/usr/local/bin:/usr/bin:/bin</string>
+        <key>PYTHONUNBUFFERED</key>
+        <string>1</string>
+        <key>SOVEREIGN_HOME</key>
+        <string>/Users/lordwilson/SovereignCore</string>
+    </dict>
+    
+    <key>RunAtLoad</key>
+    <true/>
+    
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/>
+    </dict>
+    
+    <key>StandardOutPath</key>
+    <string>/Users/lordwilson/SovereignCore/logs/launchd_stdout.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/Users/lordwilson/SovereignCore/logs/launchd_stderr.log</string>
+    
+    <key>ProcessType</key>
+    <string>Background</string>
+</dict>
+</plist>

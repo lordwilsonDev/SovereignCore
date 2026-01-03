@@ -1,0 +1,39 @@
+27373:C 02 Jan 2026 12:42:29.383 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+27373:C 02 Jan 2026 12:42:29.383 * Redis version=8.4.0, bits=64, commit=00000000, modified=1, pid=27373, just started
+27373:C 02 Jan 2026 12:42:29.383 * Configuration loaded
+27373:M 02 Jan 2026 12:42:29.384 * monotonic clock: POSIX clock_gettime
+27373:M 02 Jan 2026 12:42:29.384 # Failed to write PID file: Permission denied
+27373:M 02 Jan 2026 12:42:29.384 * Running mode=standalone, port=6379.
+27373:M 02 Jan 2026 12:42:29.384 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+27373:M 02 Jan 2026 12:42:29.384 # Aborting Redis startup because of ACL errors: Error loading ACLs, opening file '/usr/local/etc/redis/users.acl': No such file or directory
+27769:C 02 Jan 2026 12:42:59.585 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+27769:C 02 Jan 2026 12:42:59.586 * Redis version=8.4.0, bits=64, commit=00000000, modified=1, pid=27769, just started
+27769:C 02 Jan 2026 12:42:59.586 * Configuration loaded
+27769:M 02 Jan 2026 12:42:59.586 * monotonic clock: POSIX clock_gettime
+27769:M 02 Jan 2026 12:42:59.587 # Failed to write PID file: Permission denied
+27769:M 02 Jan 2026 12:42:59.587 * Running mode=standalone, port=6379.
+27769:M 02 Jan 2026 12:42:59.587 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+27769:M 02 Jan 2026 12:42:59.587 # Aborting Redis startup because of ACL errors: Error loading ACLs, opening file '/usr/local/etc/redis/users.acl': No such file or directory
+28400:C 02 Jan 2026 12:43:47.375 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+28400:C 02 Jan 2026 12:43:47.376 * Redis version=8.4.0, bits=64, commit=00000000, modified=1, pid=28400, just started
+28400:C 02 Jan 2026 12:43:47.376 * Configuration loaded
+28400:M 02 Jan 2026 12:43:47.376 * monotonic clock: POSIX clock_gettime
+28400:M 02 Jan 2026 12:43:47.376 # Failed to write PID file: Permission denied
+28400:M 02 Jan 2026 12:43:47.377 * Running mode=standalone, port=6379.
+28400:M 02 Jan 2026 12:43:47.377 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+28400:M 02 Jan 2026 12:43:47.377 # Aborting Redis startup because of ACL errors: Error loading ACLs, opening file '/usr/local/etc/redis/users.acl': No such file or directory
+30419:C 02 Jan 2026 12:46:11.270 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+30419:C 02 Jan 2026 12:46:11.271 * Redis version=8.4.0, bits=64, commit=00000000, modified=1, pid=30419, just started
+30419:C 02 Jan 2026 12:46:11.271 * Configuration loaded
+30419:M 02 Jan 2026 12:46:11.271 * monotonic clock: POSIX clock_gettime
+30419:M 02 Jan 2026 12:46:11.272 # Failed to write PID file: Permission denied
+30419:M 02 Jan 2026 12:46:11.273 * Running mode=standalone, port=6379.
+30419:M 02 Jan 2026 12:46:11.273 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+30419:M 02 Jan 2026 12:46:11.273 # Aborting Redis startup because of ACL errors: Error loading ACLs, opening file '/usr/local/etc/redis/users.acl': No such file or directory
+48628:C 02 Jan 2026 13:16:36.482 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+48628:C 02 Jan 2026 13:16:36.483 * Redis version=8.4.0, bits=64, commit=00000000, modified=1, pid=48628, just started
+48628:C 02 Jan 2026 13:16:36.483 * Configuration loaded
+48628:M 02 Jan 2026 13:16:36.483 * monotonic clock: POSIX clock_gettime
+48628:M 02 Jan 2026 13:16:36.484 * Running mode=standalone, port=6379.
+48628:M 02 Jan 2026 13:16:36.484 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+48628:M 02 Jan 2026 13:16:36.485 # Aborting Redis startup because of ACL errors: /Users/lordwilson/SovereignCore/users.acl:1 should start with user keyword followed by the username. /Users/lordwilson/SovereignCore/users.acl:2 should start with user keyword followed by the username. /Users/lordwilson/SovereignCore/users.acl:4 should start with user keyword followed by the username. /Users/lordwilson/SovereignCore/users.acl:7 should start with user keyword followed by the username. /Users/lordwilson/SovereignCore/users.acl:10 should start with user keyword followed by the username. /Users/lordwilson/SovereignCore/users.acl:13 should start with user keyword followed by the username. /Users/lordwilson/SovereignCore/users.acl:16 should start with user keyword followed by the username. /Users/lordwilson/SovereignCore/users.acl:17 should start with user keyword followed by the username. /Users/lordwilson/SovereignCore/users.acl:18 should start with user keyword followed by the username. /Users/lordwilson/SovereignCore/users.acl:19 should start with 

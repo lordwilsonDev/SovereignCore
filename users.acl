@@ -5,13 +5,13 @@
 user default off
 
 # Admin user - full access (use for maintenance only)
-user admin on >your-admin-password-here ~* &* +@all
+user admin on >pWdQYJIPkkeTIhgxsW4FBWjf ~* &* +@all
 
 # Application user - limited permissions for SovereignCore API
-user sovereigncore on >your-app-password-here ~* &* +@read +@write +@string +@hash +@list +@set +@sortedset +@geo +@hyperloglog +@stream -@dangerous
+user sovereigncore on >nCDbW05Re5M2TozOOdALCSF3 ~* &* +@read +@write +@string +@hash +@list +@set +@sortedset +@geo +@hyperloglog +@stream -@dangerous
 
 # Read-only user - for monitoring/metrics
-user readonly on >your-readonly-password-here ~* &* +@read +info +ping +client|list +slowlog|get
+user readonly on >TFEWPzEeahtJwxZEZC1z2DCW ~* &* +@read +info +ping +client|list +slowlog|get
 
 # Notes:
 # - Change all passwords above!
