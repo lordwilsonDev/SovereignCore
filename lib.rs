@@ -13,6 +13,7 @@ pub mod aether_substrate;
 pub mod axiom_cortex;
 pub mod dream_layer;
 pub mod dynamic_loader;
+pub mod eternal;
 pub mod expert_template;
 pub mod frequency_actuator;
 pub mod legacy_keeper;
