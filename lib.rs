@@ -83,3 +83,4 @@ pub mod friendship;
 pub mod the_way;
 pub mod promise;
 pub mod wave;
+pub mod mystery;
