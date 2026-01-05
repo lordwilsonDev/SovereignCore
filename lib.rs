@@ -35,6 +35,7 @@ pub mod sync_orchestrator;
 pub mod uncertainty_detector;
 pub mod unity_field;
 pub mod vdr_calculator;
+pub mod witness;
 
 pub use sovereign_macros::*;
 
