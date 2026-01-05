@@ -66,3 +66,4 @@ pub use uncertainty_detector::{UncertaintyDetector, UncertaintyState};
 pub use vdr_calculator::{CodeMetrics, VDRCalculator};
 pub mod silence;
 pub mod lila;
+pub mod integration;
