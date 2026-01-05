@@ -6,9 +6,12 @@
 //
 // "One system, one mind, one physical substrate."
 
+use crate::aether_substrate::AetherSubstrate;
 use crate::dynamic_loader::DynamicExpertLoader;
+use crate::proof_engine::ProofEngine;
+use crate::sindy_engine::SINDyEngine;
 use crate::*;
-use sovereign_macros::StateProof;
+use sovereign_macros::*;
 use std::sync::{Arc, Mutex};
 
 #[derive(StateProof)]
@@ -20,6 +23,8 @@ pub struct SovereignKernel {
     pub ouroboros: Arc<Mutex<OuroborosLoop>>,
     pub memory: Arc<Mutex<SubstrateBuffer>>,
     pub dynamic_loader: Arc<Mutex<DynamicExpertLoader>>,
+    pub aether: Arc<Mutex<AetherSubstrate>>,
+    pub sindy: Arc<Mutex<SINDyEngine>>,
 }
 
 impl SovereignKernel {
@@ -35,12 +40,18 @@ impl SovereignKernel {
                 "/Volumes/SovereignVault",
             ))),
             dynamic_loader: Arc::new(Mutex::new(DynamicExpertLoader::new())),
+            aether: Arc::new(Mutex::new(AetherSubstrate::new(100).unwrap())),
+            sindy: Arc::new(Mutex::new(SINDyEngine::new(50))),
         }
     }
 
     /// Initialize the kernel and its safety layers
     pub fn boot(&self) -> Result<(), String> {
         println!("🚀 BOOTING SOVEREIGN KERNEL v4.0");
+
+        // Pillar 5: Formal Proof Verification
+        println!("🛡️ Verifying Formal Axiom Proofs...");
+        ProofEngine::verify_predicate("KERNEL_CYCLE", "(< temperature 100.0)")?;
 
         let mut pan = self.panopticon.lock().unwrap();
         pan.emit(EventLevel::INFO, "Kernel", "System boot sequence initiated");
@@ -50,6 +61,7 @@ impl SovereignKernel {
     }
 
     /// Execute a core cognition cycle
+    #[axiom_proof("(< temperature 100.0)")]
     pub fn cycle(&self, input: &str) -> Result<String, String> {
         let mut pan = self.panopticon.lock().unwrap();
         let mut gov = self.governor.lock().unwrap();
@@ -129,5 +141,24 @@ mod tests {
 
         let result = kernel.cycle("optimize matrix memory");
         assert!(result.is_ok());
+    }
+
+    #[test]
+    fn test_aether_flow() {
+        let kernel = SovereignKernel::new();
+        let aether = kernel.aether.lock().unwrap();
+
+        // 1. Inject a 'virtual photon' (signal)
+        aether.inject(1.0, 0);
+        assert_eq!(aether.read(0), 1.0);
+
+        // 2. Step the Mackey-Glass physics on the GPU
+        aether.step().expect("Metal physics step failed");
+
+        // 3. Verify signal propagation/transformation
+        let transformed = aether.read(0);
+        println!("🌊 Aether Signal at t=1: {}", transformed);
+        // After dxdt application, the value should have changed from 1.0
+        assert_ne!(transformed, 1.0);
     }
 }
