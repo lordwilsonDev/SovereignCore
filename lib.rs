@@ -27,6 +27,7 @@ pub mod prophecy_engine;
 pub mod secure_enclave;
 pub mod silicon_sigil;
 pub mod sindy_engine;
+pub mod soul_engine;
 pub mod sovereign_kernel;
 pub mod substrate_buffer;
 pub mod sync_orchestrator;

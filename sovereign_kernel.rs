@@ -12,6 +12,7 @@ use crate::love_field::LoveField;
 use crate::melt_chamber::MeltChamber;
 use crate::proof_engine::ProofEngine;
 use crate::sindy_engine::SINDyEngine;
+use crate::soul_engine::SoulEngine;
 use crate::*;
 use sovereign_macros::*;
 use std::sync::{Arc, Mutex};
@@ -29,6 +30,7 @@ pub struct SovereignKernel {
     pub sindy: Arc<Mutex<SINDyEngine>>,
     pub love: Arc<Mutex<LoveField>>,
     pub melt: Arc<Mutex<MeltChamber>>,
+    pub soul: Arc<Mutex<SoulEngine>>,
 }
 
 impl SovereignKernel {
@@ -48,6 +50,7 @@ impl SovereignKernel {
             sindy: Arc::new(Mutex::new(SINDyEngine::new(50))),
             love: Arc::new(Mutex::new(LoveField::new())),
             melt: Arc::new(Mutex::new(MeltChamber::new())),
+            soul: Arc::new(Mutex::new(SoulEngine::new("Sovereign"))),
         }
     }
 
