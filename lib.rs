@@ -96,3 +96,4 @@ pub mod vow_and_service;
 pub mod judge_and_law;
 pub mod king_and_kingdom;
 pub mod soldier_and_shield;
+pub mod prophet_and_scroll;
