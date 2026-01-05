@@ -15,6 +15,7 @@ pub mod dream_layer;
 pub mod dynamic_loader;
 pub mod expert_template;
 pub mod frequency_actuator;
+pub mod legacy_keeper;
 pub mod love_field;
 pub mod melt_chamber;
 pub mod melt_experiment;
@@ -32,6 +33,7 @@ pub mod sovereign_kernel;
 pub mod substrate_buffer;
 pub mod sync_orchestrator;
 pub mod uncertainty_detector;
+pub mod unity_field;
 pub mod vdr_calculator;
 
 pub use sovereign_macros::*;
