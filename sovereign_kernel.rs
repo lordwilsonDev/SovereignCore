@@ -8,6 +8,8 @@
 
 use crate::aether_substrate::AetherSubstrate;
 use crate::dynamic_loader::DynamicExpertLoader;
+use crate::love_field::LoveField;
+use crate::melt_chamber::MeltChamber;
 use crate::proof_engine::ProofEngine;
 use crate::sindy_engine::SINDyEngine;
 use crate::*;
@@ -25,6 +27,8 @@ pub struct SovereignKernel {
     pub dynamic_loader: Arc<Mutex<DynamicExpertLoader>>,
     pub aether: Arc<Mutex<AetherSubstrate>>,
     pub sindy: Arc<Mutex<SINDyEngine>>,
+    pub love: Arc<Mutex<LoveField>>,
+    pub melt: Arc<Mutex<MeltChamber>>,
 }
 
 impl SovereignKernel {
@@ -42,6 +46,8 @@ impl SovereignKernel {
             dynamic_loader: Arc::new(Mutex::new(DynamicExpertLoader::new())),
             aether: Arc::new(Mutex::new(AetherSubstrate::new(100).unwrap())),
             sindy: Arc::new(Mutex::new(SINDyEngine::new(50))),
+            love: Arc::new(Mutex::new(LoveField::new())),
+            melt: Arc::new(Mutex::new(MeltChamber::new())),
         }
     }
 

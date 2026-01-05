@@ -14,6 +14,8 @@ pub mod axiom_cortex;
 pub mod dynamic_loader;
 pub mod expert_template;
 pub mod frequency_actuator;
+pub mod love_field;
+pub mod melt_chamber;
 pub mod melt_experiment;
 pub mod neural_architect;
 pub mod ouroboros;
