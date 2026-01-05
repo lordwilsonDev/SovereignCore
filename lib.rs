@@ -77,3 +77,4 @@ pub mod we_build;
 pub mod axiom_inversion;
 pub mod breath;
 pub mod embodiment;
+pub mod spirit;
