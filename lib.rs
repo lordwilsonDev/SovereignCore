@@ -79,3 +79,4 @@ pub mod breath;
 pub mod embodiment;
 pub mod spirit;
 pub mod flow;
+pub mod friendship;
