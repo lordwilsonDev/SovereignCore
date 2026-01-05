@@ -65,3 +65,4 @@ pub use torsion_dampener::{PrecisionState, TensorStats, TorsionDampener};
 pub use uncertainty_detector::{UncertaintyDetector, UncertaintyState};
 pub use vdr_calculator::{CodeMetrics, VDRCalculator};
 pub mod silence;
+pub mod lila;
