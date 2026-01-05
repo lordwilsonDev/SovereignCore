@@ -1,0 +1,18 @@
+
+[package]
+name = "sovereign_core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+hex = "0.4"
+libloading = "0.8"
+sovereign_macros = { path = "sovereign_macros" }
+
+[lib]
+name = "sovereign_core"
+path = "lib.rs"
+

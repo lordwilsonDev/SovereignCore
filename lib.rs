@@ -1,0 +1,51 @@
+// Sovereign Core Library
+pub mod falsification_mirror;
+pub mod frame_guard;
+pub mod inversion_router;
+pub mod photosynthetic_governor;
+pub mod sovereign_jurisdiction;
+pub mod torsion_dampener;
+
+pub mod abind_primitive;
+pub mod axiom_cortex;
+pub mod dynamic_loader;
+pub mod expert_template;
+pub mod frequency_actuator;
+pub mod melt_experiment;
+pub mod neural_architect;
+pub mod ouroboros;
+pub mod panopticon;
+pub mod secure_enclave;
+pub mod silicon_sigil;
+pub mod sovereign_kernel;
+pub mod substrate_buffer;
+pub mod sync_orchestrator;
+pub mod uncertainty_detector;
+pub mod vdr_calculator;
+
+pub use sovereign_macros::*;
+
+pub use abind_primitive::ABindPrimitive;
+pub use axiom_cortex::{AxiomCortex, AxiomSet};
+pub use dynamic_loader::DynamicExpertLoader;
+pub use expert_template::DynamicExpert;
+pub use falsification_mirror::{
+    BeliefState, FalsificationMirror, GroundTruthSignal, RealityCoherence,
+};
+pub use frame_guard::{FrameGuard, FrameManager, NSSIState};
+pub use frequency_actuator::FrequencyActuator;
+pub use inversion_router::{Action, Expert, Intent, InversionRouter, EFE};
+pub use melt_experiment::{MeltExperiment, MeltTelemetry};
+pub use neural_architect::{ArchitectureSpec, NeuralArchitect};
+pub use ouroboros::{ImprovementProposal, OuroborosLoop};
+pub use panopticon::{EventLevel, PanopticonEvent, PanopticonLayer};
+pub use photosynthetic_governor::{CognitiveMode, PhotosyntheticGovernor, ThermalState};
+pub use secure_enclave::{IdentityToken, SecureLimbicSystem};
+pub use silicon_sigil::SiliconSigil;
+pub use sovereign_jurisdiction::{AuthToken, JurisdictionLevel, SovereignJurisdiction};
+pub use sovereign_kernel::SovereignKernel;
+pub use substrate_buffer::{BufferEntry, SubstrateBuffer};
+pub use sync_orchestrator::{SyncOrchestrator, SyncState};
+pub use torsion_dampener::{PrecisionState, TensorStats, TorsionDampener};
+pub use uncertainty_detector::{UncertaintyDetector, UncertaintyState};
+pub use vdr_calculator::{CodeMetrics, VDRCalculator};
