@@ -82,3 +82,4 @@ pub mod flow;
 pub mod friendship;
 pub mod the_way;
 pub mod promise;
+pub mod wave;
