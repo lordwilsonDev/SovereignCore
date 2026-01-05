@@ -68,3 +68,4 @@ pub mod silence;
 pub mod lila;
 pub mod integration;
 pub mod here;
+pub mod wonder;
