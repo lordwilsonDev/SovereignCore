@@ -1,0 +1,5 @@
+/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/release/build/httparse-657dc87bb4a79448/build_script_build-657dc87bb4a79448.d: /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.10.1/build.rs
+
+/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/release/build/httparse-657dc87bb4a79448/build_script_build-657dc87bb4a79448: /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.10.1/build.rs
+
+/Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.10.1/build.rs:

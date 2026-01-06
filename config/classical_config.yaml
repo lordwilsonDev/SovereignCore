@@ -1,0 +1,9 @@
+server:
+  port: 9000
+  host: "127.0.0.1"
+
+logging:
+  level: "INFO"
+
+inference:
+  backend: "classical" # Default to classical, overridden by quantum activation

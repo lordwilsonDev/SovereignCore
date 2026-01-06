@@ -1,0 +1,46 @@
+{
+    "version": "4.0",
+    "name": "SovereignCore",
+    
+    "ollama": {
+        "host": "http://localhost:11434",
+        "default_model": "oracle-axiom-inversion:latest",
+        "timeout_seconds": 120
+    },
+    
+    "thermal_governance": {
+        "nominal": {
+            "branching_factor": 5,
+            "max_tokens": 4096,
+            "temperature": 0.7
+        },
+        "fair": {
+            "branching_factor": 3,
+            "max_tokens": 2048,
+            "temperature": 0.5
+        },
+        "serious": {
+            "branching_factor": 2,
+            "max_tokens": 1024,
+            "temperature": 0.3
+        },
+        "critical": {
+            "branching_factor": 1,
+            "max_tokens": 512,
+            "temperature": 0.1
+        }
+    },
+    
+    "pra_tot": {
+        "risk_threshold_low": 0.2,
+        "risk_threshold_high": 0.6,
+        "evaluation_depth": 3,
+        "prune_threshold": 0.3
+    },
+    
+    "security": {
+        "require_sep_identity": false,
+        "scrub_memory_post_inference": true,
+        "log_thermal_state": true
+    }
+}
