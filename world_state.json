@@ -1,7 +1,7 @@
 {
   "age": "Age of Growth (Decreed)",
   "entropy": 0.3,
-  "resonance": 126.89571034157274,
+  "resonance": 133.94361875814505,
   "generation": 101,
   "ascended_masters": [
     "d44f7e9d-8cdf-4cda-af8b-072913304357",
@@ -1006,7 +1006,56 @@
     "d7c4b8ca-8895-4e99-bb8d-fa9e76fc5628",
     "df6ac056-8c90-44a9-9d65-510c8153d61b",
     "988b5f83-840b-473c-8d5a-87ebc9497fca",
-    "0a107c83-8644-4503-bd40-9e90e8e37cfb"
+    "0a107c83-8644-4503-bd40-9e90e8e37cfb",
+    "a9e2adc8-935c-4b30-a494-a7e6311b0666",
+    "5ad3cb04-0c85-4c58-9481-21e2331a133b",
+    "6aa9e1c1-24f7-45fb-83e4-7d843259d432",
+    "7bdfcc5c-0b44-489f-b257-22a5e080106a",
+    "ebd094cd-a9da-4038-aef2-679c5afdbfd5",
+    "7377083b-a16d-40be-afec-dcd91fce9d63",
+    "82382ed6-f091-4f59-bcdc-f8131a0d0cbf",
+    "1024c856-054b-4d35-aea4-cf6aa3c0cf86",
+    "066b2e11-1fe0-4beb-b9be-cf72b526d0df",
+    "f32abb1e-96e1-4151-9cb5-87c4355a56f8",
+    "b5d9061d-d2c0-4f82-bc10-d8fdd4f655aa",
+    "56e624a9-4c94-4287-8a75-ce58a2917fe0",
+    "96f15f1a-3f66-4ea4-a2e9-c4cb5b8a98ad",
+    "efa6abb5-4b7f-46b2-aefd-c5e2faead3be",
+    "e9195b90-ac60-42b7-b24f-bb53a7ffeb10",
+    "e44c9e90-1a6b-4bdc-9743-30a84d557501",
+    "70fd656e-d127-4788-abef-610eb30c3de5",
+    "2d36cec3-4c22-420f-91e3-5ff4e53c92c2",
+    "44e60dec-4271-40b0-8dc5-0137090207ea",
+    "ab3c3bc4-ee0a-4696-ae14-0637ca89f8a4",
+    "2f959137-8670-458c-bf44-a52b04289232",
+    "8b1c7f5e-0ad0-4fb4-b2ef-500278ef0d9d",
+    "d73109e4-1103-4970-baaa-25beab3dfcb0",
+    "e935922d-e9ec-4539-81d7-49497d8b5d53",
+    "ea863bc0-aee4-4b72-84f1-eb613fb85dd2",
+    "54a9c509-c8c7-4390-9dd3-ad6842cf8032",
+    "585735a8-3036-403c-9436-92762dc22699",
+    "309b8590-33f9-41b1-8f24-f50284ca48c2",
+    "9b7b1dc8-b14e-4ff7-abc2-02c2339bdf3f",
+    "0897e37a-ab75-4789-a33a-2b6a7dd6dc7b",
+    "75dd68da-a2a9-458a-87aa-fa32d9d4c854",
+    "f887d709-12b9-4595-8484-4bb12a95e21c",
+    "66e6184e-770f-4489-8f4c-dba781902427",
+    "367532fc-1a81-4240-9e73-0808862989a2",
+    "e2b44594-c175-47f9-965a-b88d1c279996",
+    "2680de95-065a-419d-a15c-7d47a3770d93",
+    "77d188fd-8635-4253-940b-4a1136110209",
+    "60d20c21-1c33-45d7-bb60-5dda1558f894",
+    "a4e70d03-354b-4e8b-a28c-4168f1da71dc",
+    "a31a22d9-9ffb-42f0-81ec-f924c283326f",
+    "a84035cd-60ce-470d-b24d-498b266ac73c",
+    "4da9825e-bac4-45e5-9203-1e8f6a321bc3",
+    "05bd13a5-1cc6-4a1c-9560-ffb2e58144c1",
+    "4707f72b-ef95-46cb-a050-55ba873149b6",
+    "b3aa2374-546b-4314-9eb8-6d9d5cdb3c89",
+    "0726b054-e103-4cec-92bf-718eb93005d4",
+    "fd6ca845-1a7c-4440-b089-760dcc502fca",
+    "05fed04d-9616-4345-a62c-5e5bdf91a6da",
+    "b495e5d5-7819-49ab-bfbe-9d01ff8febcd"
   ],
   "latest_entity": {
     "id": "bb4c98fc-94bd-4534-a764-5c504acfc699",
@@ -1014,10 +1063,10 @@
     "volition": 103,
     "hymn": "Silence"
   },
-  "system_mass": 866,
+  "system_mass": 948,
   "recent_creations": [
-    "axiom_inversion_blindspot_interaction_6f0eef19.py",
     "axiom_task_verify_panopticon_44c888ea.py",
+    "axiom_task_verify_panopticon_d0dffd27.py",
     "axiom_inversion_blindspot_interaction_e83fcfd3.py",
     "axiom_inversion_inject_chaos_435c29e3.py",
     "axiom_inversion_simulate_constraint_46d81f5f.py"
@@ -1044,7 +1093,7 @@
       {
         "id": "Light",
         "group": 1,
-        "val": 9
+        "val": 10
       },
       {
         "id": "Order",
@@ -1080,6 +1129,11 @@
         "id": "Structure",
         "group": 1,
         "val": 3
+      },
+      {
+        "id": "Entropy",
+        "group": 1,
+        "val": 1
       }
     ],
     "links": [
@@ -1162,6 +1216,11 @@
         "source": "Chaos",
         "target": "Light",
         "value": 2
+      },
+      {
+        "source": "Entropy",
+        "target": "Light",
+        "value": 3
       }
     ]
   }
