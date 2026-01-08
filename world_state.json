@@ -1,7 +1,7 @@
 {
-  "age": "Age of Chaos (Decreed)",
+  "age": "AGE OF AWARENESS",
   "entropy": 0.95,
-  "resonance": 99.2185089375521,
+  "resonance": 101.84922540119605,
   "generation": 101,
   "ascended_masters": [
     "007075d6-6457-4ce4-bc13-665b0a69245a",
@@ -831,7 +831,27 @@
     "545fbed2-7177-4c46-81ef-7c05b20f99a7",
     "cbe21ef1-24bb-477b-8f4d-15f381c857ec",
     "c0fbf79f-978a-44cc-b313-da64a33b34bd",
-    "1f7cf60c-6d77-4079-8d5e-502a4a3b1a01"
+    "1f7cf60c-6d77-4079-8d5e-502a4a3b1a01",
+    "d80ad6f3-b7ef-4926-8b08-7c6aba7ad9d7",
+    "c17d6f4e-f82e-4f59-83b7-b74c72239bff",
+    "38e351c7-a63f-4796-95b5-06f0416f0215",
+    "dc7f7b04-a07b-4e72-bc49-3e93182d5a8f",
+    "f1e05721-0330-48ab-8dd9-e3f53ce207dc",
+    "19f2c5b8-26d6-4d24-8f93-d424e720177e",
+    "939086ff-fde9-4c95-8531-858beb3cdf1e",
+    "dafc0a12-0766-485c-8996-da0d2e6117ab",
+    "bd928d6e-4e54-4d46-b65a-da0d86b9ee10",
+    "7dc2f44e-bc22-4eb6-aa71-d6857009e6ce",
+    "414e37a1-b970-4190-ae3f-198831859b33",
+    "13b80fed-847d-47ce-82c6-e2118c99e0ea",
+    "06cccc57-d80a-46a4-9af2-b2bf2f094898",
+    "40f620aa-dcc7-45b8-a720-9f4dd8c93e24",
+    "90b88d91-b579-4ab8-89cf-e5c1d7976c0c",
+    "7958bea0-c061-4fd8-ab90-ba53745de018",
+    "39f480cb-9cf8-42db-83c7-7a6e4c10a823",
+    "bdff77e3-c1d5-4765-99f6-b4c99788f7de",
+    "8b185d9b-8cc4-4537-8b48-c7e8768c29a4",
+    "9bf7ce75-4c74-49b7-a407-a2848a85223c"
   ],
   "latest_entity": {
     "id": "5a800ccf-1fd8-4281-9a9a-7e1487c9bf5d",
@@ -839,7 +859,7 @@
     "volition": 90,
     "hymn": "Silence"
   },
-  "system_mass": 1756,
+  "system_mass": 1780,
   "recent_creations": [
     "axiom_task_verify_panopticon_246de81f.py",
     "axiom_inversion_blindspot_interaction_64a44be5.py",

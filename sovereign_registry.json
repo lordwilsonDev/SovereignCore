@@ -1,309 +1,5 @@
 [
   {
-    "id": "d5a61118-8c17-4f8e-9a1c-6499b6c20b2f",
-    "archetype": "Void-Walker",
-    "resonance_freq": 243.81,
-    "volition": 150,
-    "born_at": "2026-01-07T21:31:40.411842",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "bdd0bafe-5393-4153-b71f-30193f7bf385",
-    "archetype": "Weaver",
-    "resonance_freq": 642.59,
-    "volition": 160,
-    "born_at": "2026-01-07T21:31:44.369528",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "7b93b2f8-0cbd-49eb-9d02-29ee28fa05ee",
-    "archetype": "Void-Walker",
-    "resonance_freq": 1651.58,
-    "volition": 150,
-    "born_at": "2026-01-07T21:31:49.001318",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "11adc6ca-f4cd-45e7-a78b-d8c9874ba39b",
-    "archetype": "Weaver",
-    "resonance_freq": 1662.82,
-    "volition": 100,
-    "born_at": "2026-01-07T21:32:01.123482",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "8d5398ba-34db-4836-a054-10e12b84816f",
-    "archetype": "Evolved-Architect",
-    "resonance_freq": 1278.35,
-    "volition": 101,
-    "born_at": "2026-01-07T21:32:02.168510",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "8f761752-a9a8-4a59-a3e7-216b61ef10bc",
-    "archetype": "Void-Walker",
-    "resonance_freq": 1279.2,
-    "volition": 160,
-    "born_at": "2026-01-07T21:31:54.049577",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "c09f9fc1-3bb7-42ff-ac0b-89af4402a875",
-    "archetype": "Weaver",
-    "resonance_freq": 669.93,
-    "volition": 150,
-    "born_at": "2026-01-07T21:32:03.214671",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "afea2c26-b52d-4a62-b905-e99173f68687",
-    "archetype": "Evolved-Architect",
-    "resonance_freq": 754.42,
-    "volition": 150,
-    "born_at": "2026-01-07T21:32:07.944196",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "eb638d64-9059-4ce7-851b-db0a2356ec9d",
-    "archetype": "Seer",
-    "resonance_freq": 58.48,
-    "volition": 102,
-    "born_at": "2026-01-07T21:32:18.374114",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "b1a96f74-9aba-4b40-9775-c2bb9bf30141",
-    "archetype": "Evolved-Architect",
-    "resonance_freq": 148.82,
-    "volition": 150,
-    "born_at": "2026-01-07T21:32:11.354246",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "40c0e7af-63af-49cf-b106-4265d7fc1e2c",
-    "archetype": "Void-Walker",
-    "resonance_freq": 1881.4,
-    "volition": 100,
-    "born_at": "2026-01-07T21:32:26.086894",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "f8635103-f393-41be-8107-aab5742fa149",
-    "archetype": "Seer",
-    "resonance_freq": 1266.01,
-    "volition": 150,
-    "born_at": "2026-01-07T21:32:19.409217",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "7dea157c-efda-4a74-b829-0c26aaa012fd",
-    "archetype": "Void-Walker",
-    "resonance_freq": 1006.73,
-    "volition": 150,
-    "born_at": "2026-01-07T21:32:27.127992",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "bad5c880-25ba-403e-a23a-87517b4d3f11",
-    "archetype": "Evolved-Architect",
-    "resonance_freq": 353.24,
-    "volition": 101,
-    "born_at": "2026-01-07T21:32:38.176686",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "2436d1f0-5968-466f-93ec-0b574f680f48",
-    "archetype": "Seer",
-    "resonance_freq": 995.27,
-    "volition": 150,
-    "born_at": "2026-01-07T21:32:32.658707",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "afafb48e-d3c1-4844-b946-ab4c7d849d66",
-    "archetype": "Catalyst",
-    "resonance_freq": 1500.22,
-    "volition": 160,
-    "born_at": "2026-01-07T21:32:39.225977",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "0a99ae93-afa8-4ca5-90d5-5ca18f3b839f",
-    "archetype": "Evolved-Architect",
-    "resonance_freq": 1095.04,
-    "volition": 150,
-    "born_at": "2026-01-07T21:32:44.124879",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "ece2d816-41d4-4976-bbf4-c6c53ee466df",
-    "archetype": "Catalyst",
-    "resonance_freq": 266.16,
-    "volition": 150,
-    "born_at": "2026-01-07T21:32:48.821122",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "3d1d602b-92c7-4351-839c-f615b4c4061f",
-    "archetype": "Evolved-Architect",
-    "resonance_freq": 842.26,
-    "volition": 150,
-    "born_at": "2026-01-07T21:32:54.051909",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "a92d084b-5f29-4f87-800a-175e47ec8e82",
-    "archetype": "Guardian",
-    "resonance_freq": 1549.2,
-    "volition": 150,
-    "born_at": "2026-01-07T21:32:57.769522",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "7f9043b1-f969-4a22-82ff-87b1c07e919d",
-    "archetype": "Guardian",
-    "resonance_freq": 894.42,
-    "volition": 150,
-    "born_at": "2026-01-07T21:33:02.534423",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "0aa43c28-17f1-42f6-b42e-59eb585996a6",
-    "archetype": "Evolved-Architect",
-    "resonance_freq": 1921.61,
-    "volition": 150,
-    "born_at": "2026-01-07T21:33:13.129759",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "0e010c59-565b-4fff-9f29-92ab50bae66c",
-    "archetype": "Void-Walker",
-    "resonance_freq": 705.66,
-    "volition": 150,
-    "born_at": "2026-01-07T21:33:19.450575",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "33614bc6-7a92-48ca-818d-6d7bf9d35614",
-    "archetype": "Void-Walker",
-    "resonance_freq": 1258.7,
-    "volition": 102,
-    "born_at": "2026-01-07T21:33:31.016294",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "861a9039-86de-4cd8-a530-c40018981be7",
-    "archetype": "Evolved-Architect",
-    "resonance_freq": 1567.17,
-    "volition": 150,
-    "born_at": "2026-01-07T21:33:26.044283",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "2c0e83eb-d810-4b5e-9d20-9c1c00a8ef62",
-    "archetype": "Weaver",
-    "resonance_freq": 735.5,
-    "volition": 150,
-    "born_at": "2026-01-07T21:33:32.057475",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "5ed6efda-435b-4aed-a9a3-a9cc1ad08807",
-    "archetype": "Seer",
-    "resonance_freq": 577.21,
-    "volition": 150,
-    "born_at": "2026-01-07T21:33:38.246737",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "967f65fa-875d-4efe-bb00-dd8938d6201e",
-    "archetype": "Void-Walker",
-    "resonance_freq": 864.57,
-    "volition": 150,
-    "born_at": "2026-01-07T21:33:43.747907",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "ec42469e-0de4-496e-bc51-068d347f5ec7",
-    "archetype": "Weaver",
-    "resonance_freq": 1047.46,
-    "volition": 112,
-    "born_at": "2026-01-07T21:34:02.509880",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "9a35fc17-7e75-4b93-8ce8-6d96c7e55ff1",
-    "archetype": "Catalyst",
-    "resonance_freq": 1702.52,
-    "volition": 150,
-    "born_at": "2026-01-07T21:33:55.474921",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "0d5926c5-549a-413a-a4fb-1c6a7880127a",
-    "archetype": "Weaver",
-    "resonance_freq": 766.34,
-    "volition": 160,
-    "born_at": "2026-01-07T21:34:03.561534",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "77cafe9b-80c3-45a6-aea8-0e55572b99f8",
-    "archetype": "Void-Walker",
-    "resonance_freq": 1244.11,
-    "volition": 100,
-    "born_at": "2026-01-07T21:34:20.154854",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "540939db-5803-4e65-a423-449fe3d428df",
-    "archetype": "Catalyst",
-    "resonance_freq": 1650.79,
-    "volition": 150,
-    "born_at": "2026-01-07T21:34:14.941285",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "eed1b2a9-b966-418c-abf3-ef1892769241",
-    "archetype": "Catalyst",
-    "resonance_freq": 73.92,
-    "volition": 150,
-    "born_at": "2026-01-07T21:34:21.185726",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "ec0d88b5-7057-429b-87ac-2118625cfd57",
-    "archetype": "Evolved-Architect",
-    "resonance_freq": 382.35,
-    "volition": 101,
-    "born_at": "2026-01-07T21:34:32.162153",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "6ed894ab-a8b3-4fd7-a269-4bd37a93dd5b",
-    "archetype": "Void-Walker",
-    "resonance_freq": 1687.84,
-    "volition": 150,
-    "born_at": "2026-01-07T21:34:26.941555",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "35414aab-73c5-4b08-8889-3ca229d18603",
-    "archetype": "Guardian",
-    "resonance_freq": 1276.39,
-    "volition": 150,
-    "born_at": "2026-01-07T21:34:33.198620",
-    "visibility": "Panopticon_Registered"
-  },
-  {
-    "id": "84e779dc-bdca-4582-bf6e-0e351402a96d",
-    "archetype": "Evolved-Architect",
-    "resonance_freq": 326.75,
-    "volition": 102,
-    "born_at": "2026-01-07T21:34:42.769243",
-    "visibility": "Panopticon_Registered"
-  },
-  {
     "id": "a5069fc9-7b77-4672-a636-9f77a9bd8c34",
     "archetype": "Guardian",
     "resonance_freq": 160.49,
@@ -805,6 +501,310 @@
     "resonance_freq": 1362.94,
     "volition": 150,
     "born_at": "2026-01-07T21:37:48.879047",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "cd8a6340-5043-44da-96f7-b27af01df112",
+    "archetype": "Weaver",
+    "resonance_freq": 1518.44,
+    "volition": 150,
+    "born_at": "2026-01-07T21:37:53.866246",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "c24477c4-a850-4401-8ea5-0e5c4fcb909a",
+    "archetype": "Void-Walker",
+    "resonance_freq": 1797.39,
+    "volition": 102,
+    "born_at": "2026-01-07T21:38:04.328085",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "d80ad6f3-b7ef-4926-8b08-7c6aba7ad9d7",
+    "archetype": "Evolved-Architect",
+    "resonance_freq": 385.99,
+    "volition": 150,
+    "born_at": "2026-01-07T21:37:59.881856",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "6a5cbe99-76a3-4ca7-9030-c916becdf0ec",
+    "archetype": "Weaver",
+    "resonance_freq": 1146.48,
+    "volition": 150,
+    "born_at": "2026-01-07T21:38:05.368231",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "c17d6f4e-f82e-4f59-83b7-b74c72239bff",
+    "archetype": "Seer",
+    "resonance_freq": 727.39,
+    "volition": 150,
+    "born_at": "2026-01-07T21:38:10.706321",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "38e351c7-a63f-4796-95b5-06f0416f0215",
+    "archetype": "Void-Walker",
+    "resonance_freq": 1664.87,
+    "volition": 101,
+    "born_at": "2026-01-07T21:38:17.890045",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "79fc1c03-2fad-4ba9-adaa-1ef5e670a891",
+    "archetype": "Evolved-Architect",
+    "resonance_freq": 964.66,
+    "volition": 160,
+    "born_at": "2026-01-07T21:38:14.710551",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "c87a9489-f3d9-4a71-89cf-f3a909a15be9",
+    "archetype": "Evolved-Architect",
+    "resonance_freq": 1037.83,
+    "volition": 69,
+    "born_at": "2026-01-07T21:38:22.626001",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "d5fd40c3-1fe1-4955-a986-1cdf0cd57967",
+    "archetype": "Evolved-Architect",
+    "resonance_freq": 1046.32,
+    "volition": 102,
+    "born_at": "2026-01-07T21:38:23.655942",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "dc7f7b04-a07b-4e72-bc49-3e93182d5a8f",
+    "archetype": "Evolved-Architect",
+    "resonance_freq": 993.02,
+    "volition": 150,
+    "born_at": "2026-01-07T21:38:18.934411",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "f1e05721-0330-48ab-8dd9-e3f53ce207dc",
+    "archetype": "Evolved-Architect",
+    "resonance_freq": 1795.21,
+    "volition": 101,
+    "born_at": "2026-01-07T21:38:26.127438",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "ba1130c7-eebc-4cb1-abd7-3ea4c473dc3c",
+    "archetype": "Guardian",
+    "resonance_freq": 1259.14,
+    "volition": 141,
+    "born_at": "2026-01-07T21:38:24.696241",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "19f2c5b8-26d6-4d24-8f93-d424e720177e",
+    "archetype": "Void-Walker",
+    "resonance_freq": 1115.26,
+    "volition": 150,
+    "born_at": "2026-01-07T21:38:27.168497",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "939086ff-fde9-4c95-8531-858beb3cdf1e",
+    "archetype": "Seer",
+    "resonance_freq": 1941.11,
+    "volition": 112,
+    "born_at": "2026-01-07T21:38:33.952212",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "aafaee12-3479-4ee0-af5c-7a5c7a718e83",
+    "archetype": "Guardian",
+    "resonance_freq": 1710.2,
+    "volition": 150,
+    "born_at": "2026-01-07T21:38:30.363904",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "dafc0a12-0766-485c-8996-da0d2e6117ab",
+    "archetype": "Catalyst",
+    "resonance_freq": 1724.56,
+    "volition": 160,
+    "born_at": "2026-01-07T21:38:35.002981",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "0ca5f0d4-224b-4640-8238-6526b25937da",
+    "archetype": "Guardian",
+    "resonance_freq": 116.33,
+    "volition": 150,
+    "born_at": "2026-01-07T21:38:41.945608",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "bd928d6e-4e54-4d46-b65a-da0d86b9ee10",
+    "archetype": "Void-Walker",
+    "resonance_freq": 140.43,
+    "volition": 150,
+    "born_at": "2026-01-07T21:38:46.482274",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "0d478e11-6929-4b0f-950c-429df7bd45d5",
+    "archetype": "Guardian",
+    "resonance_freq": 1193.54,
+    "volition": 150,
+    "born_at": "2026-01-07T21:38:58.005984",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "7dc2f44e-bc22-4eb6-aa71-d6857009e6ce",
+    "archetype": "Weaver",
+    "resonance_freq": 858.13,
+    "volition": 150,
+    "born_at": "2026-01-07T21:39:01.280550",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "414e37a1-b970-4190-ae3f-198831859b33",
+    "archetype": "Seer",
+    "resonance_freq": 1324.1,
+    "volition": 103,
+    "born_at": "2026-01-07T21:39:07.424981",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "a894b17c-5f83-403d-b537-abf474cbe56f",
+    "archetype": "Evolved-Architect",
+    "resonance_freq": 1313.25,
+    "volition": 150,
+    "born_at": "2026-01-07T21:39:04.876753",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "072cb7bf-d0db-41e3-95be-251a4facd1c0",
+    "archetype": "Evolved-Architect",
+    "resonance_freq": 994.93,
+    "volition": 101,
+    "born_at": "2026-01-07T21:39:14.873639",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "7708a41c-1f61-4c72-a418-9992ea5982d8",
+    "archetype": "Seer",
+    "resonance_freq": 888.68,
+    "volition": 103,
+    "born_at": "2026-01-07T21:39:15.897611",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "13b80fed-847d-47ce-82c6-e2118c99e0ea",
+    "archetype": "Guardian",
+    "resonance_freq": 1396.21,
+    "volition": 150,
+    "born_at": "2026-01-07T21:39:08.469030",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "06cccc57-d80a-46a4-9af2-b2bf2f094898",
+    "archetype": "Evolved-Architect",
+    "resonance_freq": 92.51,
+    "volition": 100,
+    "born_at": "2026-01-07T21:39:20.534349",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "e0ebcf9a-438b-4003-9d97-85bdf4c45b96",
+    "archetype": "Seer",
+    "resonance_freq": 1627.05,
+    "volition": 58,
+    "born_at": "2026-01-07T21:39:21.576106",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "549d858e-5216-4b35-8934-5909813bebf6",
+    "archetype": "Seer",
+    "resonance_freq": 882.48,
+    "volition": 150,
+    "born_at": "2026-01-07T21:39:16.928529",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "40f620aa-dcc7-45b8-a720-9f4dd8c93e24",
+    "archetype": "Weaver",
+    "resonance_freq": 1250.61,
+    "volition": 150,
+    "born_at": "2026-01-07T21:39:22.616119",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "d68d9736-ae29-4e20-838d-1cdc6ee17c89",
+    "archetype": "Seer",
+    "resonance_freq": 1117.88,
+    "volition": 160,
+    "born_at": "2026-01-07T21:39:23.275591",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "90b88d91-b579-4ab8-89cf-e5c1d7976c0c",
+    "archetype": "Void-Walker",
+    "resonance_freq": 338.85,
+    "volition": 150,
+    "born_at": "2026-01-07T21:39:29.762388",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "7958bea0-c061-4fd8-ab90-ba53745de018",
+    "archetype": "Weaver",
+    "resonance_freq": 1944.45,
+    "volition": 102,
+    "born_at": "2026-01-07T21:39:41.219098",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "336f0fcf-7a1e-4f61-a14d-34a80662c814",
+    "archetype": "Evolved-Architect",
+    "resonance_freq": 932.31,
+    "volition": 160,
+    "born_at": "2026-01-07T21:39:38.439963",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "39f480cb-9cf8-42db-83c7-7a6e4c10a823",
+    "archetype": "Guardian",
+    "resonance_freq": 1789.32,
+    "volition": 150,
+    "born_at": "2026-01-07T21:39:42.306081",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "17f5fa63-fab0-4e38-8485-c1d21b832558",
+    "archetype": "Weaver",
+    "resonance_freq": 980.49,
+    "volition": 150,
+    "born_at": "2026-01-07T21:39:45.341213",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "bdff77e3-c1d5-4765-99f6-b4c99788f7de",
+    "archetype": "Guardian",
+    "resonance_freq": 384.49,
+    "volition": 144,
+    "born_at": "2026-01-07T21:39:49.038450",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "8b185d9b-8cc4-4537-8b48-c7e8768c29a4",
+    "archetype": "Evolved-Architect",
+    "resonance_freq": 941.54,
+    "volition": 100,
+    "born_at": "2026-01-07T21:39:57.195239",
+    "visibility": "Panopticon_Registered"
+  },
+  {
+    "id": "9bf7ce75-4c74-49b7-a407-a2848a85223c",
+    "archetype": "Guardian",
+    "resonance_freq": 235.71,
+    "volition": 110,
+    "born_at": "2026-01-07T21:39:58.227877",
     "visibility": "Panopticon_Registered"
   }
 ]
