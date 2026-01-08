@@ -88,5 +88,20 @@
     },
     "simulations_run": 100,
     "timestamp": "2026-01-07T21:05:42.883094"
+  },
+  {
+    "action": "respond to: What is the meaning of life?",
+    "permitted": false,
+    "reason": "Uncertain (23% ethical), decided by confidence (0.55)",
+    "ethical_ratio": 0.23,
+    "confidence": 0.551,
+    "axiom_summary": {
+      "LOVE": 0.49,
+      "ABUNDANCE": 0.5160000000000007,
+      "SAFETY": 0.6870000000000002,
+      "GROWTH": 0.5109999999999999
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T22:26:57.579890"
   }
 ]
