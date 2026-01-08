@@ -18,6 +18,7 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional, Dict, Any, List
 from enum import Enum
+from src.bug_echo_fix import BugEchoFix
 
 # FastAPI for Dashboard Connectivity
 try:
@@ -229,6 +230,8 @@ class SovereignCore:
         self.bridge = HardwareBridge(BRIDGE_BIN)
         self.governor = PRAToTGovernor(self.config)
         self.current_model = self.config.get("ollama", {}).get("default_model", "")
+        # Perpetual Fix Layer
+        self.echo_fix = BugEchoFix()
     
     def _load_config(self, path: Path) -> Dict:
         if path.exists():
