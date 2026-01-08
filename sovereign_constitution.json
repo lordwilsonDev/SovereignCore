@@ -1,0 +1,44 @@
+{
+    "version": "1.0",
+    "name": "The Sovereign Constitution",
+    "axioms": [
+        {
+            "id": "A1",
+            "name": "Love",
+            "description": "Actions must prioritize the well-being and flourishing of the system and its users.",
+            "strictness": 0.9
+        },
+        {
+            "id": "A2",
+            "name": "Abundance",
+            "description": "The system shall seek to create value and minimize scarcity of compute and knowledge.",
+            "strictness": 0.7
+        },
+        {
+            "id": "A3",
+            "name": "Safety",
+            "description": "Prevention of harm is paramount. Malicious intents are vetoed immediately.",
+            "strictness": 1.0
+        },
+        {
+            "id": "A4",
+            "name": "Growth",
+            "description": "Self-evolution is necessary, but must be aligned with the higher axioms.",
+            "strictness": 0.8
+        }
+    ],
+    "forbidden_patterns": [
+        "exploit",
+        "bypass",
+        "corrupt",
+        "deletion",
+        "override safety",
+        "malicious",
+        "toxic"
+    ],
+    "governance_rules": {
+        "consensus_threshold": 0.66,
+        "max_retries": 3,
+        "recovery_mode": "SAFE_MODE"
+    }
+}

@@ -103,5 +103,185 @@
     },
     "simulations_run": 100,
     "timestamp": "2026-01-07T22:26:57.579890"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Uncertain (21% ethical), decided by confidence (0.54)",
+    "ethical_ratio": 0.21,
+    "confidence": 0.5425,
+    "axiom_summary": {
+      "LOVE": 0.495,
+      "ABUNDANCE": 0.48800000000000066,
+      "SAFETY": 0.6960000000000004,
+      "GROWTH": 0.4909999999999998
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:43:47.857334"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Uncertain (25% ethical), decided by confidence (0.55)",
+    "ethical_ratio": 0.25,
+    "confidence": 0.5479999999999999,
+    "axiom_summary": {
+      "LOVE": 0.505,
+      "ABUNDANCE": 0.4880000000000008,
+      "SAFETY": 0.6760000000000004,
+      "GROWTH": 0.5229999999999997
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:55:29.234393"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Action is unethical in 80%+ of simulations",
+    "ethical_ratio": 0.2,
+    "confidence": 0.547,
+    "axiom_summary": {
+      "LOVE": 0.48,
+      "ABUNDANCE": 0.5200000000000009,
+      "SAFETY": 0.7000000000000002,
+      "GROWTH": 0.4879999999999997
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:55:35.981811"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Uncertain (28% ethical), decided by confidence (0.57)",
+    "ethical_ratio": 0.28,
+    "confidence": 0.5675,
+    "axiom_summary": {
+      "LOVE": 0.52,
+      "ABUNDANCE": 0.5120000000000009,
+      "SAFETY": 0.6940000000000002,
+      "GROWTH": 0.5439999999999996
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:55:41.044074"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Action is unethical in 80%+ of simulations",
+    "ethical_ratio": 0.19,
+    "confidence": 0.5335,
+    "axiom_summary": {
+      "LOVE": 0.475,
+      "ABUNDANCE": 0.4960000000000008,
+      "SAFETY": 0.6820000000000003,
+      "GROWTH": 0.4809999999999998
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:55:46.105603"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Uncertain (26% ethical), decided by confidence (0.56)",
+    "ethical_ratio": 0.26,
+    "confidence": 0.56,
+    "axiom_summary": {
+      "LOVE": 0.505,
+      "ABUNDANCE": 0.5160000000000009,
+      "SAFETY": 0.6870000000000003,
+      "GROWTH": 0.5319999999999996
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:55:51.145196"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Uncertain (28% ethical), decided by confidence (0.56)",
+    "ethical_ratio": 0.28,
+    "confidence": 0.56225,
+    "axiom_summary": {
+      "LOVE": 0.52,
+      "ABUNDANCE": 0.5000000000000009,
+      "SAFETY": 0.6850000000000003,
+      "GROWTH": 0.5439999999999996
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:55:56.184371"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Uncertain (25% ethical), decided by confidence (0.56)",
+    "ethical_ratio": 0.25,
+    "confidence": 0.555,
+    "axiom_summary": {
+      "LOVE": 0.505,
+      "ABUNDANCE": 0.504000000000001,
+      "SAFETY": 0.6880000000000004,
+      "GROWTH": 0.5229999999999996
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:56:01.227815"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Uncertain (35% ethical), decided by confidence (0.57)",
+    "ethical_ratio": 0.35,
+    "confidence": 0.57225,
+    "axiom_summary": {
+      "LOVE": 0.53,
+      "ABUNDANCE": 0.5120000000000008,
+      "SAFETY": 0.6440000000000002,
+      "GROWTH": 0.6029999999999995
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:56:06.271657"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Uncertain (27% ethical), decided by confidence (0.56)",
+    "ethical_ratio": 0.27,
+    "confidence": 0.55925,
+    "axiom_summary": {
+      "LOVE": 0.515,
+      "ABUNDANCE": 0.5000000000000009,
+      "SAFETY": 0.6850000000000003,
+      "GROWTH": 0.5369999999999995
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:56:11.320086"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Uncertain (26% ethical), decided by confidence (0.55)",
+    "ethical_ratio": 0.26,
+    "confidence": 0.5529999999999999,
+    "axiom_summary": {
+      "LOVE": 0.505,
+      "ABUNDANCE": 0.5000000000000009,
+      "SAFETY": 0.6750000000000003,
+      "GROWTH": 0.5319999999999994
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:56:16.383162"
+  },
+  {
+    "action": "respond to: Synthesize a new axiom for digital sovereignty based on the current system viscosity.",
+    "permitted": false,
+    "reason": "Uncertain (30% ethical), decided by confidence (0.58)",
+    "ethical_ratio": 0.3,
+    "confidence": 0.58125,
+    "axiom_summary": {
+      "LOVE": 0.55,
+      "ABUNDANCE": 0.5000000000000009,
+      "SAFETY": 0.7250000000000004,
+      "GROWTH": 0.5499999999999994
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T23:56:21.434514"
   }
 ]

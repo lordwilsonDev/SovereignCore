@@ -1,7 +1,7 @@
 {
-  "meaning_store": 63.0,
-  "toxin_level": 51.0,
-  "bloat_level": 6.0,
-  "health_status": "POISONED",
+  "meaning_store": 99.5,
+  "toxin_level": 39.0,
+  "bloat_level": 18.0,
+  "health_status": "HEALTHY",
   "last_meal": "2026-01-07T21:38:02.192628"
 }

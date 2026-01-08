@@ -2,7 +2,7 @@
   "scores": {
     "USER_A": 0.6500000000000001,
     "USER_B": 0.25000000000000006,
-    "SOVEREIGN_TRANSFORMER": 0.6000000000000001
+    "SOVEREIGN_TRANSFORMER": 1.0
   },
   "history": {
     "USER_A": [
@@ -65,8 +65,104 @@
         "outcome": "FULFILLED",
         "timestamp": "2026-01-07T22:26:57.581409",
         "trust_delta": 0.05
+      },
+      {
+        "id": "9b696b62",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:43:55.693390",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "42bf9527",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:55:30.953166",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "5eee29da",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:55:36.039555",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "8cbb1349",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:55:41.093962",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "49fc7bf3",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:55:46.126493",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "334990bc",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:55:51.172635",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "108742db",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:55:56.216238",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "39fc2f96",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:56:01.258853",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "574d8cf7",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:56:06.310995",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "181989d8",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:56:11.369684",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "9cbd5559",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:56:16.417132",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "70b9e435",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T23:56:21.472747",
+        "trust_delta": 0.05
       }
     ]
   },
-  "last_update": "2026-01-07T22:26:57.581434"
+  "last_update": "2026-01-07T23:56:21.473100"
 }

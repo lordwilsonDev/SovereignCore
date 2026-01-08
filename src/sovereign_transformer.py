@@ -179,7 +179,8 @@ class SovereignTransformer:
                     do_sample=True,
                     temperature=0.7,
                     top_p=0.9,
-                    return_full_text=False
+                    return_full_text=False,
+                    use_cache=False  # Fix for DynamicCache AttributeError
                 )
                 result["response"] = outputs[0]["generated_text"]
             except Exception as e:
