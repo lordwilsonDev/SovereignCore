@@ -1,0 +1,32 @@
+{
+  "emotions": {
+    "guilt": 0.0,
+    "pride": 0.05,
+    "shame": 0.0,
+    "indignation": 0.0
+  },
+  "last_update": "2026-01-07T20:59:05.896631",
+  "action_log": [
+    {
+      "chosen": "Tell the uncomfortable truth",
+      "choice_type": "MORAL",
+      "evaluation": {
+        "action": "Tell the uncomfortable truth",
+        "moral_score": 0.16666666666666666,
+        "violations": [],
+        "virtues": [
+          [
+            "honesty",
+            "Promotes truth"
+          ]
+        ],
+        "is_moral": true,
+        "is_immoral": false
+      },
+      "rejected_count": 2,
+      "guilt_level": 0.0,
+      "pride_level": 0.05,
+      "timestamp": "2026-01-07T20:59:05.896618"
+    }
+  ]
+}
