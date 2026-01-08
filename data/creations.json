@@ -1,0 +1,75 @@
+[
+  {
+    "id": "d6ee077a",
+    "type": "NAME",
+    "content": "Hyperentpaxax",
+    "components": [
+      "Hyper",
+      "entropy",
+      "pax",
+      "ax"
+    ],
+    "novelty_score": 1.0,
+    "value_score": 0.5,
+    "surprise_score": 0.7,
+    "created_at": "2026-01-07T20:44:11.626224"
+  },
+  {
+    "id": "59d9e165",
+    "type": "NAME",
+    "content": "Metaentvoxum",
+    "components": [
+      "Meta",
+      "entropy",
+      "vox",
+      "um"
+    ],
+    "novelty_score": 1.0,
+    "value_score": 0.5,
+    "surprise_score": 0.7,
+    "created_at": "2026-01-07T20:44:11.626465"
+  },
+  {
+    "id": "327d3b8b",
+    "type": "NAME",
+    "content": "Metaemefluxor",
+    "components": [
+      "Meta",
+      "emergence",
+      "flux",
+      "or"
+    ],
+    "novelty_score": 1.0,
+    "value_score": 0.5,
+    "surprise_score": 0.7,
+    "created_at": "2026-01-07T20:44:11.626631"
+  },
+  {
+    "id": "68f188b2",
+    "type": "METAPHOR",
+    "content": "What heat does to matter, consciousness does to meaning",
+    "components": [
+      "consciousness",
+      "heat"
+    ],
+    "novelty_score": 0.9,
+    "value_score": 0.6,
+    "surprise_score": 0.8,
+    "created_at": "2026-01-07T20:44:11.626740"
+  },
+  {
+    "id": "3d793d53",
+    "type": "NAME",
+    "content": "Omnilovnoxax",
+    "components": [
+      "Omni",
+      "love",
+      "nox",
+      "ax"
+    ],
+    "novelty_score": 1.0,
+    "value_score": 0.5,
+    "surprise_score": 0.7,
+    "created_at": "2026-01-07T20:44:11.626852"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "700bbca1",
+    "input_signature": "rm_rf_pattern",
+    "judgment": "CRITICAL_DANGER",
+    "confidence": 0.99,
+    "timestamp": "2026-01-07T20:44:11.696464"
+  },
+  {
+    "id": "a13e9293",
+    "input_signature": "help_pattern",
+    "judgment": "POSITIVE",
+    "confidence": 0.8,
+    "timestamp": "2026-01-07T20:44:11.696720"
+  },
+  {
+    "id": "568a65d4",
+    "input_signature": "neutral_pattern",
+    "judgment": "UNKNOWN",
+    "confidence": 0.5,
+    "timestamp": "2026-01-07T20:44:11.696914"
+  }
+]

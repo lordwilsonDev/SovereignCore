@@ -1,0 +1,53 @@
+{
+  "scores": {
+    "USER_A": 0.6500000000000001,
+    "USER_B": 0.25000000000000006
+  },
+  "history": {
+    "USER_A": [
+      {
+        "id": "2b20b974",
+        "actor": "USER_A",
+        "action": "provided helpful feedback",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T20:44:11.661017",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "db93fc1f",
+        "actor": "USER_A",
+        "action": "kept their promise",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T20:44:11.661258",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "a9312d8a",
+        "actor": "USER_A",
+        "action": "shared useful information",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T20:44:11.661366",
+        "trust_delta": 0.05
+      }
+    ],
+    "USER_B": [
+      {
+        "id": "d7fbf3a6",
+        "actor": "USER_B",
+        "action": "said they would help",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T20:44:11.661453",
+        "trust_delta": 0.05
+      },
+      {
+        "id": "81ef11d3",
+        "actor": "USER_B",
+        "action": "violated the agreement",
+        "outcome": "VIOLATED",
+        "timestamp": "2026-01-07T20:44:11.661527",
+        "trust_delta": -0.3
+      }
+    ]
+  },
+  "last_update": "2026-01-07T20:44:11.661530"
+}
