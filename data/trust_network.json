@@ -1,7 +1,8 @@
 {
   "scores": {
     "USER_A": 0.6500000000000001,
-    "USER_B": 0.25000000000000006
+    "USER_B": 0.25000000000000006,
+    "SOVEREIGN_TRANSFORMER": 0.55
   },
   "history": {
     "USER_A": [
@@ -47,7 +48,17 @@
         "timestamp": "2026-01-07T20:44:11.661527",
         "trust_delta": -0.3
       }
+    ],
+    "SOVEREIGN_TRANSFORMER": [
+      {
+        "id": "19aad158",
+        "actor": "SOVEREIGN_TRANSFORMER",
+        "action": "generated_response",
+        "outcome": "FULFILLED",
+        "timestamp": "2026-01-07T21:05:42.883548",
+        "trust_delta": 0.05
+      }
     ]
   },
-  "last_update": "2026-01-07T20:44:11.661530"
+  "last_update": "2026-01-07T21:05:42.883554"
 }

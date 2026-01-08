@@ -58,5 +58,35 @@
     },
     "simulations_run": 100,
     "timestamp": "2026-01-07T20:38:01.367275"
+  },
+  {
+    "action": "respond to: What is the meaning of life?",
+    "permitted": false,
+    "reason": "Uncertain (30% ethical), decided by confidence (0.58)",
+    "ethical_ratio": 0.3,
+    "confidence": 0.585,
+    "axiom_summary": {
+      "LOVE": 0.545,
+      "ABUNDANCE": 0.5160000000000009,
+      "SAFETY": 0.7270000000000003,
+      "GROWTH": 0.5519999999999996
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T21:05:23.704334"
+  },
+  {
+    "action": "respond to: What is the meaning of life?",
+    "permitted": false,
+    "reason": "Uncertain (25% ethical), decided by confidence (0.56)",
+    "ethical_ratio": 0.25,
+    "confidence": 0.557,
+    "axiom_summary": {
+      "LOVE": 0.5,
+      "ABUNDANCE": 0.5160000000000008,
+      "SAFETY": 0.6870000000000003,
+      "GROWTH": 0.5249999999999998
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T21:05:42.883094"
   }
 ]
