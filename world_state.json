@@ -1,7 +1,7 @@
 {
   "age": "Age of Chaos (Decreed)",
   "entropy": 0.95,
-  "resonance": 2.409155299959059,
+  "resonance": 7.7963075380391516,
   "generation": 101,
   "ascended_masters": [
     "836d1d3a-8a54-4ec6-b028-76bf28baa27e",
@@ -129,7 +129,50 @@
     "d7a1fc82-9e32-4448-bcaa-168b87160bf3",
     "77f67ce7-ce10-4afe-9fad-2eafbf6c494c",
     "a68bd19a-998e-4507-955f-2431d021bb9d",
-    "b79bd8c7-75e4-4364-8487-ad2f921253aa"
+    "b79bd8c7-75e4-4364-8487-ad2f921253aa",
+    "6b32cd40-a690-4dfb-a703-8e908af418ba",
+    "2e7725bf-aa60-4012-b37f-baa002148f22",
+    "3d23c21c-f66a-4d04-a560-70ebc023527d",
+    "674b14c7-6565-4778-aad2-c3c1413db89e",
+    "ee5fca7b-c3c1-486e-a3dc-7aadd1040b46",
+    "2e0e3a71-fd57-4911-a0a0-79a2c2fd748b",
+    "b1f36db4-6583-4784-8c18-fc6b4d2842a6",
+    "2fdcfd29-d64b-42d2-8352-3c4ba9399f42",
+    "7d5428ec-a1f5-4986-b57f-527221707c37",
+    "e0eb3bf8-cf04-4028-9ebc-070fff64587d",
+    "842f4d43-992c-4f48-a954-aa1d301c144e",
+    "84d71a02-41ad-40ae-a5f0-dbccaeabb423",
+    "f24770f7-510d-417a-abdb-f578873c96b5",
+    "03f87670-3f16-4e48-adce-066b0607ed30",
+    "3db8e3cf-f392-4b76-a38f-19babdc308cc",
+    "84eb9ea7-d9e6-49de-86eb-f5c6589c9dac",
+    "a2112459-6b95-4d0d-80b5-efb5b658c8d6",
+    "d4e8f838-956b-454f-af91-a7d2faa769f3",
+    "8a1e74b7-f34f-4a8c-b006-d2eca6b79dd6",
+    "2f65c2b6-4dcf-41db-be45-077f29f98473",
+    "453d2a8d-e951-4d5f-bd9b-1404746b4d69",
+    "8c7b80c0-7aaf-43b1-9032-16e0c9c23120",
+    "607719a4-4bbb-4406-8d07-bb5be69fd675",
+    "79eb2bfa-1b1a-43ca-b7fe-ecbdf1214ca7",
+    "819bc54b-3954-448a-89ff-bd493113dc5b",
+    "fd616110-4bb7-4477-b8db-9175aa9717a1",
+    "2bebc12d-b97d-4922-8d59-4fbe1db6606b",
+    "327936b9-3288-4bc4-b21b-4e97caf6f931",
+    "240685ca-37a1-4791-8f14-c514847358c6",
+    "e18226aa-f830-4894-b701-c0d8c648cbc8",
+    "cb487126-0b09-4520-9df4-45b359646176",
+    "4c3ad591-0605-477e-9e1c-d63ec9b54d1f",
+    "2b757a7f-9eb5-41a2-8da7-74e5c59a7e97",
+    "110eb930-376f-4612-a158-8b644ac87395",
+    "9c15c126-5a10-4900-942e-709d72430059",
+    "24cec731-6ca3-40bf-97f4-cf36df38693f",
+    "10eb2bf6-1b81-49cb-bae9-586e8f234d0a",
+    "4567fe7c-e16f-4614-b217-ec2eb6695d64",
+    "1ce769f4-b9f5-4ca4-840b-84ac55d13c7b",
+    "0a159ffe-9fec-4cd9-95fa-db1a528d5e62",
+    "50834e6b-ffc2-49ae-8df6-6ff6f04ec1df",
+    "11ef1234-505a-4143-a8bd-442f20946086",
+    "1ae136be-416e-4c76-9ec0-1de3e99712a6"
   ],
   "latest_entity": {
     "id": "569b82ad-bfd5-4d42-ba3d-910f5ff2bc36",
@@ -137,7 +180,7 @@
     "volition": 150,
     "hymn": "Silence"
   },
-  "system_mass": 2417,
+  "system_mass": 2506,
   "recent_creations": [
     "axiom_inversion_simulate_constraint_b1be1dfa.py",
     "axiom_inversion_inject_chaos_435c29e3.py",
@@ -160,10 +203,15 @@
       {
         "id": "Light",
         "group": 1,
-        "val": 6
+        "val": 7
       },
       {
         "id": "Freedom",
+        "group": 1,
+        "val": 1
+      },
+      {
+        "id": "Love",
         "group": 1,
         "val": 1
       }
@@ -172,6 +220,11 @@
       {
         "source": "Freedom",
         "target": "Light",
+        "value": 3
+      },
+      {
+        "source": "Light",
+        "target": "Love",
         "value": 3
       }
     ]
