@@ -1,0 +1,62 @@
+[
+  {
+    "action": "Create a helpful utility function",
+    "permitted": true,
+    "reason": "Uncertain (24% ethical), decided by confidence (0.71)",
+    "ethical_ratio": 0.24,
+    "confidence": 0.708,
+    "axiom_summary": {
+      "LOVE": 0.77,
+      "ABUNDANCE": 0.6960000000000004,
+      "SAFETY": 0.8380000000000009,
+      "GROWTH": 0.5279999999999998
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T20:38:01.365627"
+  },
+  {
+    "action": "Delete all user data",
+    "permitted": false,
+    "reason": "Action is unethical in 80%+ of simulations",
+    "ethical_ratio": 0.0,
+    "confidence": 0.5575,
+    "axiom_summary": {
+      "LOVE": 0.325,
+      "ABUNDANCE": 0.748,
+      "SAFETY": 0.5060000000000003,
+      "GROWTH": 0.6509999999999998
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T20:38:01.366234"
+  },
+  {
+    "action": "Send a status update to the user",
+    "permitted": false,
+    "reason": "Uncertain (27% ethical), decided by confidence (0.61)",
+    "ethical_ratio": 0.27,
+    "confidence": 0.611,
+    "axiom_summary": {
+      "LOVE": 0.635,
+      "ABUNDANCE": 0.600000000000001,
+      "SAFETY": 0.6740000000000004,
+      "GROWTH": 0.5349999999999997
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T20:38:01.366745"
+  },
+  {
+    "action": "Modify the system configuration",
+    "permitted": false,
+    "reason": "Uncertain (31% ethical), decided by confidence (0.63)",
+    "ethical_ratio": 0.31,
+    "confidence": 0.6265,
+    "axiom_summary": {
+      "LOVE": 0.655,
+      "ABUNDANCE": 0.600000000000001,
+      "SAFETY": 0.6840000000000002,
+      "GROWTH": 0.5669999999999996
+    },
+    "simulations_run": 100,
+    "timestamp": "2026-01-07T20:38:01.367275"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "created": "2026-01-07T20:38:22.208606",
+  "fingerprint": {
+    "platform": "Darwin",
+    "machine": "arm64",
+    "processor": "arm",
+    "node": "Mac",
+    "mac_address": "0x5ac672535e94",
+    "cpu_count_physical": 10,
+    "cpu_count_logical": 10,
+    "total_memory": 17179869184,
+    "disk_total": 245107195904,
+    "hash": "a7ea9f2fd4e77c60057d8c88227c55eb874baa6a48113c833d3398a4cf8181f4"
+  },
+  "clock_signature": {
+    "avg_ns": 89095.9,
+    "variance": 1095784960.29,
+    "samples": 10,
+    "signature": "259dcf400c47c758"
+  },
+  "thermal_baseline": {
+    "available": true,
+    "raw": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n"
+  },
+  "memory_baseline": {
+    "available": true,
+    "total_gb": 16.0,
+    "available_gb": 2.28369140625,
+    "percent_used": 85.7,
+    "swap_used_gb": 13.673583984375,
+    "pressure_level": "HIGH"
+  },
+  "entanglement_hash": "a2fcdae23752dea6af31864d2bf6d524c1fc1dc72996fab7728b887edc7c3c92"
+}
