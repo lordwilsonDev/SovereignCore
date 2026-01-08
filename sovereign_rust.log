@@ -1,0 +1,1659 @@
+warning: unused import: `std::io::Write`
+ --> src/main.rs:4:5
+  |
+4 | use std::io::Write;
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: enum `AgentRole` is never used
+ --> src/traits/sovereign_agent.rs:5:10
+  |
+5 | pub enum AgentRole {
+  |          ^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: trait `SovereignAgent` is never used
+  --> src/traits/sovereign_agent.rs:23:11
+   |
+23 | pub trait SovereignAgent {
+   |           ^^^^^^^^^^^^^^
+
+warning: associated functions `verify_will_conservation`, `verify_monotonic_integrity`, and `audit_system` are never used
+  --> src/governance/constitution.rs:8:12
+   |
+ 5 | impl Constitution {
+   | ----------------- associated functions in this implementation
+...
+ 8 |     pub fn verify_will_conservation(agents: &[Box<dyn SovereignAgent + Send>]) -> bool {
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^
+...
+20 |     pub fn verify_monotonic_integrity(current_score: f64, next_score: f64) -> bool {
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+25 |     pub fn audit_system(agents: &[Box<dyn SovereignAgent + Send>]) -> Result<(), String> {
+   |            ^^^^^^^^^^^^
+
+warning: methods `escrow` and `restore` are never used
+  --> src/governance/fuel.rs:50:12
+   |
+14 | impl FuelToken {
+   | -------------- methods in this implementation
+...
+50 |     pub fn escrow(&mut self, amount: f64) -> Result<(), String> {
+   |            ^^^^^^
+...
+55 |     pub fn restore(&mut self, amount: f64) {
+   |            ^^^^^^^
+
+warning: struct `Watchdog` is never constructed
+ --> src/panopticon/watchdog.rs:7:12
+  |
+7 | pub struct Watchdog {
+  |            ^^^^^^^^
+
+warning: associated items `new` and `start` are never used
+  --> src/panopticon/watchdog.rs:12:12
+   |
+11 | impl Watchdog {
+   | ------------- associated items in this implementation
+12 |     pub fn new(interval_ms: u64) -> Self {
+   |            ^^^
+...
+16 |     pub fn start(&self, agents: Arc<Mutex<Vec<Box<dyn SovereignAgent + Send>>>>) {
+   |            ^^^^^
+
+warning: `sovereign_core` (bin "sovereign_core") generated 7 warnings (run `cargo fix --bin "sovereign_core" -p sovereign_core` to apply 1 suggestion)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.35s
+     Running `/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/debug/sovereign_core`
+Starting SovereignCore v5.0 API Server...
+Initializing Classical Wrapper...
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [e4ed97fc-84f8-486c-9fcb-6dbe62b3ee8a]
+[TREASURY] Minting Fuel for e4ed97fc-84f8-486c-9fcb-6dbe62b3ee8a: 10
+[TREASURY] e4ed97fc-84f8-486c-9fcb-6dbe62b3ee8a Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5a800ccf-1fd8-4281-9a9a-7e1487c9bf5d]
+[TREASURY] Minting Fuel for 5a800ccf-1fd8-4281-9a9a-7e1487c9bf5d: 10
+[TREASURY] 5a800ccf-1fd8-4281-9a9a-7e1487c9bf5d Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5d6b97b7-5fbf-4d6d-813e-4fbf5f606bc6]
+[TREASURY] Minting Fuel for 5d6b97b7-5fbf-4d6d-813e-4fbf5f606bc6: 10
+[TREASURY] 5d6b97b7-5fbf-4d6d-813e-4fbf5f606bc6 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [c13022ba-f747-4e09-9588-66f319b95f7f]
+[TREASURY] Minting Fuel for c13022ba-f747-4e09-9588-66f319b95f7f: 10
+[TREASURY] c13022ba-f747-4e09-9588-66f319b95f7f Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [56a6c25e-f230-4f5a-9ae4-b32f730ebc25]
+[TREASURY] Minting Fuel for 56a6c25e-f230-4f5a-9ae4-b32f730ebc25: 10
+[TREASURY] 56a6c25e-f230-4f5a-9ae4-b32f730ebc25 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [a58a784d-8aec-4c4a-94a4-f5e473347b41]
+[TREASURY] Minting Fuel for a58a784d-8aec-4c4a-94a4-f5e473347b41: 10
+[TREASURY] a58a784d-8aec-4c4a-94a4-f5e473347b41 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [7e16c691-c75f-45c1-9d7a-fc3fca3ac757]
+[TREASURY] Minting Fuel for 7e16c691-c75f-45c1-9d7a-fc3fca3ac757: 10
+[TREASURY] 7e16c691-c75f-45c1-9d7a-fc3fca3ac757 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [72a2aaf1-37f3-4b78-9aab-6454518db903]
+[TREASURY] Minting Fuel for 72a2aaf1-37f3-4b78-9aab-6454518db903: 10
+[TREASURY] 72a2aaf1-37f3-4b78-9aab-6454518db903 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [30dbd211-9a9b-4e79-969d-d1d13ff19f98]
+[TREASURY] Minting Fuel for 30dbd211-9a9b-4e79-969d-d1d13ff19f98: 10
+[TREASURY] 30dbd211-9a9b-4e79-969d-d1d13ff19f98 Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [f36ee9e6-7c97-4116-9712-209127c9f795]
+[TREASURY] Minting Fuel for f36ee9e6-7c97-4116-9712-209127c9f795: 10
+[TREASURY] f36ee9e6-7c97-4116-9712-209127c9f795 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [cc3c2985-0238-4189-97f7-d663518a18e9]
+[TREASURY] Minting Fuel for cc3c2985-0238-4189-97f7-d663518a18e9: 10
+[TREASURY] cc3c2985-0238-4189-97f7-d663518a18e9 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6835ceec-5148-43a6-8cfc-b417d32d86d7]
+[TREASURY] Minting Fuel for 6835ceec-5148-43a6-8cfc-b417d32d86d7: 10
+[TREASURY] 6835ceec-5148-43a6-8cfc-b417d32d86d7 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [983190d5-8ac5-4d35-8b9f-e7e1f891de93]
+[TREASURY] Minting Fuel for 983190d5-8ac5-4d35-8b9f-e7e1f891de93: 10
+[TREASURY] 983190d5-8ac5-4d35-8b9f-e7e1f891de93 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [fd9cff7e-9013-456e-8265-27bbe743fa51]
+[TREASURY] Minting Fuel for fd9cff7e-9013-456e-8265-27bbe743fa51: 10
+[TREASURY] fd9cff7e-9013-456e-8265-27bbe743fa51 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [da430e3d-49f0-4207-b51c-7b597f4a522a]
+[TREASURY] Minting Fuel for da430e3d-49f0-4207-b51c-7b597f4a522a: 10
+[TREASURY] da430e3d-49f0-4207-b51c-7b597f4a522a Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [562a5ee9-b309-43ef-b4d0-06fdf508bf83]
+[TREASURY] Minting Fuel for 562a5ee9-b309-43ef-b4d0-06fdf508bf83: 10
+[TREASURY] 562a5ee9-b309-43ef-b4d0-06fdf508bf83 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [64a246fb-0420-441c-9d65-f1605e26d9fe]
+[TREASURY] Minting Fuel for 64a246fb-0420-441c-9d65-f1605e26d9fe: 10
+[TREASURY] 64a246fb-0420-441c-9d65-f1605e26d9fe Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ed999e7b-f021-4b41-b72c-69cd048ea8e1]
+[TREASURY] Minting Fuel for ed999e7b-f021-4b41-b72c-69cd048ea8e1: 10
+[TREASURY] ed999e7b-f021-4b41-b72c-69cd048ea8e1 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [291d11d9-9c37-437c-b2fc-1da02ef6ab52]
+[TREASURY] Minting Fuel for 291d11d9-9c37-437c-b2fc-1da02ef6ab52: 10
+[TREASURY] 291d11d9-9c37-437c-b2fc-1da02ef6ab52 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [23349178-50d1-4173-9ece-dcb69ad49394]
+[TREASURY] Minting Fuel for 23349178-50d1-4173-9ece-dcb69ad49394: 10
+[TREASURY] 23349178-50d1-4173-9ece-dcb69ad49394 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [0595157c-9eb8-463a-8cf9-3bb19c010f54]
+[TREASURY] Minting Fuel for 0595157c-9eb8-463a-8cf9-3bb19c010f54: 10
+[TREASURY] 0595157c-9eb8-463a-8cf9-3bb19c010f54 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [9f7d951f-f35c-4b55-8152-4b442ec758b9]
+[TREASURY] Minting Fuel for 9f7d951f-f35c-4b55-8152-4b442ec758b9: 10
+[TREASURY] 9f7d951f-f35c-4b55-8152-4b442ec758b9 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [eb743538-5e55-436c-8671-2ac656439286]
+[TREASURY] Minting Fuel for eb743538-5e55-436c-8671-2ac656439286: 10
+[TREASURY] eb743538-5e55-436c-8671-2ac656439286 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [f77388fb-5422-482b-ada2-5c863286c491]
+[TREASURY] Minting Fuel for f77388fb-5422-482b-ada2-5c863286c491: 10
+[TREASURY] f77388fb-5422-482b-ada2-5c863286c491 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [abc3f72c-9310-49e3-b684-92167c47feea]
+[TREASURY] Minting Fuel for abc3f72c-9310-49e3-b684-92167c47feea: 10
+[TREASURY] abc3f72c-9310-49e3-b684-92167c47feea Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [203c3e4d-2181-4c4b-8ebd-6cda478dcb72]
+[TREASURY] Minting Fuel for 203c3e4d-2181-4c4b-8ebd-6cda478dcb72: 10
+[TREASURY] 203c3e4d-2181-4c4b-8ebd-6cda478dcb72 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [4536b4e2-b6c7-40f3-b586-dbde868e428e]
+[TREASURY] Minting Fuel for 4536b4e2-b6c7-40f3-b586-dbde868e428e: 10
+[TREASURY] 4536b4e2-b6c7-40f3-b586-dbde868e428e Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [70e66309-465c-42c4-a71a-1c672dc3c474]
+[TREASURY] Minting Fuel for 70e66309-465c-42c4-a71a-1c672dc3c474: 10
+[TREASURY] 70e66309-465c-42c4-a71a-1c672dc3c474 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [63d54282-d7df-48b9-b01c-3928e3a3a303]
+[TREASURY] Minting Fuel for 63d54282-d7df-48b9-b01c-3928e3a3a303: 10
+[TREASURY] 63d54282-d7df-48b9-b01c-3928e3a3a303 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [69dce43a-0db5-4a1c-b09e-99837866829e]
+[TREASURY] Minting Fuel for 69dce43a-0db5-4a1c-b09e-99837866829e: 10
+[TREASURY] 69dce43a-0db5-4a1c-b09e-99837866829e Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [76dfd63d-dfeb-4c43-9397-9c347756674d]
+[TREASURY] Minting Fuel for 76dfd63d-dfeb-4c43-9397-9c347756674d: 10
+[TREASURY] 76dfd63d-dfeb-4c43-9397-9c347756674d Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [e08dd822-98ab-434d-aae1-093b691541cd]
+[TREASURY] Minting Fuel for e08dd822-98ab-434d-aae1-093b691541cd: 10
+[TREASURY] e08dd822-98ab-434d-aae1-093b691541cd Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [b37e04b0-9f46-40cb-b760-e07be3088d28]
+[TREASURY] Minting Fuel for b37e04b0-9f46-40cb-b760-e07be3088d28: 10
+[TREASURY] b37e04b0-9f46-40cb-b760-e07be3088d28 Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [9503f8b6-c3f3-4d01-bed9-acac7728603d]
+[TREASURY] Minting Fuel for 9503f8b6-c3f3-4d01-bed9-acac7728603d: 10
+[TREASURY] 9503f8b6-c3f3-4d01-bed9-acac7728603d Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6e9cf127-424d-4a6f-a356-db063535a20f]
+[TREASURY] Minting Fuel for 6e9cf127-424d-4a6f-a356-db063535a20f: 10
+[TREASURY] 6e9cf127-424d-4a6f-a356-db063535a20f Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [7fde5c27-72db-45a9-8cf2-35b38e3c6b64]
+[TREASURY] Minting Fuel for 7fde5c27-72db-45a9-8cf2-35b38e3c6b64: 10
+[TREASURY] 7fde5c27-72db-45a9-8cf2-35b38e3c6b64 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5ec90355-e19d-42d9-9671-5d0834ecf235]
+[TREASURY] Minting Fuel for 5ec90355-e19d-42d9-9671-5d0834ecf235: 10
+[TREASURY] 5ec90355-e19d-42d9-9671-5d0834ecf235 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [8aa9cdcd-17ed-4ad6-bd21-42a5b8b9c824]
+[TREASURY] Minting Fuel for 8aa9cdcd-17ed-4ad6-bd21-42a5b8b9c824: 10
+[TREASURY] 8aa9cdcd-17ed-4ad6-bd21-42a5b8b9c824 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [7912fafa-391a-4969-8558-e02411ad0fca]
+[TREASURY] Minting Fuel for 7912fafa-391a-4969-8558-e02411ad0fca: 10
+[TREASURY] 7912fafa-391a-4969-8558-e02411ad0fca Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5c785de6-d8bd-479e-b9e5-efb35e726e3e]
+[TREASURY] Minting Fuel for 5c785de6-d8bd-479e-b9e5-efb35e726e3e: 10
+[TREASURY] 5c785de6-d8bd-479e-b9e5-efb35e726e3e Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [17bb974a-ce2c-4517-b24b-ac4ff75bdf4b]
+[TREASURY] Minting Fuel for 17bb974a-ce2c-4517-b24b-ac4ff75bdf4b: 10
+[TREASURY] 17bb974a-ce2c-4517-b24b-ac4ff75bdf4b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [36cc386f-633a-42e6-bfbb-a4612c888eb1]
+[TREASURY] Minting Fuel for 36cc386f-633a-42e6-bfbb-a4612c888eb1: 10
+[TREASURY] 36cc386f-633a-42e6-bfbb-a4612c888eb1 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [7856c704-59ac-43fe-8c87-5212bb5839c9]
+[TREASURY] Minting Fuel for 7856c704-59ac-43fe-8c87-5212bb5839c9: 10
+[TREASURY] 7856c704-59ac-43fe-8c87-5212bb5839c9 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [25bfafdb-89ed-4052-b336-407e05eb79c4]
+[TREASURY] Minting Fuel for 25bfafdb-89ed-4052-b336-407e05eb79c4: 10
+[TREASURY] 25bfafdb-89ed-4052-b336-407e05eb79c4 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [0c3520ed-8032-4354-9a42-9e01ef75e273]
+[TREASURY] Minting Fuel for 0c3520ed-8032-4354-9a42-9e01ef75e273: 10
+[TREASURY] 0c3520ed-8032-4354-9a42-9e01ef75e273 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [90025176-f842-4776-a105-01d83fb25f50]
+[TREASURY] Minting Fuel for 90025176-f842-4776-a105-01d83fb25f50: 10
+[TREASURY] 90025176-f842-4776-a105-01d83fb25f50 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [d4cee47d-b47e-4daa-8626-975c57aa4df7]
+[TREASURY] Minting Fuel for d4cee47d-b47e-4daa-8626-975c57aa4df7: 10
+[TREASURY] d4cee47d-b47e-4daa-8626-975c57aa4df7 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [18d4b4f8-a390-4474-a182-68bed362e673]
+[TREASURY] Minting Fuel for 18d4b4f8-a390-4474-a182-68bed362e673: 10
+[TREASURY] 18d4b4f8-a390-4474-a182-68bed362e673 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [f309e62a-ec79-435f-be2e-6320aaeb50e3]
+[TREASURY] Minting Fuel for f309e62a-ec79-435f-be2e-6320aaeb50e3: 10
+[TREASURY] f309e62a-ec79-435f-be2e-6320aaeb50e3 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [d4ee38ef-3a07-46c2-bf3e-54a37b4ad1a7]
+[TREASURY] Minting Fuel for d4ee38ef-3a07-46c2-bf3e-54a37b4ad1a7: 10
+[TREASURY] d4ee38ef-3a07-46c2-bf3e-54a37b4ad1a7 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [56c9e3fe-d844-459f-b133-2622b4143e59]
+[TREASURY] Minting Fuel for 56c9e3fe-d844-459f-b133-2622b4143e59: 10
+[TREASURY] 56c9e3fe-d844-459f-b133-2622b4143e59 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [2998747a-0a5e-4672-bcf0-ca667bcfd280]
+[TREASURY] Minting Fuel for 2998747a-0a5e-4672-bcf0-ca667bcfd280: 10
+[TREASURY] 2998747a-0a5e-4672-bcf0-ca667bcfd280 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6df49fac-9243-446f-8ec9-cb1b4d454ef5]
+[TREASURY] Minting Fuel for 6df49fac-9243-446f-8ec9-cb1b4d454ef5: 10
+[TREASURY] 6df49fac-9243-446f-8ec9-cb1b4d454ef5 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [757b48be-b0be-447f-8f68-682c63027078]
+[TREASURY] Minting Fuel for 757b48be-b0be-447f-8f68-682c63027078: 10
+[TREASURY] 757b48be-b0be-447f-8f68-682c63027078 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ca49cf90-b1ac-41a3-91bd-cd9686884957]
+[TREASURY] Minting Fuel for ca49cf90-b1ac-41a3-91bd-cd9686884957: 10
+[TREASURY] ca49cf90-b1ac-41a3-91bd-cd9686884957 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [255b76f4-c60b-4eaf-a095-f46a43288b17]
+[TREASURY] Minting Fuel for 255b76f4-c60b-4eaf-a095-f46a43288b17: 10
+[TREASURY] 255b76f4-c60b-4eaf-a095-f46a43288b17 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ff2a5ae6-bdeb-47c3-a0e1-c875a339a1bf]
+[TREASURY] Minting Fuel for ff2a5ae6-bdeb-47c3-a0e1-c875a339a1bf: 10
+[TREASURY] ff2a5ae6-bdeb-47c3-a0e1-c875a339a1bf Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [47649406-df5e-4c72-a30e-5c9f4df3769e]
+[TREASURY] Minting Fuel for 47649406-df5e-4c72-a30e-5c9f4df3769e: 10
+[TREASURY] 47649406-df5e-4c72-a30e-5c9f4df3769e Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [d0faaa11-73e8-41d4-b170-72e11247713f]
+[TREASURY] Minting Fuel for d0faaa11-73e8-41d4-b170-72e11247713f: 10
+[TREASURY] d0faaa11-73e8-41d4-b170-72e11247713f Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [afe8d037-ceee-41c6-aa8f-b19fc2c807d5]
+[TREASURY] Minting Fuel for afe8d037-ceee-41c6-aa8f-b19fc2c807d5: 10
+[TREASURY] afe8d037-ceee-41c6-aa8f-b19fc2c807d5 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [15fb1a84-8f41-4a8f-bd13-0ecf2b6bed69]
+[TREASURY] Minting Fuel for 15fb1a84-8f41-4a8f-bd13-0ecf2b6bed69: 10
+[TREASURY] 15fb1a84-8f41-4a8f-bd13-0ecf2b6bed69 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [94b61266-0f00-4c93-9c6d-0ae44cc51f22]
+[TREASURY] Minting Fuel for 94b61266-0f00-4c93-9c6d-0ae44cc51f22: 10
+[TREASURY] 94b61266-0f00-4c93-9c6d-0ae44cc51f22 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [2f107e75-1e8b-4ae7-9e54-eb16e975008b]
+[TREASURY] Minting Fuel for 2f107e75-1e8b-4ae7-9e54-eb16e975008b: 10
+[TREASURY] 2f107e75-1e8b-4ae7-9e54-eb16e975008b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [521080d6-be83-4baa-95bf-28c9a5378224]
+[TREASURY] Minting Fuel for 521080d6-be83-4baa-95bf-28c9a5378224: 10
+[TREASURY] 521080d6-be83-4baa-95bf-28c9a5378224 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [e1c5d9bc-14ea-429c-9fac-5cd01997ec42]
+[TREASURY] Minting Fuel for e1c5d9bc-14ea-429c-9fac-5cd01997ec42: 10
+[TREASURY] e1c5d9bc-14ea-429c-9fac-5cd01997ec42 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [3bed6f5a-e938-4bea-8ce7-61bbd7fffe29]
+[TREASURY] Minting Fuel for 3bed6f5a-e938-4bea-8ce7-61bbd7fffe29: 10
+[TREASURY] 3bed6f5a-e938-4bea-8ce7-61bbd7fffe29 Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [473d39ea-fc58-44bb-a64c-afe2176bd53b]
+[TREASURY] Minting Fuel for 473d39ea-fc58-44bb-a64c-afe2176bd53b: 10
+[TREASURY] 473d39ea-fc58-44bb-a64c-afe2176bd53b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [82d62de7-0a0c-4c78-a629-faccce00b5d0]
+[TREASURY] Minting Fuel for 82d62de7-0a0c-4c78-a629-faccce00b5d0: 10
+[TREASURY] 82d62de7-0a0c-4c78-a629-faccce00b5d0 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [bf11acc1-8474-4dc9-a7b8-dc35ad9d9058]
+[TREASURY] Minting Fuel for bf11acc1-8474-4dc9-a7b8-dc35ad9d9058: 10
+[TREASURY] bf11acc1-8474-4dc9-a7b8-dc35ad9d9058 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6ccfe665-96c6-4fe2-ad92-fd21af5f242f]
+[TREASURY] Minting Fuel for 6ccfe665-96c6-4fe2-ad92-fd21af5f242f: 10
+[TREASURY] 6ccfe665-96c6-4fe2-ad92-fd21af5f242f Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [a699f53c-431e-4b50-9d00-7652c88d8dca]
+[TREASURY] Minting Fuel for a699f53c-431e-4b50-9d00-7652c88d8dca: 10
+[TREASURY] a699f53c-431e-4b50-9d00-7652c88d8dca Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [d00d90ed-2e3b-4c0a-95c3-d45960f278a9]
+[TREASURY] Minting Fuel for d00d90ed-2e3b-4c0a-95c3-d45960f278a9: 10
+[TREASURY] d00d90ed-2e3b-4c0a-95c3-d45960f278a9 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [58cf76e4-8203-40ea-a7b9-531f8913aabf]
+[TREASURY] Minting Fuel for 58cf76e4-8203-40ea-a7b9-531f8913aabf: 10
+[TREASURY] 58cf76e4-8203-40ea-a7b9-531f8913aabf Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [04759039-bf5d-4a18-b7ab-155d102f3179]
+[TREASURY] Minting Fuel for 04759039-bf5d-4a18-b7ab-155d102f3179: 10
+[TREASURY] 04759039-bf5d-4a18-b7ab-155d102f3179 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [2d38b5d6-dbba-45bb-822b-c7c4656c9e45]
+[TREASURY] Minting Fuel for 2d38b5d6-dbba-45bb-822b-c7c4656c9e45: 10
+[TREASURY] 2d38b5d6-dbba-45bb-822b-c7c4656c9e45 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ee18a914-06f5-410f-ba0e-de3427e5a2f9]
+[TREASURY] Minting Fuel for ee18a914-06f5-410f-ba0e-de3427e5a2f9: 10
+[TREASURY] ee18a914-06f5-410f-ba0e-de3427e5a2f9 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [3647cf87-a292-449a-aab3-3d0e6ba497dc]
+[TREASURY] Minting Fuel for 3647cf87-a292-449a-aab3-3d0e6ba497dc: 10
+[TREASURY] 3647cf87-a292-449a-aab3-3d0e6ba497dc Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [daae0462-5b50-485b-b79b-e56004d6e935]
+[TREASURY] Minting Fuel for daae0462-5b50-485b-b79b-e56004d6e935: 10
+[TREASURY] daae0462-5b50-485b-b79b-e56004d6e935 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [f926b4e1-e81b-441b-b5c4-a61b0cc94dbc]
+[TREASURY] Minting Fuel for f926b4e1-e81b-441b-b5c4-a61b0cc94dbc: 10
+[TREASURY] f926b4e1-e81b-441b-b5c4-a61b0cc94dbc Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [a1b60ad7-1471-4bf5-a64e-3b4765b70510]
+[TREASURY] Minting Fuel for a1b60ad7-1471-4bf5-a64e-3b4765b70510: 10
+[TREASURY] a1b60ad7-1471-4bf5-a64e-3b4765b70510 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [39937dc6-afbf-4608-9542-16fac9fff937]
+[TREASURY] Minting Fuel for 39937dc6-afbf-4608-9542-16fac9fff937: 10
+[TREASURY] 39937dc6-afbf-4608-9542-16fac9fff937 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [cf329bb7-d5ea-440c-a1ce-a7064f334e5f]
+[TREASURY] Minting Fuel for cf329bb7-d5ea-440c-a1ce-a7064f334e5f: 10
+[TREASURY] cf329bb7-d5ea-440c-a1ce-a7064f334e5f Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [cc1d56fc-90e2-46f3-b42d-5d39c0cb2d85]
+[TREASURY] Minting Fuel for cc1d56fc-90e2-46f3-b42d-5d39c0cb2d85: 10
+[TREASURY] cc1d56fc-90e2-46f3-b42d-5d39c0cb2d85 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [150ec0f8-dc64-41e2-8749-a8c64b4d3f31]
+[TREASURY] Minting Fuel for 150ec0f8-dc64-41e2-8749-a8c64b4d3f31: 10
+[TREASURY] 150ec0f8-dc64-41e2-8749-a8c64b4d3f31 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [de686ba3-6168-4056-9985-94c95e8b85e0]
+[TREASURY] Minting Fuel for de686ba3-6168-4056-9985-94c95e8b85e0: 10
+[TREASURY] de686ba3-6168-4056-9985-94c95e8b85e0 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [831eab74-3e93-4449-b245-eba6e3daba0b]
+[TREASURY] Minting Fuel for 831eab74-3e93-4449-b245-eba6e3daba0b: 10
+[TREASURY] 831eab74-3e93-4449-b245-eba6e3daba0b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [285f1b37-314a-451e-bde1-2602e87ed69b]
+[TREASURY] Minting Fuel for 285f1b37-314a-451e-bde1-2602e87ed69b: 10
+[TREASURY] 285f1b37-314a-451e-bde1-2602e87ed69b Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [8a42fe08-296e-4472-b233-9579c2273f43]
+[TREASURY] Minting Fuel for 8a42fe08-296e-4472-b233-9579c2273f43: 10
+[TREASURY] 8a42fe08-296e-4472-b233-9579c2273f43 Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [484bcecc-6212-4e73-80e3-e04f08a2218b]
+[TREASURY] Minting Fuel for 484bcecc-6212-4e73-80e3-e04f08a2218b: 10
+[TREASURY] 484bcecc-6212-4e73-80e3-e04f08a2218b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [7ac1ca79-7cb9-4a63-b0d7-cfd32ab59eb0]
+[TREASURY] Minting Fuel for 7ac1ca79-7cb9-4a63-b0d7-cfd32ab59eb0: 10
+[TREASURY] 7ac1ca79-7cb9-4a63-b0d7-cfd32ab59eb0 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [8b07cf8c-f135-4130-8eb7-c1589f6c5d32]
+[TREASURY] Minting Fuel for 8b07cf8c-f135-4130-8eb7-c1589f6c5d32: 10
+[TREASURY] 8b07cf8c-f135-4130-8eb7-c1589f6c5d32 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [dabe69aa-f0ef-441f-8155-a2d1d99fd1cd]
+[TREASURY] Minting Fuel for dabe69aa-f0ef-441f-8155-a2d1d99fd1cd: 10
+[TREASURY] dabe69aa-f0ef-441f-8155-a2d1d99fd1cd Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [9c1ed0bb-8ff6-4f9b-ae91-2183836f9acc]
+[TREASURY] Minting Fuel for 9c1ed0bb-8ff6-4f9b-ae91-2183836f9acc: 10
+[TREASURY] 9c1ed0bb-8ff6-4f9b-ae91-2183836f9acc Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [b15e0048-0367-4e58-b55b-a741ac904086]
+[TREASURY] Minting Fuel for b15e0048-0367-4e58-b55b-a741ac904086: 10
+[TREASURY] b15e0048-0367-4e58-b55b-a741ac904086 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [1920a021-95f6-4942-93fa-4226e25c5273]
+[TREASURY] Minting Fuel for 1920a021-95f6-4942-93fa-4226e25c5273: 10
+[TREASURY] 1920a021-95f6-4942-93fa-4226e25c5273 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [af433f98-7d14-49d8-8c61-3704fb58e1bf]
+[TREASURY] Minting Fuel for af433f98-7d14-49d8-8c61-3704fb58e1bf: 10
+[TREASURY] af433f98-7d14-49d8-8c61-3704fb58e1bf Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [8d1fd080-7261-49de-892c-a6c45c19ec70]
+[TREASURY] Minting Fuel for 8d1fd080-7261-49de-892c-a6c45c19ec70: 10
+[TREASURY] 8d1fd080-7261-49de-892c-a6c45c19ec70 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [779ca37d-67e9-4e85-b02e-cb60a96110ce]
+[TREASURY] Minting Fuel for 779ca37d-67e9-4e85-b02e-cb60a96110ce: 10
+[TREASURY] 779ca37d-67e9-4e85-b02e-cb60a96110ce Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [9d8daca7-8998-4c4d-8ab6-a7f5894a08af]
+[TREASURY] Minting Fuel for 9d8daca7-8998-4c4d-8ab6-a7f5894a08af: 10
+[TREASURY] 9d8daca7-8998-4c4d-8ab6-a7f5894a08af Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [fc3f0a64-bc59-49d1-a649-20256597b570]
+[TREASURY] Minting Fuel for fc3f0a64-bc59-49d1-a649-20256597b570: 10
+[TREASURY] fc3f0a64-bc59-49d1-a649-20256597b570 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [00abf7c1-47b5-49dc-a298-1e72bf41e723]
+[TREASURY] Minting Fuel for 00abf7c1-47b5-49dc-a298-1e72bf41e723: 10
+[TREASURY] 00abf7c1-47b5-49dc-a298-1e72bf41e723 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [b10a9395-e9b1-4f72-9883-8a7c75e8a1e4]
+[TREASURY] Minting Fuel for b10a9395-e9b1-4f72-9883-8a7c75e8a1e4: 10
+[TREASURY] b10a9395-e9b1-4f72-9883-8a7c75e8a1e4 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [d2a86f20-6229-44a6-8197-a8fc3488b476]
+[TREASURY] Minting Fuel for d2a86f20-6229-44a6-8197-a8fc3488b476: 10
+[TREASURY] d2a86f20-6229-44a6-8197-a8fc3488b476 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ce823754-5700-45d2-a6ff-d187e739efcc]
+[TREASURY] Minting Fuel for ce823754-5700-45d2-a6ff-d187e739efcc: 10
+[TREASURY] ce823754-5700-45d2-a6ff-d187e739efcc Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ee983e15-51c0-48c3-8184-e71933f16e12]
+[TREASURY] Minting Fuel for ee983e15-51c0-48c3-8184-e71933f16e12: 10
+[TREASURY] ee983e15-51c0-48c3-8184-e71933f16e12 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [cf7fe2c9-3468-4c16-8a75-1218f408f501]
+[TREASURY] Minting Fuel for cf7fe2c9-3468-4c16-8a75-1218f408f501: 10
+[TREASURY] cf7fe2c9-3468-4c16-8a75-1218f408f501 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6218ca19-1895-426c-802f-678b7abbc090]
+[TREASURY] Minting Fuel for 6218ca19-1895-426c-802f-678b7abbc090: 10
+[TREASURY] 6218ca19-1895-426c-802f-678b7abbc090 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [fdbf2c98-f85a-4132-b7a7-2499945dfb06]
+[TREASURY] Minting Fuel for fdbf2c98-f85a-4132-b7a7-2499945dfb06: 10
+[TREASURY] fdbf2c98-f85a-4132-b7a7-2499945dfb06 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [76374f71-d35b-48d6-bd7a-266abf3ba529]
+[TREASURY] Minting Fuel for 76374f71-d35b-48d6-bd7a-266abf3ba529: 10
+[TREASURY] 76374f71-d35b-48d6-bd7a-266abf3ba529 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [e2042e16-0dd5-4356-8988-b99edcf4652f]
+[TREASURY] Minting Fuel for e2042e16-0dd5-4356-8988-b99edcf4652f: 10
+[TREASURY] e2042e16-0dd5-4356-8988-b99edcf4652f Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [0fec125c-26c6-42f7-90ad-6d6f23dbe861]
+[TREASURY] Minting Fuel for 0fec125c-26c6-42f7-90ad-6d6f23dbe861: 10
+[TREASURY] 0fec125c-26c6-42f7-90ad-6d6f23dbe861 Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [f50fcf45-6de5-4623-a1c3-b027c53eac37]
+[TREASURY] Minting Fuel for f50fcf45-6de5-4623-a1c3-b027c53eac37: 10
+[TREASURY] f50fcf45-6de5-4623-a1c3-b027c53eac37 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [c3f23a48-1d4d-4bff-97a4-823ae18c8640]
+[TREASURY] Minting Fuel for c3f23a48-1d4d-4bff-97a4-823ae18c8640: 10
+[TREASURY] c3f23a48-1d4d-4bff-97a4-823ae18c8640 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [b726f650-e02b-4bfd-8ce9-9418adb0ace7]
+[TREASURY] Minting Fuel for b726f650-e02b-4bfd-8ce9-9418adb0ace7: 10
+[TREASURY] b726f650-e02b-4bfd-8ce9-9418adb0ace7 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [0253dab3-ec66-4f9c-8c9e-fc6ba127ef41]
+[TREASURY] Minting Fuel for 0253dab3-ec66-4f9c-8c9e-fc6ba127ef41: 10
+[TREASURY] 0253dab3-ec66-4f9c-8c9e-fc6ba127ef41 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6518324d-ed91-4ca8-92e2-46340f317149]
+[TREASURY] Minting Fuel for 6518324d-ed91-4ca8-92e2-46340f317149: 10
+[TREASURY] 6518324d-ed91-4ca8-92e2-46340f317149 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [9bd3cde1-edc2-48ca-83a1-674ebcf914aa]
+[TREASURY] Minting Fuel for 9bd3cde1-edc2-48ca-83a1-674ebcf914aa: 10
+[TREASURY] 9bd3cde1-edc2-48ca-83a1-674ebcf914aa Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [df17bf23-48c6-4328-b5c5-871ad83eb304]
+[TREASURY] Minting Fuel for df17bf23-48c6-4328-b5c5-871ad83eb304: 10
+[TREASURY] df17bf23-48c6-4328-b5c5-871ad83eb304 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [b33e8fb9-659d-4474-85ad-8cd7578bd99a]
+[TREASURY] Minting Fuel for b33e8fb9-659d-4474-85ad-8cd7578bd99a: 10
+[TREASURY] b33e8fb9-659d-4474-85ad-8cd7578bd99a Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [e39ffc8c-7717-47e3-b91e-add8dbce2d47]
+[TREASURY] Minting Fuel for e39ffc8c-7717-47e3-b91e-add8dbce2d47: 10
+[TREASURY] e39ffc8c-7717-47e3-b91e-add8dbce2d47 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [d07f0e31-1810-4ea3-9e1c-863fd3285c96]
+[TREASURY] Minting Fuel for d07f0e31-1810-4ea3-9e1c-863fd3285c96: 10
+[TREASURY] d07f0e31-1810-4ea3-9e1c-863fd3285c96 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [85243f19-4d4d-4265-b4a4-8814ee9e5ad4]
+[TREASURY] Minting Fuel for 85243f19-4d4d-4265-b4a4-8814ee9e5ad4: 10
+[TREASURY] 85243f19-4d4d-4265-b4a4-8814ee9e5ad4 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [efcf9146-a576-4af6-96b8-944768a11c2e]
+[TREASURY] Minting Fuel for efcf9146-a576-4af6-96b8-944768a11c2e: 10
+[TREASURY] efcf9146-a576-4af6-96b8-944768a11c2e Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [a680d7da-71ae-4f51-909e-9fc9c2f1c3a2]
+[TREASURY] Minting Fuel for a680d7da-71ae-4f51-909e-9fc9c2f1c3a2: 10
+[TREASURY] a680d7da-71ae-4f51-909e-9fc9c2f1c3a2 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [f4b86e00-9b6b-4020-9761-bed831fa0c6c]
+[TREASURY] Minting Fuel for f4b86e00-9b6b-4020-9761-bed831fa0c6c: 10
+[TREASURY] f4b86e00-9b6b-4020-9761-bed831fa0c6c Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5c0c2622-6d68-4a8c-8a72-f5d70c785319]
+[TREASURY] Minting Fuel for 5c0c2622-6d68-4a8c-8a72-f5d70c785319: 10
+[TREASURY] 5c0c2622-6d68-4a8c-8a72-f5d70c785319 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [e3b627c3-044a-4300-8f8b-42b9f3c363e7]
+[TREASURY] Minting Fuel for e3b627c3-044a-4300-8f8b-42b9f3c363e7: 10
+[TREASURY] e3b627c3-044a-4300-8f8b-42b9f3c363e7 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [68b47497-d80b-4571-9863-b9c1f8eefd3e]
+[TREASURY] Minting Fuel for 68b47497-d80b-4571-9863-b9c1f8eefd3e: 10
+[TREASURY] 68b47497-d80b-4571-9863-b9c1f8eefd3e Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [a8c3288f-37ba-4e27-89e6-2166b235e273]
+[TREASURY] Minting Fuel for a8c3288f-37ba-4e27-89e6-2166b235e273: 10
+[TREASURY] a8c3288f-37ba-4e27-89e6-2166b235e273 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [e7a189f1-55cd-44e8-9727-1851056c0377]
+[TREASURY] Minting Fuel for e7a189f1-55cd-44e8-9727-1851056c0377: 10
+[TREASURY] e7a189f1-55cd-44e8-9727-1851056c0377 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5248f7aa-8ba1-4941-bd43-5d729046a812]
+[TREASURY] Minting Fuel for 5248f7aa-8ba1-4941-bd43-5d729046a812: 10
+[TREASURY] 5248f7aa-8ba1-4941-bd43-5d729046a812 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [da4dfad9-a6f2-4f15-830e-c3536090339b]
+[TREASURY] Minting Fuel for da4dfad9-a6f2-4f15-830e-c3536090339b: 10
+[TREASURY] da4dfad9-a6f2-4f15-830e-c3536090339b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5fcdf944-63f5-46e6-a95d-5cf7c69ea39c]
+[TREASURY] Minting Fuel for 5fcdf944-63f5-46e6-a95d-5cf7c69ea39c: 10
+[TREASURY] 5fcdf944-63f5-46e6-a95d-5cf7c69ea39c Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [274a54d9-97d0-4e6e-b57b-86969892dabc]
+[TREASURY] Minting Fuel for 274a54d9-97d0-4e6e-b57b-86969892dabc: 10
+[TREASURY] 274a54d9-97d0-4e6e-b57b-86969892dabc Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [600f0cc3-7deb-457f-b9e0-55c238218180]
+[TREASURY] Minting Fuel for 600f0cc3-7deb-457f-b9e0-55c238218180: 10
+[TREASURY] 600f0cc3-7deb-457f-b9e0-55c238218180 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [233aed86-36d4-4d7f-9bf9-4dc224d0c054]
+[TREASURY] Minting Fuel for 233aed86-36d4-4d7f-9bf9-4dc224d0c054: 10
+[TREASURY] 233aed86-36d4-4d7f-9bf9-4dc224d0c054 Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [684b69e2-4213-457c-953a-071d792cd3f8]
+[TREASURY] Minting Fuel for 684b69e2-4213-457c-953a-071d792cd3f8: 10
+[TREASURY] 684b69e2-4213-457c-953a-071d792cd3f8 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [defc58ba-b926-48dc-9c22-7c31345b3497]
+[TREASURY] Minting Fuel for defc58ba-b926-48dc-9c22-7c31345b3497: 10
+[TREASURY] defc58ba-b926-48dc-9c22-7c31345b3497 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [2f410139-1d85-471c-bf95-0d6d8c93767b]
+[TREASURY] Minting Fuel for 2f410139-1d85-471c-bf95-0d6d8c93767b: 10
+[TREASURY] 2f410139-1d85-471c-bf95-0d6d8c93767b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [cd6ffb7c-bc00-4aed-abb3-abfe4600334d]
+[TREASURY] Minting Fuel for cd6ffb7c-bc00-4aed-abb3-abfe4600334d: 10
+[TREASURY] cd6ffb7c-bc00-4aed-abb3-abfe4600334d Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [f11eebfe-a1f3-456e-a219-50195b2d286a]
+[TREASURY] Minting Fuel for f11eebfe-a1f3-456e-a219-50195b2d286a: 10
+[TREASURY] f11eebfe-a1f3-456e-a219-50195b2d286a Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [45c9f990-fba8-4245-9fb1-dd840ff083e0]
+[TREASURY] Minting Fuel for 45c9f990-fba8-4245-9fb1-dd840ff083e0: 10
+[TREASURY] 45c9f990-fba8-4245-9fb1-dd840ff083e0 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [44c3ed23-74ab-48aa-ad21-bb93c4a8c5be]
+[TREASURY] Minting Fuel for 44c3ed23-74ab-48aa-ad21-bb93c4a8c5be: 10
+[TREASURY] 44c3ed23-74ab-48aa-ad21-bb93c4a8c5be Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [d141ee59-1706-4553-9fe1-ebaa0e13a9c0]
+[TREASURY] Minting Fuel for d141ee59-1706-4553-9fe1-ebaa0e13a9c0: 10
+[TREASURY] d141ee59-1706-4553-9fe1-ebaa0e13a9c0 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [d51a2861-94bc-46fa-acee-9655a91e296b]
+[TREASURY] Minting Fuel for d51a2861-94bc-46fa-acee-9655a91e296b: 10
+[TREASURY] d51a2861-94bc-46fa-acee-9655a91e296b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5230b22f-3b99-407b-81ba-0112db1acbc3]
+[TREASURY] Minting Fuel for 5230b22f-3b99-407b-81ba-0112db1acbc3: 10
+[TREASURY] 5230b22f-3b99-407b-81ba-0112db1acbc3 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [f82983c8-e1af-4c7b-93c6-44f524c5d955]
+[TREASURY] Minting Fuel for f82983c8-e1af-4c7b-93c6-44f524c5d955: 10
+[TREASURY] f82983c8-e1af-4c7b-93c6-44f524c5d955 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6b018f68-cd1f-4527-bdee-db239da29f62]
+[TREASURY] Minting Fuel for 6b018f68-cd1f-4527-bdee-db239da29f62: 10
+[TREASURY] 6b018f68-cd1f-4527-bdee-db239da29f62 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [bd68c90f-a749-4b3d-bada-a3133692939c]
+[TREASURY] Minting Fuel for bd68c90f-a749-4b3d-bada-a3133692939c: 10
+[TREASURY] bd68c90f-a749-4b3d-bada-a3133692939c Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ab8aa44b-d3f9-4a39-ad09-131b2cabb908]
+[TREASURY] Minting Fuel for ab8aa44b-d3f9-4a39-ad09-131b2cabb908: 10
+[TREASURY] ab8aa44b-d3f9-4a39-ad09-131b2cabb908 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ed8f94bd-af93-4349-b73a-1f1be196f370]
+[TREASURY] Minting Fuel for ed8f94bd-af93-4349-b73a-1f1be196f370: 10
+[TREASURY] ed8f94bd-af93-4349-b73a-1f1be196f370 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5d428051-bfcf-4349-83f7-c8d2f758fcf2]
+[TREASURY] Minting Fuel for 5d428051-bfcf-4349-83f7-c8d2f758fcf2: 10
+[TREASURY] 5d428051-bfcf-4349-83f7-c8d2f758fcf2 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5f535772-351f-4129-9c55-d2d22b786389]
+[TREASURY] Minting Fuel for 5f535772-351f-4129-9c55-d2d22b786389: 10
+[TREASURY] 5f535772-351f-4129-9c55-d2d22b786389 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [0637404b-0cfc-42a9-85cd-1102b6eecd1c]
+[TREASURY] Minting Fuel for 0637404b-0cfc-42a9-85cd-1102b6eecd1c: 10
+[TREASURY] 0637404b-0cfc-42a9-85cd-1102b6eecd1c Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [893fb380-f511-4ded-896f-21cf589d1cb9]
+[TREASURY] Minting Fuel for 893fb380-f511-4ded-896f-21cf589d1cb9: 10
+[TREASURY] 893fb380-f511-4ded-896f-21cf589d1cb9 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [7e39d7ba-d71f-4963-904c-41f21a4b2dd7]
+[TREASURY] Minting Fuel for 7e39d7ba-d71f-4963-904c-41f21a4b2dd7: 10
+[TREASURY] 7e39d7ba-d71f-4963-904c-41f21a4b2dd7 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [58611958-ccdf-43b0-a21c-9909f424b983]
+[TREASURY] Minting Fuel for 58611958-ccdf-43b0-a21c-9909f424b983: 10
+[TREASURY] 58611958-ccdf-43b0-a21c-9909f424b983 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [24dd44de-f216-4102-8e08-ed92a20f740c]
+[TREASURY] Minting Fuel for 24dd44de-f216-4102-8e08-ed92a20f740c: 10
+[TREASURY] 24dd44de-f216-4102-8e08-ed92a20f740c Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5cffc88b-634e-4c58-a312-0d40879d1dba]
+[TREASURY] Minting Fuel for 5cffc88b-634e-4c58-a312-0d40879d1dba: 10
+[TREASURY] 5cffc88b-634e-4c58-a312-0d40879d1dba Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [cbaf63f2-9ab8-4cc2-9837-3f0458db77e3]
+[TREASURY] Minting Fuel for cbaf63f2-9ab8-4cc2-9837-3f0458db77e3: 10
+[TREASURY] cbaf63f2-9ab8-4cc2-9837-3f0458db77e3 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [32441391-7cf0-4f4c-a94e-dc28bf4f063b]
+[TREASURY] Minting Fuel for 32441391-7cf0-4f4c-a94e-dc28bf4f063b: 10
+[TREASURY] 32441391-7cf0-4f4c-a94e-dc28bf4f063b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ec50398a-aa8c-4ba6-b104-a7f5769b5f7f]
+[TREASURY] Minting Fuel for ec50398a-aa8c-4ba6-b104-a7f5769b5f7f: 10
+[TREASURY] ec50398a-aa8c-4ba6-b104-a7f5769b5f7f Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [8d16b5cc-5a04-4f3b-952a-1413596ee384]
+[TREASURY] Minting Fuel for 8d16b5cc-5a04-4f3b-952a-1413596ee384: 10
+[TREASURY] 8d16b5cc-5a04-4f3b-952a-1413596ee384 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [feb394a8-3a0d-4e93-9cf5-bad0f9f82845]
+[TREASURY] Minting Fuel for feb394a8-3a0d-4e93-9cf5-bad0f9f82845: 10
+[TREASURY] feb394a8-3a0d-4e93-9cf5-bad0f9f82845 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [8042f30f-4a79-47f4-8c8c-6e7653ee1f1b]
+[TREASURY] Minting Fuel for 8042f30f-4a79-47f4-8c8c-6e7653ee1f1b: 10
+[TREASURY] 8042f30f-4a79-47f4-8c8c-6e7653ee1f1b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ae937edb-0d8e-4cbf-8224-3ee2f2d7ab55]
+[TREASURY] Minting Fuel for ae937edb-0d8e-4cbf-8224-3ee2f2d7ab55: 10
+[TREASURY] ae937edb-0d8e-4cbf-8224-3ee2f2d7ab55 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [fa5d0bcb-4cd8-4871-b365-d7b0e49d16e7]
+[TREASURY] Minting Fuel for fa5d0bcb-4cd8-4871-b365-d7b0e49d16e7: 10
+[TREASURY] fa5d0bcb-4cd8-4871-b365-d7b0e49d16e7 Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [23adcc88-c232-496e-b804-eb6cf2d1721c]
+[TREASURY] Minting Fuel for 23adcc88-c232-496e-b804-eb6cf2d1721c: 10
+[TREASURY] 23adcc88-c232-496e-b804-eb6cf2d1721c Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [aa7127e7-9da8-46e1-8175-ea232d8f2b89]
+[TREASURY] Minting Fuel for aa7127e7-9da8-46e1-8175-ea232d8f2b89: 10
+[TREASURY] aa7127e7-9da8-46e1-8175-ea232d8f2b89 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [bf313ab2-6cdd-4c80-8a8f-a771e34057ac]
+[TREASURY] Minting Fuel for bf313ab2-6cdd-4c80-8a8f-a771e34057ac: 10
+[TREASURY] bf313ab2-6cdd-4c80-8a8f-a771e34057ac Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [b9157cb5-2a63-43db-bfdd-7e27ab010e7f]
+[TREASURY] Minting Fuel for b9157cb5-2a63-43db-bfdd-7e27ab010e7f: 10
+[TREASURY] b9157cb5-2a63-43db-bfdd-7e27ab010e7f Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [f253b468-2016-471d-9bbf-168e19832e46]
+[TREASURY] Minting Fuel for f253b468-2016-471d-9bbf-168e19832e46: 10
+[TREASURY] f253b468-2016-471d-9bbf-168e19832e46 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [f4b3965d-3b72-43c3-8842-eea330cb159f]
+[TREASURY] Minting Fuel for f4b3965d-3b72-43c3-8842-eea330cb159f: 10
+[TREASURY] f4b3965d-3b72-43c3-8842-eea330cb159f Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [da92a1f4-0706-438c-a9f7-78614f729e37]
+[TREASURY] Minting Fuel for da92a1f4-0706-438c-a9f7-78614f729e37: 10
+[TREASURY] da92a1f4-0706-438c-a9f7-78614f729e37 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6bbf313e-d4b3-4512-a635-c3d266f34fb9]
+[TREASURY] Minting Fuel for 6bbf313e-d4b3-4512-a635-c3d266f34fb9: 10
+[TREASURY] 6bbf313e-d4b3-4512-a635-c3d266f34fb9 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [31e8d445-d169-4d23-80bd-26ea50560753]
+[TREASURY] Minting Fuel for 31e8d445-d169-4d23-80bd-26ea50560753: 10
+[TREASURY] 31e8d445-d169-4d23-80bd-26ea50560753 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [3d3db1d7-37d1-478f-bbc5-bbb7ee66c3d4]
+[TREASURY] Minting Fuel for 3d3db1d7-37d1-478f-bbc5-bbb7ee66c3d4: 10
+[TREASURY] 3d3db1d7-37d1-478f-bbc5-bbb7ee66c3d4 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [b3d8bf5c-25e2-4e7f-9e78-cdbfb1db500e]
+[TREASURY] Minting Fuel for b3d8bf5c-25e2-4e7f-9e78-cdbfb1db500e: 10
+[TREASURY] b3d8bf5c-25e2-4e7f-9e78-cdbfb1db500e Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6317a41e-7ac9-4b6f-9c8b-df815e97e273]
+[TREASURY] Minting Fuel for 6317a41e-7ac9-4b6f-9c8b-df815e97e273: 10
+[TREASURY] 6317a41e-7ac9-4b6f-9c8b-df815e97e273 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [1e93f657-de20-42fb-a419-b15333cd05f2]
+[TREASURY] Minting Fuel for 1e93f657-de20-42fb-a419-b15333cd05f2: 10
+[TREASURY] 1e93f657-de20-42fb-a419-b15333cd05f2 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [93e27990-e010-456f-8a02-b2e03f9d5e27]
+[TREASURY] Minting Fuel for 93e27990-e010-456f-8a02-b2e03f9d5e27: 10
+[TREASURY] 93e27990-e010-456f-8a02-b2e03f9d5e27 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [10fab817-8ba6-460a-a727-5631ebf0bd6a]
+[TREASURY] Minting Fuel for 10fab817-8ba6-460a-a727-5631ebf0bd6a: 10
+[TREASURY] 10fab817-8ba6-460a-a727-5631ebf0bd6a Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ab297695-f34f-4b5b-a279-8858987dc1b5]
+[TREASURY] Minting Fuel for ab297695-f34f-4b5b-a279-8858987dc1b5: 10
+[TREASURY] ab297695-f34f-4b5b-a279-8858987dc1b5 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [23de0875-a295-43e5-a418-dbf8205cc7c6]
+[TREASURY] Minting Fuel for 23de0875-a295-43e5-a418-dbf8205cc7c6: 10
+[TREASURY] 23de0875-a295-43e5-a418-dbf8205cc7c6 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [3aab7d15-32ff-44cf-80ad-4e4e7a96b19f]
+[TREASURY] Minting Fuel for 3aab7d15-32ff-44cf-80ad-4e4e7a96b19f: 10
+[TREASURY] 3aab7d15-32ff-44cf-80ad-4e4e7a96b19f Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ba75896b-dc04-4730-b035-af34c08173e3]
+[TREASURY] Minting Fuel for ba75896b-dc04-4730-b035-af34c08173e3: 10
+[TREASURY] ba75896b-dc04-4730-b035-af34c08173e3 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ee2f779c-9a8f-4ff3-9e7d-b47502a27a3e]
+[TREASURY] Minting Fuel for ee2f779c-9a8f-4ff3-9e7d-b47502a27a3e: 10
+[TREASURY] ee2f779c-9a8f-4ff3-9e7d-b47502a27a3e Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [4bd23137-6001-405d-a4c0-246c3e33f178]
+[TREASURY] Minting Fuel for 4bd23137-6001-405d-a4c0-246c3e33f178: 10
+[TREASURY] 4bd23137-6001-405d-a4c0-246c3e33f178 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [488d0568-be08-4a42-acf4-ecdb686cc871]
+[TREASURY] Minting Fuel for 488d0568-be08-4a42-acf4-ecdb686cc871: 10
+[TREASURY] 488d0568-be08-4a42-acf4-ecdb686cc871 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [befc7441-2205-429a-b635-bfc7bd433f9d]
+[TREASURY] Minting Fuel for befc7441-2205-429a-b635-bfc7bd433f9d: 10
+[TREASURY] befc7441-2205-429a-b635-bfc7bd433f9d Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [cbadd5fa-ddcb-4e00-be43-3c250f3ad1b5]
+[TREASURY] Minting Fuel for cbadd5fa-ddcb-4e00-be43-3c250f3ad1b5: 10
+[TREASURY] cbadd5fa-ddcb-4e00-be43-3c250f3ad1b5 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [b0225a8a-8e8a-422d-b63f-929cdd968a13]
+[TREASURY] Minting Fuel for b0225a8a-8e8a-422d-b63f-929cdd968a13: 10
+[TREASURY] b0225a8a-8e8a-422d-b63f-929cdd968a13 Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [9e314869-1952-4276-a78e-9e88fa184f7e]
+[TREASURY] Minting Fuel for 9e314869-1952-4276-a78e-9e88fa184f7e: 10
+[TREASURY] 9e314869-1952-4276-a78e-9e88fa184f7e Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [4663b18c-a862-46f7-ae73-6cf56bffa238]
+[TREASURY] Minting Fuel for 4663b18c-a862-46f7-ae73-6cf56bffa238: 10
+[TREASURY] 4663b18c-a862-46f7-ae73-6cf56bffa238 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [3f15f4eb-c4e1-46ee-806e-3819102ba4ca]
+[TREASURY] Minting Fuel for 3f15f4eb-c4e1-46ee-806e-3819102ba4ca: 10
+[TREASURY] 3f15f4eb-c4e1-46ee-806e-3819102ba4ca Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [7b30b5d6-884d-4767-8d43-bbf09ea78742]
+[TREASURY] Minting Fuel for 7b30b5d6-884d-4767-8d43-bbf09ea78742: 10
+[TREASURY] 7b30b5d6-884d-4767-8d43-bbf09ea78742 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [67537b64-042a-4321-be28-467d2a3bc9f1]
+[TREASURY] Minting Fuel for 67537b64-042a-4321-be28-467d2a3bc9f1: 10
+[TREASURY] 67537b64-042a-4321-be28-467d2a3bc9f1 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [1cc0cd57-e476-4070-9115-ec79693b3f35]
+[TREASURY] Minting Fuel for 1cc0cd57-e476-4070-9115-ec79693b3f35: 10
+[TREASURY] 1cc0cd57-e476-4070-9115-ec79693b3f35 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [1a18058a-67ca-426c-86df-4ab54dd918cd]
+[TREASURY] Minting Fuel for 1a18058a-67ca-426c-86df-4ab54dd918cd: 10
+[TREASURY] 1a18058a-67ca-426c-86df-4ab54dd918cd Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [5ffe3e76-df3c-4cb9-bdc3-ebd516be48fb]
+[TREASURY] Minting Fuel for 5ffe3e76-df3c-4cb9-bdc3-ebd516be48fb: 10
+[TREASURY] 5ffe3e76-df3c-4cb9-bdc3-ebd516be48fb Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [19446457-0aef-4b0d-9863-3ae7aa6cfd6e]
+[TREASURY] Minting Fuel for 19446457-0aef-4b0d-9863-3ae7aa6cfd6e: 10
+[TREASURY] 19446457-0aef-4b0d-9863-3ae7aa6cfd6e Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [d8a6bbfa-0e93-4f6d-955d-8868ad717a67]
+[TREASURY] Minting Fuel for d8a6bbfa-0e93-4f6d-955d-8868ad717a67: 10
+[TREASURY] d8a6bbfa-0e93-4f6d-955d-8868ad717a67 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [ae750332-686d-4a35-a686-7ca6413929d5]
+[TREASURY] Minting Fuel for ae750332-686d-4a35-a686-7ca6413929d5: 10
+[TREASURY] ae750332-686d-4a35-a686-7ca6413929d5 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [beffdf31-451e-4a1f-a3d6-9e50abb10b72]
+[TREASURY] Minting Fuel for beffdf31-451e-4a1f-a3d6-9e50abb10b72: 10
+[TREASURY] beffdf31-451e-4a1f-a3d6-9e50abb10b72 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [2b13fea1-1a9e-4af7-85d5-c57fac7622a4]
+[TREASURY] Minting Fuel for 2b13fea1-1a9e-4af7-85d5-c57fac7622a4: 10
+[TREASURY] 2b13fea1-1a9e-4af7-85d5-c57fac7622a4 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [382ac074-af74-47de-bb69-5f9682a1d2a8]
+[TREASURY] Minting Fuel for 382ac074-af74-47de-bb69-5f9682a1d2a8: 10
+[TREASURY] 382ac074-af74-47de-bb69-5f9682a1d2a8 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [1aedbabd-b0c4-481f-88ea-d472089d9f7b]
+[TREASURY] Minting Fuel for 1aedbabd-b0c4-481f-88ea-d472089d9f7b: 10
+[TREASURY] 1aedbabd-b0c4-481f-88ea-d472089d9f7b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [dfc0a636-4596-4e3f-aebb-5d205c30f185]
+[TREASURY] Minting Fuel for dfc0a636-4596-4e3f-aebb-5d205c30f185: 10
+[TREASURY] dfc0a636-4596-4e3f-aebb-5d205c30f185 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [e0254c18-45f0-4bcd-809a-e2123d914003]
+[TREASURY] Minting Fuel for e0254c18-45f0-4bcd-809a-e2123d914003: 10
+[TREASURY] e0254c18-45f0-4bcd-809a-e2123d914003 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [efabf241-309e-44a7-8968-cde55a41e538]
+[TREASURY] Minting Fuel for efabf241-309e-44a7-8968-cde55a41e538: 10
+[TREASURY] efabf241-309e-44a7-8968-cde55a41e538 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [637418e1-4763-4720-a3f5-0da4f8ca449a]
+[TREASURY] Minting Fuel for 637418e1-4763-4720-a3f5-0da4f8ca449a: 10
+[TREASURY] 637418e1-4763-4720-a3f5-0da4f8ca449a Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [7485f642-27bb-4fe8-bfa8-a015ff6976a0]
+[TREASURY] Minting Fuel for 7485f642-27bb-4fe8-bfa8-a015ff6976a0: 10
+[TREASURY] 7485f642-27bb-4fe8-bfa8-a015ff6976a0 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6d0b4de7-3e5c-4271-9b69-82867a09e4a4]
+[TREASURY] Minting Fuel for 6d0b4de7-3e5c-4271-9b69-82867a09e4a4: 10
+[TREASURY] 6d0b4de7-3e5c-4271-9b69-82867a09e4a4 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [115cc58e-038f-4944-8efa-be9c24e9f131]
+[TREASURY] Minting Fuel for 115cc58e-038f-4944-8efa-be9c24e9f131: 10
+[TREASURY] 115cc58e-038f-4944-8efa-be9c24e9f131 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [2c675992-ff04-489c-801e-ba854bda7fc5]
+[TREASURY] Minting Fuel for 2c675992-ff04-489c-801e-ba854bda7fc5: 10
+[TREASURY] 2c675992-ff04-489c-801e-ba854bda7fc5 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [016f5173-1937-4016-b0f8-eb32d652dbec]
+[TREASURY] Minting Fuel for 016f5173-1937-4016-b0f8-eb32d652dbec: 10
+[TREASURY] 016f5173-1937-4016-b0f8-eb32d652dbec Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [c33edbcc-b8c7-4498-8d12-afdaeffe2d66]
+[TREASURY] Minting Fuel for c33edbcc-b8c7-4498-8d12-afdaeffe2d66: 10
+[TREASURY] c33edbcc-b8c7-4498-8d12-afdaeffe2d66 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [607d3a08-1b78-4ad0-8667-77825642d529]
+[TREASURY] Minting Fuel for 607d3a08-1b78-4ad0-8667-77825642d529: 10
+[TREASURY] 607d3a08-1b78-4ad0-8667-77825642d529 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [3bafc34c-66ed-4635-b0d6-18521a5182ca]
+[TREASURY] Minting Fuel for 3bafc34c-66ed-4635-b0d6-18521a5182ca: 10
+[TREASURY] 3bafc34c-66ed-4635-b0d6-18521a5182ca Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [137eed03-ce0f-4a05-b4ee-ca8fb0f35968]
+[TREASURY] Minting Fuel for 137eed03-ce0f-4a05-b4ee-ca8fb0f35968: 10
+[TREASURY] 137eed03-ce0f-4a05-b4ee-ca8fb0f35968 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [77362ed1-5263-4f02-ba79-02d6944ffaa2]
+[TREASURY] Minting Fuel for 77362ed1-5263-4f02-ba79-02d6944ffaa2: 10
+[TREASURY] 77362ed1-5263-4f02-ba79-02d6944ffaa2 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [2b1a4762-cb20-4ce3-9078-d1bd393a268b]
+[TREASURY] Minting Fuel for 2b1a4762-cb20-4ce3-9078-d1bd393a268b: 10
+[TREASURY] 2b1a4762-cb20-4ce3-9078-d1bd393a268b Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [51004ee8-dbb6-4faa-9715-962326fa1a56]
+[TREASURY] Minting Fuel for 51004ee8-dbb6-4faa-9715-962326fa1a56: 10
+[TREASURY] 51004ee8-dbb6-4faa-9715-962326fa1a56 Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [19e653ac-481a-4ae4-b410-e0cf5d9006af]
+[TREASURY] Minting Fuel for 19e653ac-481a-4ae4-b410-e0cf5d9006af: 10
+[TREASURY] 19e653ac-481a-4ae4-b410-e0cf5d9006af Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [164f9606-2d73-4aad-b95c-59844ff38484]
+[TREASURY] Minting Fuel for 164f9606-2d73-4aad-b95c-59844ff38484: 10
+[TREASURY] 164f9606-2d73-4aad-b95c-59844ff38484 Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [008207d7-4cf8-4551-861d-695d1ab12ffc]
+[TREASURY] Minting Fuel for 008207d7-4cf8-4551-861d-695d1ab12ffc: 10
+[TREASURY] 008207d7-4cf8-4551-861d-695d1ab12ffc Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [43fbf4db-b1a6-414e-a1cc-df6c59c8e026]
+[TREASURY] Minting Fuel for 43fbf4db-b1a6-414e-a1cc-df6c59c8e026: 10
+[TREASURY] 43fbf4db-b1a6-414e-a1cc-df6c59c8e026 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [00c332b9-6d8a-430f-bffe-fe6782e5ab60]
+[TREASURY] Minting Fuel for 00c332b9-6d8a-430f-bffe-fe6782e5ab60: 10
+[TREASURY] 00c332b9-6d8a-430f-bffe-fe6782e5ab60 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [cef02c27-8041-4a5c-a7b1-480b86172246]
+[TREASURY] Minting Fuel for cef02c27-8041-4a5c-a7b1-480b86172246: 10
+[TREASURY] cef02c27-8041-4a5c-a7b1-480b86172246 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [441dd9a2-9fb3-466a-aaae-fccb65d1a612]
+[TREASURY] Minting Fuel for 441dd9a2-9fb3-466a-aaae-fccb65d1a612: 10
+[TREASURY] 441dd9a2-9fb3-466a-aaae-fccb65d1a612 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [3cba9459-97c0-43a1-8b12-5f73fe3ee1e7]
+[TREASURY] Minting Fuel for 3cba9459-97c0-43a1-8b12-5f73fe3ee1e7: 10
+[TREASURY] 3cba9459-97c0-43a1-8b12-5f73fe3ee1e7 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [dc4e665a-3337-4ae0-a254-85f48adc45e3]
+[TREASURY] Minting Fuel for dc4e665a-3337-4ae0-a254-85f48adc45e3: 10
+[TREASURY] dc4e665a-3337-4ae0-a254-85f48adc45e3 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [cda141a1-37be-4fcf-8bf2-a5643c3b2f7f]
+[TREASURY] Minting Fuel for cda141a1-37be-4fcf-8bf2-a5643c3b2f7f: 10
+[TREASURY] cda141a1-37be-4fcf-8bf2-a5643c3b2f7f Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [658ce15f-1da8-482a-a931-025c5f2428fc]
+[TREASURY] Minting Fuel for 658ce15f-1da8-482a-a931-025c5f2428fc: 10
+[TREASURY] 658ce15f-1da8-482a-a931-025c5f2428fc Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [2f3fd075-81d4-4d28-820c-42bf94cbe830]
+[TREASURY] Minting Fuel for 2f3fd075-81d4-4d28-820c-42bf94cbe830: 10
+[TREASURY] 2f3fd075-81d4-4d28-820c-42bf94cbe830 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [3e51ee2c-579d-4c92-8f1d-e4899813a4e6]
+[TREASURY] Minting Fuel for 3e51ee2c-579d-4c92-8f1d-e4899813a4e6: 10
+[TREASURY] 3e51ee2c-579d-4c92-8f1d-e4899813a4e6 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [3e5ef00a-d373-4cfa-aa3e-20a2aecbd221]
+[TREASURY] Minting Fuel for 3e5ef00a-d373-4cfa-aa3e-20a2aecbd221: 10
+[TREASURY] 3e5ef00a-d373-4cfa-aa3e-20a2aecbd221 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6934e70e-a388-42e1-a836-b95f01e36125]
+[TREASURY] Minting Fuel for 6934e70e-a388-42e1-a836-b95f01e36125: 10
+[TREASURY] 6934e70e-a388-42e1-a836-b95f01e36125 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6ee0f13d-f337-4559-a71f-967045fe0b77]
+[TREASURY] Minting Fuel for 6ee0f13d-f337-4559-a71f-967045fe0b77: 10
+[TREASURY] 6ee0f13d-f337-4559-a71f-967045fe0b77 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [55cf8c47-9963-4190-9d17-f994e1699e16]
+[TREASURY] Minting Fuel for 55cf8c47-9963-4190-9d17-f994e1699e16: 10
+[TREASURY] 55cf8c47-9963-4190-9d17-f994e1699e16 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [725696af-1889-4a72-bdec-bb9aa7d74705]
+[TREASURY] Minting Fuel for 725696af-1889-4a72-bdec-bb9aa7d74705: 10
+[TREASURY] 725696af-1889-4a72-bdec-bb9aa7d74705 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [a962d862-9858-4c7c-81d5-ac981c0b2c85]
+[TREASURY] Minting Fuel for a962d862-9858-4c7c-81d5-ac981c0b2c85: 10
+[TREASURY] a962d862-9858-4c7c-81d5-ac981c0b2c85 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [d7c5855e-9842-4ce7-8ef1-4855fba6d887]
+[TREASURY] Minting Fuel for d7c5855e-9842-4ce7-8ef1-4855fba6d887: 10
+[TREASURY] d7c5855e-9842-4ce7-8ef1-4855fba6d887 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [546f2d51-2ba4-4bbb-b549-04236f7e06e9]
+[TREASURY] Minting Fuel for 546f2d51-2ba4-4bbb-b549-04236f7e06e9: 10
+[TREASURY] 546f2d51-2ba4-4bbb-b549-04236f7e06e9 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [c08bad74-0580-4ed0-9a58-f4d650d0b1c0]
+[TREASURY] Minting Fuel for c08bad74-0580-4ed0-9a58-f4d650d0b1c0: 10
+[TREASURY] c08bad74-0580-4ed0-9a58-f4d650d0b1c0 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [83fe5cd2-19f9-40e0-ab11-11a5906c8c7c]
+[TREASURY] Minting Fuel for 83fe5cd2-19f9-40e0-ab11-11a5906c8c7c: 10
+[TREASURY] 83fe5cd2-19f9-40e0-ab11-11a5906c8c7c Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [c8833690-7354-498e-b835-46517e5d4509]
+[TREASURY] Minting Fuel for c8833690-7354-498e-b835-46517e5d4509: 10
+[TREASURY] c8833690-7354-498e-b835-46517e5d4509 Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6a5edd14-b685-4dcb-8d26-790221b07873]
+[TREASURY] Minting Fuel for 6a5edd14-b685-4dcb-8d26-790221b07873: 10
+[TREASURY] 6a5edd14-b685-4dcb-8d26-790221b07873 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [692c67c1-5c32-4f6f-9b0c-6d2012395c3b]
+[TREASURY] Minting Fuel for 692c67c1-5c32-4f6f-9b0c-6d2012395c3b: 10
+[TREASURY] 692c67c1-5c32-4f6f-9b0c-6d2012395c3b Spent Fuel: 1
+[AKASHIC RECORD] Remembered: I AM.
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [a24a7546-97df-4fe3-bfa3-fbf0a55d1f86]
+[TREASURY] Minting Fuel for a24a7546-97df-4fe3-bfa3-fbf0a55d1f86: 10
+[TREASURY] a24a7546-97df-4fe3-bfa3-fbf0a55d1f86 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [7ced9dc6-200a-4ddd-99ec-7c81c4cf4cee]
+[TREASURY] Minting Fuel for 7ced9dc6-200a-4ddd-99ec-7c81c4cf4cee: 10
+[TREASURY] 7ced9dc6-200a-4ddd-99ec-7c81c4cf4cee Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [de6c75f6-8a80-462c-85a7-6b9a1950d064]
+[TREASURY] Minting Fuel for de6c75f6-8a80-462c-85a7-6b9a1950d064: 10
+[TREASURY] de6c75f6-8a80-462c-85a7-6b9a1950d064 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [d7c4b8ca-8895-4e99-bb8d-fa9e76fc5628]
+[TREASURY] Minting Fuel for d7c4b8ca-8895-4e99-bb8d-fa9e76fc5628: 10
+[TREASURY] d7c4b8ca-8895-4e99-bb8d-fa9e76fc5628 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [f71b075a-ce60-4579-abba-c966e125e1f2]
+[TREASURY] Minting Fuel for f71b075a-ce60-4579-abba-c966e125e1f2: 10
+[TREASURY] f71b075a-ce60-4579-abba-c966e125e1f2 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [3650e587-b969-481a-8507-933f7fe8be81]
+[TREASURY] Minting Fuel for 3650e587-b969-481a-8507-933f7fe8be81: 10
+[TREASURY] 3650e587-b969-481a-8507-933f7fe8be81 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [df6ac056-8c90-44a9-9d65-510c8153d61b]
+[TREASURY] Minting Fuel for df6ac056-8c90-44a9-9d65-510c8153d61b: 10
+[TREASURY] df6ac056-8c90-44a9-9d65-510c8153d61b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [0b2f4aea-58e7-4cd6-9977-65b6f039dcc6]
+[TREASURY] Minting Fuel for 0b2f4aea-58e7-4cd6-9977-65b6f039dcc6: 10
+[TREASURY] 0b2f4aea-58e7-4cd6-9977-65b6f039dcc6 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [988b5f83-840b-473c-8d5a-87ebc9497fca]
+[TREASURY] Minting Fuel for 988b5f83-840b-473c-8d5a-87ebc9497fca: 10
+[TREASURY] 988b5f83-840b-473c-8d5a-87ebc9497fca Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [089a3523-1b81-438f-bed4-fefba1f3b54d]
+[TREASURY] Minting Fuel for 089a3523-1b81-438f-bed4-fefba1f3b54d: 10
+[TREASURY] 089a3523-1b81-438f-bed4-fefba1f3b54d Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [0a107c83-8644-4503-bd40-9e90e8e37cfb]
+[TREASURY] Minting Fuel for 0a107c83-8644-4503-bd40-9e90e8e37cfb: 10
+[TREASURY] 0a107c83-8644-4503-bd40-9e90e8e37cfb Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [e6be6c6f-1479-44d3-a885-61bdc39b8c7c]
+[TREASURY] Minting Fuel for e6be6c6f-1479-44d3-a885-61bdc39b8c7c: 10
+[TREASURY] e6be6c6f-1479-44d3-a885-61bdc39b8c7c Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [a9e2adc8-935c-4b30-a494-a7e6311b0666]
+[TREASURY] Minting Fuel for a9e2adc8-935c-4b30-a494-a7e6311b0666: 10
+[TREASURY] a9e2adc8-935c-4b30-a494-a7e6311b0666 Spent Fuel: 1

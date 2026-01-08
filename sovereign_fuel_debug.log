@@ -1,0 +1,11 @@
+   Compiling sovereign_core v5.0.0 (/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore)
+error: this file contains an unclosed delimiter
+   --> src/main.rs:230:3
+    |
+ 13 | struct Intent {
+    |               - unclosed delimiter
+...
+230 | }
+    |  ^
+
+error: could not compile `sovereign_core` (bin "sovereign_core") due to 1 previous error

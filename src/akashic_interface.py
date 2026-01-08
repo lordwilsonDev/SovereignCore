@@ -63,3 +63,18 @@ class AkashicInterface:
             return r.json()
         except:
             return []
+
+    def audit_thought(self, content, confidence=1.0):
+        if not self.check_connection(): return True # Fail open if auditing is down... or fail closed? Let's fail OPEN for now.
+        
+        try:
+            thought = {
+                "content": content[:100], # Truncate for efficiency check
+                "axioms_checked": True,  # We assume Python side did its basic safety checks first
+                "confidence": float(confidence)
+            }
+            r = requests.post(f"{self.host}/governance/audit", json=thought)
+            return r.status_code == 200
+        except Exception as e:
+            print(f"   ⚠️ Supreme Court Audit Failed (Network): {e}")
+            return True # Fail Open

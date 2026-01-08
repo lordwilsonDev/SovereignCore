@@ -1,0 +1,92 @@
+version: '3.8'
+
+services:
+  # Rust Core (Treasury, Constitution, Auction, Watchdog, API)
+  sovereign-core:
+    build:
+      context: .
+      dockerfile: Dockerfile.rust
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - RUST_LOG=info
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - sovereign-net
+
+  # Panopticon Dashboard
+  panopticon:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./data:/app/data
+      - ./world_state.json:/app/world_state.json
+    depends_on:
+      - sovereign-core
+    networks:
+      - sovereign-net
+
+  # Prometheus Telemetry
+  telemetry:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    command: [ "python3", "src/prometheus_telemetry.py", "--port", "9090" ]
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./data:/app/data
+      - ./world_state.json:/app/world_state.json
+    networks:
+      - sovereign-net
+
+  # Prometheus Server
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - sovereign-net
+
+  # Grafana Dashboard
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=sovereign
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - ./grafana_dashboard.json:/var/lib/grafana/dashboards/sovereign.json
+      - grafana-data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    networks:
+      - sovereign-net
+  # Ollama LLM (Optional - if not running on host)
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ollama-data:/root/.ollama
+  #   networks:
+  #     - sovereign-net
+
+networks:
+  sovereign-net:
+    driver: bridge
+
+volumes:
+  grafana-data: # ollama-data:

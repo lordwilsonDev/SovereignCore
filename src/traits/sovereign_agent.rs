@@ -11,6 +11,9 @@ pub enum AgentRole {
     Sentinel,
 }
 
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Thought {
     pub content: String,
     pub axioms_checked: bool,

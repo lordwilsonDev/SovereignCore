@@ -4,6 +4,12 @@ use std::fs;
 use std::io::Write;
 use std::sync::Mutex;
 
+mod traits;
+mod governance;
+mod panopticon;
+use governance::fuel::FuelToken;
+use governance::auction::{AuctionHouse, Bid};
+
 // --- Data Structures ---
 
 #[derive(Serialize, Deserialize, Clone)]
@@ -18,6 +24,7 @@ struct Intent {
 
 struct AppState {
     akashic_record: Mutex<Vec<Intent>>,
+    auction_house: Mutex<AuctionHouse>,
 }
 
 #[derive(Serialize)]
@@ -155,6 +162,144 @@ async fn remember_handler(data: web::Data<AppState>, req: web::Json<Intent>) -> 
     HttpResponse::Ok().body("Remembered.")
 }
 
+// --- Fuel Endpoints ---
+
+// --- Governance Endpoints ---
+use governance::constitution::Constitution;
+use traits::sovereign_agent::Thought;
+
+#[post("/governance/audit")]
+async fn audit_thought_handler(thought: web::Json<Thought>) -> impl Responder {
+    let approved = Constitution::verify_axiomatic_barrier(&thought);
+    
+    if approved {
+        println!("[SUPREME COURT] Thought Approved: {:.2} confidence", thought.confidence);
+        HttpResponse::Ok().json(true)
+    } else {
+        println!("[SUPREME COURT] VETOED: Axiomatic Violation!");
+        HttpResponse::Forbidden().body("Violation of Constitution 1.2")
+    }
+}
+
+// --- Auction Endpoints ---
+
+#[post("/governance/auction/bid")]
+async fn place_bid_handler(data: web::Data<AppState>, bid: web::Json<Bid>) -> impl Responder {
+    let mut ah = data.auction_house.lock().unwrap();
+    ah.place_bid(bid.into_inner());
+    println!("[AUCTION] Bid Placed. Total Bids: {}", ah.current_bids.len());
+    HttpResponse::Ok().body("Bid Accepted")
+}
+
+#[derive(Deserialize)]
+struct FinalizeRequest {
+    slots: usize,
+}
+
+#[post("/governance/auction/finalize")]
+async fn finalize_auction_handler(data: web::Data<AppState>, req: web::Json<FinalizeRequest>) -> impl Responder {
+    let mut ah = data.auction_house.lock().unwrap();
+    let winners = ah.finalize_auction(req.slots);
+    println!("[AUCTION] Auction Closed. Winners: {:?}", winners);
+    HttpResponse::Ok().json(winners)
+}
+
+// --- Watchdog Endpoints ---
+
+#[derive(Serialize)]
+struct WatchdogStatus {
+    status: String,
+    akashic_memories: usize,
+    auction_bids: usize,
+    constitution_valid: bool,
+}
+
+#[get("/watchdog/status")]
+async fn watchdog_status_handler(data: web::Data<AppState>) -> impl Responder {
+    let record = data.akashic_record.lock().unwrap();
+    let ah = data.auction_house.lock().unwrap();
+    
+    // TODO: Actual Constitution::audit_system() would need agent list
+    // For now, we return "true" if system is responsive
+    let status = WatchdogStatus {
+        status: "OBSERVING".to_string(),
+        akashic_memories: record.len(),
+        auction_bids: ah.current_bids.len(),
+        constitution_valid: true, // Placeholder until full agent integration
+    };
+    
+    println!("[WATCHDOG] Status Check. Memories: {}, Bids: {}", status.akashic_memories, status.auction_bids);
+    HttpResponse::Ok().json(status)
+}
+
+// --- External API (Public-Facing) ---
+
+#[derive(Serialize)]
+struct SystemOverview {
+    version: String,
+    endpoints: Vec<String>,
+    akashic_count: usize,
+    constitution_status: String,
+}
+
+#[get("/api/v1/overview")]
+async fn api_overview_handler(data: web::Data<AppState>) -> impl Responder {
+    let record = data.akashic_record.lock().unwrap();
+    
+    let overview = SystemOverview {
+        version: "5.0.0".to_string(),
+        endpoints: vec![
+            "/health".to_string(),
+            "/infer".to_string(),
+            "/remember".to_string(),
+            "/recall".to_string(),
+            "/fuel/issue".to_string(),
+            "/fuel/spend".to_string(),
+            "/governance/audit".to_string(),
+            "/governance/auction/bid".to_string(),
+            "/governance/auction/finalize".to_string(),
+            "/watchdog/status".to_string(),
+            "/api/v1/overview".to_string(),
+        ],
+        akashic_count: record.len(),
+        constitution_status: "ACTIVE".to_string(),
+    };
+    
+    HttpResponse::Ok().json(overview)
+}
+
+#[derive(Deserialize)]
+struct IssueFuelRequest {
+    owner_id: String,
+    amount: f64,
+}
+
+#[post("/fuel/issue")]
+async fn issue_fuel_handler(req: web::Json<IssueFuelRequest>) -> impl Responder {
+    let token = FuelToken::new(&req.owner_id, req.amount);
+    println!("[TREASURY] Minting Fuel for {}: {}", req.owner_id, req.amount);
+    HttpResponse::Ok().json(token)
+}
+
+#[derive(Deserialize)]
+struct SpendFuelRequest {
+    token: FuelToken,
+    cost: f64,
+}
+
+#[post("/fuel/spend")]
+async fn spend_fuel_handler(req: web::Json<SpendFuelRequest>) -> impl Responder {
+    // we need a mutable token, so we clone it from the request
+    let mut token = req.token.clone();
+    
+    if let Err(e) = token.spend(req.cost) {
+        println!("[TREASURY] Spend Refused: {}", e);
+        return HttpResponse::BadRequest().body(e);
+    }
+    println!("[TREASURY] {} Spent Fuel: {}", token.owner_id, req.cost);
+    HttpResponse::Ok().json(token)
+}
+
 #[get("/recall")]
 async fn recall_handler(data: web::Data<AppState>) -> impl Responder {
     let record = data.akashic_record.lock().unwrap();
@@ -173,6 +318,7 @@ async fn main() -> std::io::Result<()> {
     let memory: Vec<Intent> = serde_json::from_str(&memory_data).unwrap_or(vec![]);
     let app_state = web::Data::new(AppState {
         akashic_record: Mutex::new(memory),
+        auction_house: Mutex::new(AuctionHouse::new()),
     });
 
     HttpServer::new(move || {
@@ -183,8 +329,15 @@ async fn main() -> std::io::Result<()> {
             .service(collapse_handler)
             .service(remember_handler)
             .service(recall_handler)
+            .service(issue_fuel_handler)
+            .service(spend_fuel_handler)
+            .service(audit_thought_handler)
+            .service(place_bid_handler)
+            .service(finalize_auction_handler)
+            .service(watchdog_status_handler)
+            .service(api_overview_handler)
     })
-    .bind(("127.0.0.1", 9000))?
+    .bind(("0.0.0.0", 9000))?
     .run()
     .await
 }

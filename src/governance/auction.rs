@@ -1,7 +1,8 @@
+use serde::{Deserialize, Serialize};
 use std::cmp::Ordering;
 use uuid::Uuid;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Bid {
     pub agent_id: Uuid,
     pub amount: f64,

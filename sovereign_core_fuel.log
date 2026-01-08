@@ -1,0 +1,21 @@
+   Compiling sovereign_core v5.0.0 (/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore)
+error[E0433]: failed to resolve: unresolved import
+ --> src/governance/constitution.rs:1:12
+  |
+1 | use crate::traits::sovereign_agent::{SovereignAgent, Thought};
+  |            ^^^^^^
+  |            |
+  |            unresolved import
+  |            help: a similar path exists: `sovereign_core::traits`
+
+warning: unused import: `std::io::Write`
+ --> src/main.rs:4:5
+  |
+4 | use std::io::Write;
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+For more information about this error, try `rustc --explain E0433`.
+warning: `sovereign_core` (bin "sovereign_core") generated 1 warning
+error: could not compile `sovereign_core` (bin "sovereign_core") due to 1 previous error; 1 warning emitted

@@ -1,0 +1,29 @@
+# Python Services Container
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Install dependencies
+RUN pip install --no-cache-dir \
+    requests \
+    psutil \
+    prometheus_client \
+    torch \
+    transformers
+
+# Copy source
+COPY src /app/src
+COPY tests /app/tests
+COPY data /app/data
+COPY Sovereign_Creations /app/Sovereign_Creations
+COPY whitepapers /app/whitepapers
+
+WORKDIR /app
+
+# Expose ports
+EXPOSE 8888
+EXPOSE 9090
+EXPOSE 9999/udp
+
+# Default: run Panopticon
+CMD ["python3", "src/panopticon_server.py"]

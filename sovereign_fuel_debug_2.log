@@ -1,0 +1,21 @@
+   Compiling sovereign_core v5.0.0 (/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore)
+error[E0583]: file not found for module `governance`
+ --> src/main.rs:7:1
+  |
+7 | mod governance;
+  | ^^^^^^^^^^^^^^^
+  |
+  = help: to create the module `governance`, create file "src/governance.rs" or "src/governance/mod.rs"
+  = note: if there is a `mod governance` elsewhere in the crate already, import it with `use crate::...` instead
+
+warning: unused import: `std::io::Write`
+ --> src/main.rs:4:5
+  |
+4 | use std::io::Write;
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+For more information about this error, try `rustc --explain E0583`.
+warning: `sovereign_core` (bin "sovereign_core") generated 1 warning
+error: could not compile `sovereign_core` (bin "sovereign_core") due to 1 previous error; 1 warning emitted

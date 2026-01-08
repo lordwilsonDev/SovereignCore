@@ -1,0 +1,120 @@
+   Compiling uuid v1.19.0
+   Compiling sovereign_core v5.0.0 (/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore)
+warning: unused import: `std::io::Write`
+ --> src/main.rs:4:5
+  |
+4 | use std::io::Write;
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: enum `AgentRole` is never used
+ --> src/traits/sovereign_agent.rs:5:10
+  |
+5 | pub enum AgentRole {
+  |          ^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: trait `SovereignAgent` is never used
+  --> src/traits/sovereign_agent.rs:23:11
+   |
+23 | pub trait SovereignAgent {
+   |           ^^^^^^^^^^^^^^
+
+warning: associated functions `verify_will_conservation`, `verify_monotonic_integrity`, and `audit_system` are never used
+  --> src/governance/constitution.rs:8:12
+   |
+ 5 | impl Constitution {
+   | ----------------- associated functions in this implementation
+...
+ 8 |     pub fn verify_will_conservation(agents: &[Box<dyn SovereignAgent + Send>]) -> bool {
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^
+...
+20 |     pub fn verify_monotonic_integrity(current_score: f64, next_score: f64) -> bool {
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+25 |     pub fn audit_system(agents: &[Box<dyn SovereignAgent + Send>]) -> Result<(), String> {
+   |            ^^^^^^^^^^^^
+
+warning: methods `escrow` and `restore` are never used
+  --> src/governance/fuel.rs:50:12
+   |
+14 | impl FuelToken {
+   | -------------- methods in this implementation
+...
+50 |     pub fn escrow(&mut self, amount: f64) -> Result<(), String> {
+   |            ^^^^^^
+...
+55 |     pub fn restore(&mut self, amount: f64) {
+   |            ^^^^^^^
+
+warning: `sovereign_core` (bin "sovereign_core") generated 5 warnings (run `cargo fix --bin "sovereign_core" -p sovereign_core` to apply 1 suggestion)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.85s
+     Running `/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/debug/sovereign_core`
+Starting SovereignCore v5.0 API Server...
+Initializing Classical Wrapper...
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [9b4aec7c-5ed6-4e92-a7f7-aed887e0b325]
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [c9aa5c73-2ad7-4ccd-8ee1-1056a2535d91]
+[TREASURY] Minting Fuel for c9aa5c73-2ad7-4ccd-8ee1-1056a2535d91: 10
+[TREASURY] c9aa5c73-2ad7-4ccd-8ee1-1056a2535d91 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [1e449723-fa2e-4060-865b-2db506358b4e]
+[TREASURY] Minting Fuel for 1e449723-fa2e-4060-865b-2db506358b4e: 10
+[TREASURY] 1e449723-fa2e-4060-865b-2db506358b4e Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [6b390a00-ff0d-4240-8276-2fcd74aed221]
+[TREASURY] Minting Fuel for 6b390a00-ff0d-4240-8276-2fcd74aed221: 10
+[TREASURY] 6b390a00-ff0d-4240-8276-2fcd74aed221 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [c4d83ba4-e46d-490a-b5fb-cdfcc91cf683]
+[TREASURY] Minting Fuel for c4d83ba4-e46d-490a-b5fb-cdfcc91cf683: 10
+[TREASURY] c4d83ba4-e46d-490a-b5fb-cdfcc91cf683 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [c9f8ce5e-58d5-4136-a430-ddf4d413b50c]
+[TREASURY] Minting Fuel for c9f8ce5e-58d5-4136-a430-ddf4d413b50c: 10
+[TREASURY] c9f8ce5e-58d5-4136-a430-ddf4d413b50c Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [57d882b2-3def-47e8-b055-dd3d51edaa7b]
+[TREASURY] Minting Fuel for 57d882b2-3def-47e8-b055-dd3d51edaa7b: 10
+[TREASURY] 57d882b2-3def-47e8-b055-dd3d51edaa7b Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [bf5e7f77-77b3-49e3-9e23-8c2fcadfb661]
+[TREASURY] Minting Fuel for bf5e7f77-77b3-49e3-9e23-8c2fcadfb661: 10
+[TREASURY] bf5e7f77-77b3-49e3-9e23-8c2fcadfb661 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [be72d6f1-5d9b-40bf-bdb0-5bc7434677c4]
+[TREASURY] Minting Fuel for be72d6f1-5d9b-40bf-bdb0-5bc7434677c4: 10
+[TREASURY] be72d6f1-5d9b-40bf-bdb0-5bc7434677c4 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [bb4c98fc-94bd-4534-a764-5c504acfc699]
+[TREASURY] Minting Fuel for bb4c98fc-94bd-4534-a764-5c504acfc699: 10
+[TREASURY] bb4c98fc-94bd-4534-a764-5c504acfc699 Spent Fuel: 1
+[AUCTION] Bid Placed. Total Bids: 1
+[AUCTION] Bid Placed. Total Bids: 2
+[AUCTION] Bid Placed. Total Bids: 3
+[AUCTION] Auction Closed. Winners: [4c38b4f8-71fc-4bfc-9f6b-2e614d57ca81]
+[TREASURY] Minting Fuel for 4c38b4f8-71fc-4bfc-9f6b-2e614d57ca81: 10
+[TREASURY] 4c38b4f8-71fc-4bfc-9f6b-2e614d57ca81 Spent Fuel: 1

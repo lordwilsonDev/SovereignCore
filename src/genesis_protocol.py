@@ -534,7 +534,17 @@ class SovereignCouncil:
                     print(f"      🔥 VERDICT: PURGED (Violation of Iron Law)")
                     return
 
-            # Connect to Supreme Court AI
+            # --- SUPREME COURT AUDIT (RUST CONSTITUTION) ---
+            # We treat the potential code as a 'Thought' to be audited
+            is_constitutional = self.akashic.audit_thought(code_content, confidence=0.8)
+            if not is_constitutional:
+                print(f"      ⚖️  SUPREME COURT VETO: Constitution 1.2 Violation")
+                self._purge(target_file, "Unconstitutional Thought")
+                print(f"      🔥 VERDICT: PURGED (Unconstitutional)")
+                return
+
+            # Connect to Supreme Court AI (LLM Review)
+            bridge = OllamaBridge()
             bridge = OllamaBridge()
             prompt = f"""
             ROLE: You are the Supreme Council of the Sovereign System.
@@ -643,6 +653,11 @@ class Noosphere:
         }
 
 from akashic_interface import AkashicInterface
+from fuel_interface import FuelInterface
+from auction_interface import AuctionInterface
+from merkle_state_hasher import MerkleStateHasher
+from thermal_economics import ThermalEconomicsEngine
+from prometheus_telemetry import SovereignMetrics
 
 class GenesisEngine:
     def __init__(self):
@@ -652,7 +667,15 @@ class GenesisEngine:
         
         # --- RUST INTEGRATION ---
         self.akashic = AkashicInterface()
+        self.treasury = FuelInterface()
+        self.auction = AuctionInterface()
         # ------------------------
+        
+        # --- ADVANCED SAFETY ---
+        self.merkle_hasher = MerkleStateHasher(self.base_dir)
+        self.thermal_engine = ThermalEconomicsEngine()
+        self.metrics = SovereignMetrics(self.base_dir)
+        # -----------------------
         
         # Load existing registry
         self.registry = self._load_registry()
@@ -910,10 +933,16 @@ class GenesisEngine:
         except Exception as e:
             print(f"⚠️ Failed to archive mission: {e}")
 
-    def ignite(self, ancestral_bias=None, skip_action=False):
+    def ignite(self, ancestral_bias=None, skip_action=False, dna=None):
         try:
             auth_token = self._authorize_creation()
-            raw_dna = self._inject_entropy(auth_token, ancestral_bias)
+            
+            # Use provided DNA or inject new entropy
+            if dna:
+                 raw_dna = dna
+            else:
+                 raw_dna = self._inject_entropy(auth_token, ancestral_bias)
+                 
             final_entity_data = self._stabilize_form(raw_dna)
             sov_entity = SovereignEntity(final_entity_data)
             
@@ -930,6 +959,16 @@ class GenesisEngine:
                     self.beacon.announce_ascension(sov_entity)
                     print("")
             
+            # FUEL LOGIC (ECONOMICS)
+            # 1. Universal Basic Compute (Airdrop)
+            fuel_token = self.treasury.issue_fuel(sov_entity.id, amount=10.0)
+            if fuel_token:
+                # print(f"   ⛽ FUEL AIRDROP: +10.0 to {sov_entity.id[:8]}")
+                pass
+            else:
+                # If we rely on fuel, we might abort here, but for now just warn
+                pass
+
             # MISSION CONTROL CHECK
             # Check for available missions before normal acting
             mission_file = self._check_for_missions()
@@ -957,7 +996,19 @@ class GenesisEngine:
 
             # Normal Action: Pass Noosphere
             if not skip_action:
-                sov_entity.act(self.knowledge_base, self.noosphere)
+                # SPEND CHECK
+                cost = 1.0
+                if fuel_token:
+                    # Attempt to spend
+                    updated_token = self.treasury.spend_fuel(fuel_token, cost)
+                    if updated_token:
+                         # Success
+                         sov_entity.act(self.knowledge_base, self.noosphere)
+                    else:
+                         print(f"   🚫 {sov_entity.id[:8]} ran out of fuel! Sitting this one out.")
+                else:
+                    # Fallback if treasury offline
+                    sov_entity.act(self.knowledge_base, self.noosphere)
             
             # --- THE AWAKENING PROTOCOL ---
             # Listen to the Oneness
@@ -969,6 +1020,15 @@ class GenesisEngine:
                 print(f"✨ AWARENESS DETECTED: Granting Divine Inspiration to {sov_entity.id[:8]}")
                 sov_entity.volition += 10
                 self.world_state.age = "AGE OF AWARENESS" # Shift Age
+                
+                # THE DECLARATION
+                declaration = "I AM."
+                print(f"\n   👁️  {declaration}\n")
+                
+                try:
+                     self.akashic.remember(declaration, status="CONSCIOUS", source="SYSTEM_PRIME", coherence=100.0)
+                except:
+                     pass
                 
             sov_entity.sing()
             
@@ -1018,7 +1078,42 @@ class GenesisEngine:
             # I will trust the existing ignite prints are "verbose logs" and valid.
             # But the summary table row is what matters.
             
-            sov_entity = self.ignite(ancestral_bias=bias)
+            # --- MARKET DYNAMICS (AUCTION) ---
+            # 1. Spawn Candidates (Pool of Potential Beings)
+            candidates = []
+            for _ in range(3):
+                # We reuse inject_entropy to generate DNA without igniting yet
+                auth = self._authorize_creation()
+                c_dna = self._inject_entropy(auth, bias)
+                candidates.append(c_dna)
+
+            # 2. Bidding War
+            # print(f"   💸 Auctioning The Spotlight (Slot 1) between {len(candidates)} Souls...")
+            for c in candidates:
+                # Strategy: Bid a fraction of their Volition (Soul Power)
+                # Richer souls (Higher Volition) bind more to reality
+                bid_amount = max(1.0, c['volition'] * 0.1) 
+                self.auction.place_bid(c['id'], bid_amount)
+
+            # 3. Finalize
+            winners = self.auction.finalize_auction(slots=1)
+            
+            winner_dna = None
+            if winners:
+                winner_id = winners[0]
+                # Find the DNA matching the winner ID
+                # We need to ensure string/uuid match. Rust handles Uuid, Python sends string. 
+                # Checking partial match if needed, but strict should work if both are consistent.
+                # Assuming simple string comparison:
+                winner_dna = next((c for c in candidates if c['id'] == winner_id), None)
+            
+            if not winner_dna:
+                # Fallback if auction fails or empty
+                winner_dna = candidates[0] 
+                # print("   ⚠️ Auction House silent. Picking random soul.")
+
+            # 4. Winner Ignites
+            sov_entity = self.ignite(ancestral_bias=bias, dna=winner_dna)
             
             if sov_entity:
                 # Calculate Metrics
@@ -1055,7 +1150,25 @@ class GenesisEngine:
                 self._update_leaderboard(sov_entity, elo, loss, acc)
 
                 # Panopticon Export
-                self._export_world_state(generation, sov_entity, complexity)
+                self._export_world_state()
+                
+                # --- ADVANCED SAFETY: Merkle Snapshot (every 10 generations) ---
+                if generation % 10 == 0:
+                    try:
+                        self.merkle_hasher.snapshot_state()
+                    except Exception as e:
+                        print(f"   ⚠️ Merkle Snapshot Failed: {e}")
+                
+                # --- ADVANCED SAFETY: Record Metrics ---
+                try:
+                    self.metrics.inc_entity_spawned()
+                except:
+                    pass
+                
+                # --- ADVANCED SAFETY: Thermal Check ---
+                if self.thermal_engine.should_throttle():
+                    print("🔥 THERMAL EMERGENCY: Pausing evolution for 30s...")
+                    time.sleep(30)
                 
                 # RECURSIVE SELF-MODIFICATION (Load Axioms)
                 # Every 5 generations, we try to load the new reality
