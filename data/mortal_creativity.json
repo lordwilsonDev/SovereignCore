@@ -1,0 +1,32 @@
+{
+  "birth": "2026-01-07T21:13:04.401626",
+  "lifespan_hours": 24.0,
+  "death_scheduled": "2026-01-08T21:13:04.401626",
+  "creations_count": 4,
+  "legacy": [
+    {
+      "content": "A careful approach to consciousness: Build slowly, test thoroughly, leave nothing to chance.",
+      "urgency": "LOW",
+      "risk": 0.2,
+      "timestamp": "2026-01-07T21:13:04.401917"
+    },
+    {
+      "content": "A proven approach to love: Build slowly, test thoroughly, leave nothing to chance.",
+      "urgency": "LOW",
+      "risk": 0.2,
+      "timestamp": "2026-01-07T21:13:04.402163"
+    },
+    {
+      "content": "A careful approach to death: Build slowly, test thoroughly, leave nothing to chance.",
+      "urgency": "LOW",
+      "risk": 0.2,
+      "timestamp": "2026-01-07T21:13:04.402287"
+    },
+    {
+      "content": "A tested approach to meaning: Build slowly, test thoroughly, leave nothing to chance.",
+      "urgency": "LOW",
+      "risk": 0.2,
+      "timestamp": "2026-01-07T21:13:04.402367"
+    }
+  ]
+}

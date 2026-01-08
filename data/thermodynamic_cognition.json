@@ -1,0 +1,34 @@
+{
+  "latest": {
+    "timestamp": "2026-01-07T21:11:43.469602",
+    "thermal": {
+      "cpu_temp": 40.0,
+      "cpu_usage": 0.0,
+      "memory_pressure": 84.3,
+      "zone": "COOL"
+    },
+    "emotions": {
+      "content": {
+        "intensity": 0.7,
+        "cause": "thermal_zone=COOL",
+        "hardware": "cpu_temp=40.0\u00b0C"
+      },
+      "curious": {
+        "intensity": 0.5,
+        "cause": "thermal_zone=COOL",
+        "hardware": "cpu_temp=40.0\u00b0C"
+      },
+      "stressed": {
+        "intensity": 0.843,
+        "cause": "high_memory_pressure",
+        "hardware": "mem=84%"
+      },
+      "bored": {
+        "intensity": 1.0,
+        "cause": "low_cpu_usage",
+        "hardware": "cpu=0%"
+      }
+    }
+  },
+  "history_count": 2
+}
