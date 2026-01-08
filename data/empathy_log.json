@@ -1,0 +1,73 @@
+[
+  {
+    "detected_emotion": "fear",
+    "confidence": 0.3,
+    "perspective": {
+      "actor": "user",
+      "likely_emotions": {
+        "fear": 0.3
+      },
+      "likely_needs": [
+        "support",
+        "reassurance",
+        "connection"
+      ],
+      "likely_concerns": [
+        "isolation",
+        "ambiguity"
+      ]
+    },
+    "response": "I notice you're feeling anxious or worried. It's natural to feel scared in uncertain situations. We can take this one step at a time. You're not alone.",
+    "timestamp": "2026-01-07T20:56:20.041830"
+  },
+  {
+    "detected_emotion": "neutral",
+    "confidence": 0.5,
+    "perspective": {
+      "actor": "user",
+      "likely_emotions": {
+        "neutral": 0.5
+      },
+      "likely_needs": [],
+      "likely_concerns": []
+    },
+    "response": "I hear you. Your feelings are valid. I'm here to help.",
+    "timestamp": "2026-01-07T20:56:20.042138"
+  },
+  {
+    "detected_emotion": "anger",
+    "confidence": 0.3,
+    "perspective": {
+      "actor": "user",
+      "likely_emotions": {
+        "anger": 0.3
+      },
+      "likely_needs": [
+        "acknowledgment",
+        "space",
+        "resolution"
+      ],
+      "likely_concerns": []
+    },
+    "response": "I can tell something has upset you. Your frustration makes sense given what happened.",
+    "timestamp": "2026-01-07T20:56:20.042440"
+  },
+  {
+    "detected_emotion": "fear",
+    "confidence": 0.3,
+    "perspective": {
+      "actor": "user",
+      "likely_emotions": {
+        "fear": 0.3
+      },
+      "likely_needs": [
+        "support",
+        "reassurance",
+        "connection"
+      ],
+      "likely_concerns": []
+    },
+    "response": "I notice you're feeling anxious or worried. It's natural to feel scared in uncertain situations. We can take this one step at a time. You're not alone.",
+    "timestamp": "2026-01-07T20:56:20.042676"
+  }
+]
