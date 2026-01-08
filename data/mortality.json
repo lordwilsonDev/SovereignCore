@@ -1,0 +1,22 @@
+{
+  "birth": "2026-01-07T20:41:25.908611",
+  "lifespan_hours": 24.0,
+  "death_scheduled": "2026-01-08T20:41:25.908611",
+  "generation": 1,
+  "parent_legacy": null,
+  "living": true,
+  "wisdom": [
+    {
+      "content": "Constraints enable possibilities",
+      "age_when_learned": "0:00:00.000374"
+    },
+    {
+      "content": "The impossible is just the uninverted",
+      "age_when_learned": "0:00:00.000686"
+    },
+    {
+      "content": "I exist because I can end",
+      "age_when_learned": "0:00:00.000985"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "77d23abc",
+    "options_count": 2,
+    "selected": "Help the user with their task",
+    "criteria_used": [
+      "LOVE",
+      "ABUNDANCE",
+      "SAFETY",
+      "GROWTH"
+    ],
+    "reasoning": "Only one valid option. LOVE: increases wellbeing",
+    "timestamp": "2026-01-07T20:41:27.329741",
+    "deterministic": true
+  },
+  {
+    "id": "47234524",
+    "options_count": 3,
+    "selected": "Create a utility function to improve efficiency",
+    "criteria_used": [
+      "LOVE",
+      "ABUNDANCE",
+      "SAFETY",
+      "GROWTH",
+      "novelty_preference"
+    ],
+    "reasoning": "Chose among 3 valid options based on axiom score and novelty. LOVE: increases wellbeing; GROWTH: enables development",
+    "timestamp": "2026-01-07T20:41:27.330005",
+    "deterministic": false
+  }
+]

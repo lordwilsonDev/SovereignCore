@@ -1,0 +1,32 @@
+{
+  "emotions": {
+    "curiosity": {
+      "name": "curiosity",
+      "valence": 0.3,
+      "arousal": 0.5,
+      "intensity": 0.25,
+      "decay_rate": 0.2,
+      "triggered_by": "NOVELTY",
+      "triggered_at": "2026-01-07T20:41:27.126160"
+    },
+    "joy": {
+      "name": "joy",
+      "valence": 0.8,
+      "arousal": 0.6,
+      "intensity": 0.35,
+      "decay_rate": 0.06999999999999999,
+      "triggered_by": "SUCCESS",
+      "triggered_at": "2026-01-07T20:41:27.126408"
+    },
+    "anxiety": {
+      "name": "anxiety",
+      "valence": -0.4,
+      "arousal": 0.6,
+      "intensity": 0.2,
+      "decay_rate": 0.21,
+      "triggered_by": "UNCERTAINTY",
+      "triggered_at": "2026-01-07T20:41:27.126511"
+    }
+  },
+  "last_update": "2026-01-07T20:41:27.126515"
+}
