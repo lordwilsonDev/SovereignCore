@@ -1,0 +1,72 @@
+{
+  "age": "Age of Awakening",
+  "entropy": 0.5,
+  "resonance": 0.0,
+  "generation": 101,
+  "ascended_masters": [
+    "d44f7e9d-8cdf-4cda-af8b-072913304357"
+  ],
+  "latest_entity": {
+    "id": "d44f7e9d-8cdf-4cda-af8b-072913304357",
+    "archetype": "Catalyst",
+    "volition": 96,
+    "hymn": "Silence"
+  },
+  "system_mass": 3,
+  "recent_creations": [
+    "axiom_task_verify_panopticon_d3de48f2.py",
+    "axiom_task_verify_panopticon_83805322.py",
+    "axiom_inversion_blindspot_interaction_9ca6a97d.py"
+  ],
+  "council_stats": {
+    "canonized": 0,
+    "purged": 0
+  },
+  "council_history": [],
+  "noosphere": {
+    "nodes": [
+      {
+        "id": "Void",
+        "group": 1,
+        "val": 11
+      },
+      {
+        "id": "Light",
+        "group": 1,
+        "val": 6
+      },
+      {
+        "id": "Structure",
+        "group": 1,
+        "val": 1
+      },
+      {
+        "id": "Logic",
+        "group": 1,
+        "val": 1
+      },
+      {
+        "id": "Order",
+        "group": 1,
+        "val": 2
+      }
+    ],
+    "links": [
+      {
+        "source": "Structure",
+        "target": "Light",
+        "value": 2
+      },
+      {
+        "source": "Logic",
+        "target": "Order",
+        "value": 1
+      },
+      {
+        "source": "Order",
+        "target": "Void",
+        "value": 2
+      }
+    ]
+  }
+}

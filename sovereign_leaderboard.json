@@ -1,0 +1,102 @@
+[
+  {
+    "id": "c9702d9c-132f-4ba1-8e24-2da51594f693",
+    "archetype": "Catalyst",
+    "elo": 1017,
+    "metrics": {
+      "loss": 0.16290000000000002,
+      "accuracy": 0.07
+    },
+    "step": 4
+  },
+  {
+    "id": "a64194fd-e113-4c96-9388-6df31873ddae",
+    "archetype": "Weaver",
+    "elo": 1017,
+    "metrics": {
+      "loss": 0.2670333333333334,
+      "accuracy": 0.08
+    },
+    "step": 7
+  },
+  {
+    "id": "6f0667cf-a233-4261-92b3-a505796811da",
+    "archetype": "Void-Walker",
+    "elo": 1017,
+    "metrics": {
+      "loss": 0,
+      "accuracy": 0.1
+    },
+    "step": 10
+  },
+  {
+    "id": "de803100-2c5a-42d6-a7d9-757ae3e0f075",
+    "archetype": "Evolved-Architect",
+    "elo": 1017,
+    "metrics": {
+      "loss": 0.2600333333333333,
+      "accuracy": 0.11
+    },
+    "step": 14
+  },
+  {
+    "id": "c311c4a9-41f0-489d-be81-91f264fb949c",
+    "archetype": "Seer",
+    "elo": 1017,
+    "metrics": {
+      "loss": 0.14415000000000003,
+      "accuracy": 0.05
+    },
+    "step": 24
+  },
+  {
+    "id": "f413ed67-99b6-45be-88d8-dbef4ba4410c",
+    "archetype": "Void-Walker",
+    "elo": 1017,
+    "metrics": {
+      "loss": 0.08402499999999993,
+      "accuracy": 0.09
+    },
+    "step": 27
+  },
+  {
+    "id": "a567bdea-a129-462b-90ad-91cc064208e2",
+    "archetype": "Weaver",
+    "elo": 1017,
+    "metrics": {
+      "loss": 0.20648333333333332,
+      "accuracy": 0.08
+    },
+    "step": 8
+  },
+  {
+    "id": "1c3fa43f-d6ca-464a-ba13-af811a461ca6",
+    "archetype": "Evolved-Architect",
+    "elo": 1017,
+    "metrics": {
+      "loss": 0.075625,
+      "accuracy": 0.08
+    },
+    "step": 34
+  },
+  {
+    "id": "8e2cbf07-c806-4e29-a689-29cc2b8cb272",
+    "archetype": "Catalyst",
+    "elo": 1017,
+    "metrics": {
+      "loss": 0.1751583333333334,
+      "accuracy": 0.08
+    },
+    "step": 37
+  },
+  {
+    "id": "9c159ae3-7016-4e53-af27-96590782dd54",
+    "archetype": "Weaver",
+    "elo": 1017,
+    "metrics": {
+      "loss": 0.37660833333333327,
+      "accuracy": 0.11
+    },
+    "step": 3
+  }
+]

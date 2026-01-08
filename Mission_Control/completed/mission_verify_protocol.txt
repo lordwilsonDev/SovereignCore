@@ -1,0 +1,1 @@
+Write a Python class called ProtocolVerifier that returns 'Sovereign Protocol Verified' when check() is called.

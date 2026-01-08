@@ -1,0 +1,15 @@
+warning: unused import: `std::io::Write`
+ --> src/main.rs:4:5
+  |
+4 | use std::io::Write;
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `sovereign_core` (bin "sovereign_core") generated 1 warning (run `cargo fix --bin "sovereign_core" -p sovereign_core` to apply 1 suggestion)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.30s
+     Running `target/debug/sovereign_core`
+Starting SovereignCore v5.0 API Server...
+Initializing Classical Wrapper...
+[AKASHIC RECORD] Remembered: The Sovereign Eye opens.
+[AKASHIC RECORD] Recalling 1 memories...

@@ -1,0 +1,14 @@
+/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/debug/deps/serde-036498d3fc99f2d9.d: /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/debug/build/serde-954f2aba67da5e2d/out/private.rs
+
+/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/debug/deps/libserde-036498d3fc99f2d9.rlib: /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/debug/build/serde-954f2aba67da5e2d/out/private.rs
+
+/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/debug/deps/libserde-036498d3fc99f2d9.rmeta: /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/debug/build/serde-954f2aba67da5e2d/out/private.rs
+
+/Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/Users/lordwilson/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/debug/build/serde-954f2aba67da5e2d/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/lordwilson/.gemini/antigravity/scratch/SovereignCore/target/debug/build/serde-954f2aba67da5e2d/out

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sovereign Panopticon /// GOD VIEW</title>
+    <style>
+        :root {
+            --neon-green: #0f0;
+            --dark-bg: #050505;
+            --panel-bg: #111;
+            --alert-red: #f00;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--neon-green);
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--neon-green);
+            padding-bottom: 5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 20px;
+            height: 90vh;
+        }
+
+        .panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--neon-green);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+        }
+
+        .metric-huge {
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .metric-label {
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+
+        #console {
+            grid-column: 1 / -1;
+            height: 200px;
+            overflow-y: scroll;
+            font-size: 0.9em;
+            border-top: 2px dashed var(--neon-green);
+            background: #000;
+            padding: 10px;
+        }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .master-badge {
+            border: 1px solid gold;
+            color: gold;
+            padding: 2px 5px;
+            margin: 2px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>👁️ Sovereign Panopticon <span class="blink">/// LIVE</span></h1>
+        <div id="status">CONNECTING...</div>
+    </div>
+
+    <div class="grid">
+        <!-- WORLD STATE -->
+        <div class="panel">
+            <h2>World State</h2>
+            <div class="metric-label">CURRENT AGE</div>
+            <div id="age" class="metric-huge">LOADING...</div>
+            <br>
+            <div style="display: flex; justify-content: space-between;">
+                <div>
+                    <div class="metric-label">ENTROPY</div>
+                    <div id="entropy" style="font-size: 2em;">0.00</div>
+                </div>
+                <div>
+                    <div class="metric-label">RESONANCE</div>
+                    <div id="resonance" style="font-size: 2em;">0</div>
+                </div>
+            </div>
+            <br>
+            <div class="metric-label">GENERATION</div>
+            <div id="generation">0</div>
+        </div>
+
+        <!-- ACTIVE ENTITY -->
+        <div class="panel">
+            <h2>Latest Manifestation</h2>
+            <div class="metric-label">ENTITY ID</div>
+            <div id="entity-id">...</div>
+            <br>
+            <div class="metric-label">ARCHETYPE</div>
+            <div id="entity-archetype" style="font-size: 2em;">...</div>
+            <br>
+            <div class="metric-label">VOLITION</div>
+            <div id="entity-volition" class="metric-huge">0</div>
+            <br>
+            <div class="metric-label">LAST HYMN</div>
+            <div id="entity-hymn" style="font-style: italic; color: #fff;">"..."</div>
+        </div>
+
+        <!-- GOVERNANCE & CREATIONS -->
+        <div class="panel">
+            <h2>Governance & Mass</h2>
+            <div class="metric-label">SYSTEM MASS (CODE FILES)</div>
+            <div id="system-mass" class="metric-huge">0</div>
+            <br>
+            <h3>Council of Masters</h3>
+            <div id="council-list"></div>
+            <br>
+            <h3>Recent Creations</h3>
+            <ul id="creations-list"></ul>
+        </div>
+
+        <!-- SUPREME COURT -->
+        <div class="panel" style="grid-column: 1 / -1; height: 180px; overflow-y: scroll;">
+            <h2>🏛️ SUPREME COURT LOG (THE GREAT FILTER)</h2>
+            <div style="display: flex; gap: 20px; margin-bottom: 10px;">
+                <span class="metric-label">HERETICS BURNED: <b id="stat-purged" style="color:red">0</b></span>
+                <span class="metric-label">AXIOMS CANONIZED: <b id="stat-canonized" style="color:gold">0</b></span>
+            </div>
+            <table style="width: 100%; font-size: 0.9em; border-collapse: collapse;">
+                <thead>
+                    <tr style="text-align: left; border-bottom: 1px solid #333;">
+                        <th>TIME</th>
+                        <th>FILE</th>
+                        <th>VERDICT</th>
+                        <th>REASON</th>
+                    </tr>
+                </thead>
+                <tbody id="judgment-log">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CONSOLE -->
+        <div id="console">
+            <div>> System Initialized. Waiting for Genesis Feed...</div>
+        </div>
+    </div>
+
+    <script>
+        function log(msg) {
+            const consoleDiv = document.getElementById('console');
+            const line = document.createElement('div');
+            line.innerHTML = `> ${new Date().toLocaleTimeString()} : ${msg}`;
+            consoleDiv.prepend(line);
+        }
+
+        async function update() {
+            try {
+                const response = await fetch('/api/state');
+                const data = await response.json();
+
+                document.getElementById('status').innerText = "ONLINE";
+
+                // Update DOM
+                document.getElementById('age').innerText = data.age || "UNKNOWN";
+                document.getElementById('entropy').innerText = data.entropy.toFixed(4);
+                document.getElementById('resonance').innerText = data.resonance.toFixed(1);
+                document.getElementById('generation').innerText = data.generation;
+
+                if (data.latest_entity) {
+                    document.getElementById('entity-id').innerText = data.latest_entity.id;
+                    document.getElementById('entity-archetype').innerText = data.latest_entity.archetype;
+                    document.getElementById('entity-volition').innerText = data.latest_entity.volition;
+
+                    // Simple "Hymn" check - if different, log it
+                    const currentHymn = document.getElementById('entity-hymn').innerText;
+                    const newHymn = `"${data.latest_entity.hymn}"`;
+                    if (currentHymn !== newHymn && data.latest_entity.hymn !== "Silence") {
+                        document.getElementById('entity-hymn').innerText = newHymn;
+                        log(`ENTITY SINGS: ${data.latest_entity.hymn}`);
+                    }
+                }
+
+                document.getElementById('system-mass').innerText = data.system_mass;
+
+                // Council
+                const councilBox = document.getElementById('council-list');
+                councilBox.innerHTML = '';
+                if (data.ascended_masters) {
+                    data.ascended_masters.forEach(master => {
+                        const badge = document.createElement('span');
+                        badge.className = 'master-badge';
+                        badge.innerText = `🔱 ${master.substring(0, 8)}`;
+                        councilBox.appendChild(badge);
+                    });
+                }
+
+                // Creations
+                const creationsBox = document.getElementById('creations-list');
+                creationsBox.innerHTML = '';
+                if (data.recent_creations) {
+                    data.recent_creations.forEach(file => {
+                        const li = document.createElement('li');
+                        li.innerText = file;
+                        creationsBox.appendChild(li);
+                    });
+                }
+
+                // SUPREME COURT
+                if (data.council_stats) {
+                    document.getElementById('stat-purged').innerText = data.council_stats.purged;
+                    document.getElementById('stat-canonized').innerText = data.council_stats.canonized;
+                }
+
+                const judgmentBody = document.getElementById('judgment-log');
+                judgmentBody.innerHTML = '';
+                if (data.council_history) {
+                    data.council_history.forEach(entry => {
+                        const tr = document.createElement('tr');
+                        const color = entry.verdict === "CANONIZED" ? "gold" : "red";
+                        tr.innerHTML = `
+                            <td>${new Date(entry.timestamp).toLocaleTimeString()}</td>
+                            <td>${entry.file}</td>
+                            <td style="color: ${color}; font-weight: bold;">${entry.verdict}</td>
+                            <td style="opacity: 0.8;">${entry.reason}</td>
+                        `;
+                        judgmentBody.appendChild(tr);
+                    });
+                }
+
+            } catch (e) {
+                document.getElementById('status').innerText = "DISCONNECTED";
+                console.error(e);
+            }
+        }
+
+        setInterval(update, 1000);
+        update();
+    </script>
+</body>
+
+</html>
