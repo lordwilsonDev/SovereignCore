@@ -55,13 +55,13 @@ class MetaGovernance:
         try:
             self.fuel = FuelInterface()
             self.auction = AuctionInterface()
-        except:
+        except Exception:
             self.fuel = None
             self.auction = None
         
         try:
             self.verifier = Z3FormalVerifier()
-        except:
+        except Exception:
             self.verifier = None
         
         # Governance Treasury

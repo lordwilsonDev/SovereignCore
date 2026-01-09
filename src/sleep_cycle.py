@@ -15,6 +15,23 @@ import hashlib
 from datetime import datetime, timedelta
 from pathlib import Path
 from collections import defaultdict
+import sys
+
+# Add companion to path for AxiomRAG (two possible locations)
+companion_paths = [
+    Path(__file__).resolve().parent.parent / "companion",  # Same repo
+    Path.home() / "SovereignCore" / "companion",           # User's main repo
+]
+for cp in companion_paths:
+    if (cp / "axiom_rag.py").exists():
+        sys.path.insert(0, str(cp))
+        break
+
+try:
+    from axiom_rag import AxiomRAG
+    RAG_AVAILABLE = True
+except ImportError:
+    RAG_AVAILABLE = False
 
 
 class SleepCycle:
@@ -38,8 +55,12 @@ class SleepCycle:
         self.prune_threshold = 0.3  # Memories with value < this are pruned
         self.archive_age_days = 7  # Memories older than this are archived
         self.max_active_memories = 1000  # Cap on active memories
+        self.rag_prune_threshold = 0.2  # Lower threshold for RAG (preserve more)
         
         self.archive_path.parent.mkdir(exist_ok=True)
+        
+        # Initialize RAG if available
+        self.rag = AxiomRAG() if RAG_AVAILABLE else None
     
     def consolidate(self) -> dict:
         """
@@ -142,7 +163,7 @@ class SleepCycle:
                     if mem_time.replace(tzinfo=None) < cutoff:
                         to_archive.append(m)
                         continue
-            except:
+            except (ValueError, TypeError):
                 pass
             active.append(m)
         
@@ -206,13 +227,76 @@ class SleepCycle:
         with open(self.log_path, 'a') as f:
             f.write(json.dumps(entry) + "\n")
 
+    def consolidate_rag(self) -> dict:
+        """
+        Consolidate memories in AxiomRAG.
+        
+        Strategy:
+        1. Get all memories
+        2. Sort by confidence (lowest first)
+        3. Prune memories below threshold
+        4. Keep correction memories (never prune learning)
+        
+        Returns:
+            Dict with consolidation stats
+        """
+        if not self.rag:
+            print("⚠️  AxiomRAG not available. Skipping RAG consolidation.")
+            return {"error": "RAG not available"}
+        
+        start_time = time.time()
+        print("💤 DREAM CYCLE: Consolidating AxiomRAG memories...")
+        
+        initial_count = self.rag.count()
+        all_memories = self.rag.get_all()
+        
+        # Sort by confidence (lowest first for pruning)
+        all_memories.sort(key=lambda m: m.confidence)
+        
+        pruned = 0
+        preserved = 0
+        
+        for memory in all_memories:
+            # Never prune corrections (learning is sacred)
+            if memory.type == "correction":
+                preserved += 1
+                continue
+            
+            # Prune low-confidence memories
+            if memory.confidence < self.rag_prune_threshold:
+                self.rag.forget(memory.id)
+                pruned += 1
+            else:
+                preserved += 1
+        
+        duration = time.time() - start_time
+        final_count = self.rag.count()
+        
+        result = {
+            "source": "AxiomRAG",
+            "initial_count": initial_count,
+            "final_count": final_count,
+            "pruned": pruned,
+            "preserved": preserved,
+            "duration_seconds": round(duration, 2)
+        }
+        
+        self._log_cycle(result)
+        
+        print(f"   🧹 Pruned {pruned} low-confidence memories")
+        print(f"   💾 Preserved {preserved} memories")
+        print(f"   ✅ Dream complete: {initial_count} -> {final_count} memories ({duration:.2f}s)")
+        
+        return result
+
 
 # CLI Interface
 if __name__ == "__main__":
     import argparse
     
     parser = argparse.ArgumentParser(description='Sleep Cycle - Memory Consolidation')
-    parser.add_argument('--consolidate', action='store_true', help='Run consolidation')
+    parser.add_argument('--consolidate', action='store_true', help='Run legacy consolidation')
+    parser.add_argument('--consolidate-rag', action='store_true', help='Run RAG consolidation')
     parser.add_argument('--status', action='store_true', help='Show memory status')
     
     args = parser.parse_args()
@@ -221,6 +305,8 @@ if __name__ == "__main__":
     
     if args.consolidate:
         sleep.consolidate()
+    elif args.consolidate_rag:
+        sleep.consolidate_rag()
     elif args.status:
         memories = sleep._load_memories()
         archive = []
@@ -228,9 +314,13 @@ if __name__ == "__main__":
             with open(sleep.archive_path, 'r') as f:
                 archive = json.load(f)
         
-        print(f"📊 MEMORY STATUS")
+        print(f"📊 MEMORY STATUS (Legacy)")
         print(f"   Active: {len(memories)}")
         print(f"   Archived: {len(archive)}")
         print(f"   Max Active: {sleep.max_active_memories}")
+        
+        if sleep.rag:
+            print(f"\n📊 MEMORY STATUS (AxiomRAG)")
+            print(f"   Memories: {sleep.rag.count()}")
     else:
-        print("Usage: python3 sleep_cycle.py --consolidate")
+        print("Usage: python3 sleep_cycle.py --consolidate-rag")
